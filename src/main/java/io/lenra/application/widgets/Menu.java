@@ -7,11 +7,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import io.lenra.template.object.Widget;
-import io.lenra.template.object.components.*;
-import io.lenra.template.object.components.FlexSchema.CrossAxisAlignment;
-import io.lenra.template.object.components.FlexSchema.MainAxisAlignment;
-import io.lenra.template.object.components.TextSchema.TextAlign;
-import io.lenra.template.object.components.TextStyleSchema.FontWeight;
+import lenra.components.*;
+import lenra.components.FlexSchema.CrossAxisAlignment;
+import lenra.components.FlexSchema.MainAxisAlignment;
+import lenra.components.TextSchema.TextAlign;
+import lenra.components.TextStyleSchema.FontWeight;
 
 public class Menu implements Widget {
 

@@ -4,7 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import io.lenra.template.object.Widget;
-import io.lenra.template.object.components.*;
+import lenra.components.*;
 
 public class UserData implements Widget {
 
