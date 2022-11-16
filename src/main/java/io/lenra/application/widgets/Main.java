@@ -16,11 +16,18 @@ public class Main implements Widget {
     public Object render(JsonArray data, JsonObject props,
             JsonObject context) {
         List<Object> flex_child = new LinkedList<Object>();
-        flex_child.add(new WidgetSchema().withName("menu"));
-        flex_child.add(new WidgetSchema().withName("home"));
+        flex_child.add(
+                new WidgetSchema().withType(WidgetSchema.Type.WIDGET).withName("menu").withProps(new JsonObject()));
+        flex_child.add(
+                new WidgetSchema().withType(WidgetSchema.Type.WIDGET).withName("home").withProps(new JsonObject()));
 
-        return new FlexSchema().withDirection(DirectionSchema.VERTICAL).withScroll(true).withSpacing(4.0)
-                .withCrossAxisAlignment(CrossAxisAlignment.CENTER).withChildren(flex_child);
+        return new FlexSchema()
+                .withType(FlexSchema.Type.FLEX)
+                .withDirection(DirectionSchema.VERTICAL)
+                .withScroll(true)
+                .withSpacing(4.0)
+                .withCrossAxisAlignment(CrossAxisAlignment.CENTER)
+                .withChildren(flex_child);
     }
 
 }

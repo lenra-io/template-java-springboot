@@ -16,23 +16,36 @@ import lenra.components.FlexSchema.MainAxisAlignment;
 
 public class Counter implements Widget {
 
-    public Object render(JsonArray data, JsonObject props,
-            JsonObject context) {
-        List<Object> child_list = new LinkedList<Object>();
+        public Object render(JsonArray data, JsonObject props,
+                        JsonObject context) {
+                List<Object> child_list = new LinkedList<Object>();
 
-        child_list.add(new TextSchema()
-                .withValue(props.get("text").getAsString() + ": "
-                        + data.get(0).getAsJsonObject().get("count").getAsString()));
+                String counterText = props.get("text").getAsString()
+                                + ": " +
+                                data.get(0).getAsJsonObject().get("count").getAsString();
 
-        JsonObject Props = new JsonObject();
-        Props.addProperty("id", data.get(0).getAsJsonObject().get("_id").getAsInt());
-        Props.addProperty("datastore", data.get(0).getAsJsonObject().get("datastore").getAsString());
+                child_list.add(new TextSchema()
+                                .withType(TextSchema.Type.TEXT)
+                                .withValue(counterText));
 
-        child_list.add(new ButtonSchema().withText("+")
-                .withOnPressed(new ListenerSchema().withAction("increment").withProps(Props)));
+                JsonObject Props = new JsonObject();
+                Props.addProperty("id", data.get(0).getAsJsonObject().get("_id").getAsInt());
 
-        return new FlexSchema().withSpacing(2.0).withMainAxisAlignment(MainAxisAlignment.SPACE_EVENLY)
-                .withCrossAxisAlignment(CrossAxisAlignment.CENTER).withChildren(child_list);
-    };
+                child_list.add(new ButtonSchema()
+                                .withType(ButtonSchema.Type.BUTTON)
+                                .withText("+")
+                                .withOnPressed(
+                                                new ListenerSchema()
+
+                                                                .withAction("increment")
+                                                                .withProps(Props)));
+
+                return new FlexSchema()
+                                .withType(FlexSchema.Type.FLEX)
+                                .withSpacing(2.0)
+                                .withMainAxisAlignment(MainAxisAlignment.SPACE_EVENLY)
+                                .withCrossAxisAlignment(CrossAxisAlignment.CENTER)
+                                .withChildren(child_list);
+        };
 
 }

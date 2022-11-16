@@ -12,7 +12,7 @@
 	<artifactId>template</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>template</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Lenra SpringBoot Template</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

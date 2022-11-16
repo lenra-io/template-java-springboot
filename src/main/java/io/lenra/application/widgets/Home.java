@@ -14,30 +14,48 @@ import lenra.components.FlexSchema.MainAxisAlignment;
 
 public class Home implements Widget {
 
-    public Object render(JsonArray data, JsonObject props,
-            JsonObject context) {
-        List<Object> child_list = new LinkedList<Object>();
-        JsonObject Query = new JsonObject();
-        Query.addProperty("user", "global");
+        public Object render(JsonArray data, JsonObject props,
+                        JsonObject context) {
+                List<Object> child_list = new LinkedList<Object>();
 
-        JsonObject Props = new JsonObject();
-        Props.addProperty("text", "My personnal counter");
+                child_list.add(privateCounter());
 
-        child_list.add(
-                new WidgetSchema().withName("counter").withColl("counter").withQuery(Query)
-                        .withProps(Props));
+                child_list.add(globalCounter());
 
-        JsonObject Query1 = new JsonObject();
-        Query1.addProperty("user", "global");
+                return new FlexSchema()
+                                .withType(FlexSchema.Type.FLEX)
+                                .withDirection(DirectionSchema.VERTICAL)
+                                .withSpacing(4.0)
+                                .withMainAxisAlignment(MainAxisAlignment.SPACE_EVENLY)
+                                .withCrossAxisAlignment(CrossAxisAlignment.CENTER)
+                                .withChildren(child_list);
+        }
 
-        JsonObject Props1 = new JsonObject();
-        Props1.addProperty("text", "The common counter");
-        child_list.add(
-                new WidgetSchema().withName("counter").withColl("counter").withQuery(Query1)
-                        .withProps(Props1));
-        return new FlexSchema().withDirection(DirectionSchema.VERTICAL).withSpacing(4.0)
-                .withMainAxisAlignment(MainAxisAlignment.SPACE_EVENLY).withCrossAxisAlignment(CrossAxisAlignment.CENTER)
-                .withChildren(child_list);
-    }
+        private Object privateCounter() {
+                JsonObject Query = new JsonObject();
+                Query.addProperty("user", "global");
 
+                JsonObject Props = new JsonObject();
+                Props.addProperty("text", "My personnal counter");
+                return new WidgetSchema()
+                                .withType(WidgetSchema.Type.WIDGET)
+                                .withName("counter")
+                                .withColl("counter")
+                                .withQuery(Query)
+                                .withProps(Props);
+        }
+
+        private Object globalCounter() {
+                JsonObject Query = new JsonObject();
+                Query.addProperty("user", "global");
+
+                JsonObject Props = new JsonObject();
+                Props.addProperty("text", "The common counter");
+
+                return new WidgetSchema()
+                                .withType(WidgetSchema.Type.WIDGET)
+                                .withName("counter")
+                                .withColl("counter").withQuery(Query)
+                                .withProps(Props);
+        }
 }

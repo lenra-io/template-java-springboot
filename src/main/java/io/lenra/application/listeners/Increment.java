@@ -12,5 +12,6 @@ public class Increment implements Listener {
     public void run(JsonObject props, JsonObject event, JsonObject api) {
         Counter counter = counterApi.getCounter(api, props.get("id").getAsInt());
         counter.setCount(counter.getCount() + 1);
+        counterApi.updateCounter(api, counter);
     }
 }
