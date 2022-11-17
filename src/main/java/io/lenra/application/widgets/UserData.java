@@ -10,6 +10,6 @@ public class UserData implements Widget {
 
     public Object render(JsonArray data, JsonObject props,
             JsonObject context) {
-        return new TextSchema().withValue(data.get(0).getAsString());
+        return new TextSchema().withType(TextSchema.Type.TEXT).withValue(data.get(0).getAsString());
     }
 }

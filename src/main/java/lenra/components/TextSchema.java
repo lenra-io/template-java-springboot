@@ -8,7 +8,6 @@ import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-
 /**
  * Text
  * <p>
@@ -59,7 +58,8 @@ public class TextSchema {
     @Expose
     private String semanticsLabel;
     /**
-     * Whether the assistive technologies should spell out this text character by character
+     * Whether the assistive technologies should spell out this text character by
+     * character
      * 
      */
     @SerializedName("spellOut")
@@ -76,9 +76,9 @@ public class TextSchema {
      * Additional texts to add after this text.
      * 
      */
-    @SerializedName("children")
-    @Expose
-    private List<Child> children = new ArrayList<Child>();
+    // @SerializedName("children")
+    // @Expose
+    // private List<Child> children = new ArrayList<Child>();
 
     /**
      * The type of the element
@@ -198,7 +198,8 @@ public class TextSchema {
     }
 
     /**
-     * Whether the assistive technologies should spell out this text character by character
+     * Whether the assistive technologies should spell out this text character by
+     * character
      * 
      */
     public Boolean getSpellOut() {
@@ -206,7 +207,8 @@ public class TextSchema {
     }
 
     /**
-     * Whether the assistive technologies should spell out this text character by character
+     * Whether the assistive technologies should spell out this text character by
+     * character
      * 
      */
     public void setSpellOut(Boolean spellOut) {
@@ -239,65 +241,66 @@ public class TextSchema {
         return this;
     }
 
-    /**
-     * Additional texts to add after this text.
-     * 
-     */
-    public List<Child> getChildren() {
-        return children;
-    }
+    // /**
+    // * Additional texts to add after this text.
+    // *
+    // */
+    // public List<Child> getChildren() {
+    // return children;
+    // }
 
-    /**
-     * Additional texts to add after this text.
-     * 
-     */
-    public void setChildren(List<Child> children) {
-        this.children = children;
-    }
+    // /**
+    // * Additional texts to add after this text.
+    // *
+    // */
+    // public void setChildren(List<Child> children) {
+    // this.children = children;
+    // }
 
-    public TextSchema withChildren(List<Child> children) {
-        this.children = children;
-        return this;
-    }
+    // public TextSchema withChildren(List<Child> children) {
+    // this.children = children;
+    // return this;
+    // }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(TextSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(TextSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("value");
         sb.append('=');
-        sb.append(((this.value == null)?"<null>":this.value));
+        sb.append(((this.value == null) ? "<null>" : this.value));
         sb.append(',');
         sb.append("style");
         sb.append('=');
-        sb.append(((this.style == null)?"<null>":this.style));
+        sb.append(((this.style == null) ? "<null>" : this.style));
         sb.append(',');
         sb.append("locale");
         sb.append('=');
-        sb.append(((this.locale == null)?"<null>":this.locale));
+        sb.append(((this.locale == null) ? "<null>" : this.locale));
         sb.append(',');
         sb.append("semanticsLabel");
         sb.append('=');
-        sb.append(((this.semanticsLabel == null)?"<null>":this.semanticsLabel));
+        sb.append(((this.semanticsLabel == null) ? "<null>" : this.semanticsLabel));
         sb.append(',');
         sb.append("spellOut");
         sb.append('=');
-        sb.append(((this.spellOut == null)?"<null>":this.spellOut));
+        sb.append(((this.spellOut == null) ? "<null>" : this.spellOut));
         sb.append(',');
         sb.append("textAlign");
         sb.append('=');
-        sb.append(((this.textAlign == null)?"<null>":this.textAlign));
+        sb.append(((this.textAlign == null) ? "<null>" : this.textAlign));
         sb.append(',');
-        sb.append("children");
-        sb.append('=');
-        sb.append(((this.children == null)?"<null>":this.children));
+        // sb.append("children");
+        // sb.append('=');
+        // sb.append(((this.children == null) ? "<null>" : this.children));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -307,14 +310,15 @@ public class TextSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.textAlign == null)? 0 :this.textAlign.hashCode()));
-        result = ((result* 31)+((this.children == null)? 0 :this.children.hashCode()));
-        result = ((result* 31)+((this.spellOut == null)? 0 :this.spellOut.hashCode()));
-        result = ((result* 31)+((this.style == null)? 0 :this.style.hashCode()));
-        result = ((result* 31)+((this.semanticsLabel == null)? 0 :this.semanticsLabel.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.locale == null)? 0 :this.locale.hashCode()));
-        result = ((result* 31)+((this.value == null)? 0 :this.value.hashCode()));
+        result = ((result * 31) + ((this.textAlign == null) ? 0 : this.textAlign.hashCode()));
+        // result = ((result * 31) + ((this.children == null) ? 0 :
+        // this.children.hashCode()));
+        result = ((result * 31) + ((this.spellOut == null) ? 0 : this.spellOut.hashCode()));
+        result = ((result * 31) + ((this.style == null) ? 0 : this.style.hashCode()));
+        result = ((result * 31) + ((this.semanticsLabel == null) ? 0 : this.semanticsLabel.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.locale == null) ? 0 : this.locale.hashCode()));
+        result = ((result * 31) + ((this.value == null) ? 0 : this.value.hashCode()));
         return result;
     }
 
@@ -327,9 +331,19 @@ public class TextSchema {
             return false;
         }
         TextSchema rhs = ((TextSchema) other);
-        return (((((((((this.textAlign == rhs.textAlign)||((this.textAlign!= null)&&this.textAlign.equals(rhs.textAlign)))&&((this.children == rhs.children)||((this.children!= null)&&this.children.equals(rhs.children))))&&((this.spellOut == rhs.spellOut)||((this.spellOut!= null)&&this.spellOut.equals(rhs.spellOut))))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))))&&((this.semanticsLabel == rhs.semanticsLabel)||((this.semanticsLabel!= null)&&this.semanticsLabel.equals(rhs.semanticsLabel))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.locale == rhs.locale)||((this.locale!= null)&&this.locale.equals(rhs.locale))))&&((this.value == rhs.value)||((this.value!= null)&&this.value.equals(rhs.value))));
+        return (((((((((this.textAlign == rhs.textAlign)
+                || ((this.textAlign != null) && this.textAlign.equals(rhs.textAlign)))
+        // && ((this.children == rhs.children) || ((this.children != null) &&
+        // this.children.equals(rhs.children)))
+        )
+                && ((this.spellOut == rhs.spellOut) || ((this.spellOut != null) && this.spellOut.equals(rhs.spellOut))))
+                && ((this.style == rhs.style) || ((this.style != null) && this.style.equals(rhs.style))))
+                && ((this.semanticsLabel == rhs.semanticsLabel)
+                        || ((this.semanticsLabel != null) && this.semanticsLabel.equals(rhs.semanticsLabel))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.locale == rhs.locale) || ((this.locale != null) && this.locale.equals(rhs.locale))))
+                && ((this.value == rhs.value) || ((this.value != null) && this.value.equals(rhs.value))));
     }
-
 
     /**
      * The text alignment
@@ -349,11 +363,12 @@ public class TextSchema {
         START("start"),
         @SerializedName("end")
         END("end");
+
         private final String value;
         private final static Map<String, TextSchema.TextAlign> CONSTANTS = new HashMap<String, TextSchema.TextAlign>();
 
         static {
-            for (TextSchema.TextAlign c: values()) {
+            for (TextSchema.TextAlign c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -382,7 +397,6 @@ public class TextSchema {
 
     }
 
-
     /**
      * The type of the element
      * 
@@ -391,11 +405,12 @@ public class TextSchema {
 
         @SerializedName("text")
         TEXT("text");
+
         private final String value;
         private final static Map<String, TextSchema.Type> CONSTANTS = new HashMap<String, TextSchema.Type>();
 
         static {
-            for (TextSchema.Type c: values()) {
+            for (TextSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

@@ -18,6 +18,7 @@ public class Counter implements Widget {
 
         public Object render(JsonArray data, JsonObject props,
                         JsonObject context) {
+                System.out.println(data);
                 List<Object> child_list = new LinkedList<Object>();
 
                 String counterText = props.get("text").getAsString()
@@ -29,7 +30,7 @@ public class Counter implements Widget {
                                 .withValue(counterText));
 
                 JsonObject Props = new JsonObject();
-                Props.addProperty("id", data.get(0).getAsJsonObject().get("_id").getAsInt());
+                Props.addProperty("id", data.get(0).getAsJsonObject().get("_id").getAsString());
 
                 child_list.add(new ButtonSchema()
                                 .withType(ButtonSchema.Type.BUTTON)

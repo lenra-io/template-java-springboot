@@ -1,8 +1,6 @@
 
 package lenra.components;
 
-
-
 /**
  * Props
  * <p>
@@ -11,13 +9,13 @@ package lenra.components;
  */
 public class PropsSchema {
 
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(PropsSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        sb.append(PropsSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -38,7 +36,6 @@ public class PropsSchema {
         if ((other instanceof PropsSchema) == false) {
             return false;
         }
-        PropsSchema rhs = ((PropsSchema) other);
         return true;
     }
 

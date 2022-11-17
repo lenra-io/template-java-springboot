@@ -24,7 +24,9 @@ public class TemplateController {
 		} else {
 			if (body.widget != null) {
 				System.out.println("Handle widget: " + body.widget);
-				return handleWidget(body);
+				Object widget = handleWidget(body);
+				System.out.println("return widget: " + widget.toString());
+				return widget;
 			} else if (body.action != null) {
 				System.out.println("Handle listener: " + body.action);
 				handleListeners(body);

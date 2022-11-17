@@ -20,18 +20,18 @@ public class CounterApi {
         this.restTemplate = new RestTemplateBuilder().build();
     }
 
-    public Counter getCounter(JsonObject api, int id) {
+    public Counter getCounter(JsonObject api, String id) {
         String url = api.get("url").getAsString() + "/app/colls/counter/docs/" + id;
         return this.restTemplate.exchange(url, HttpMethod.GET, createHeader(api, ""), Counter.class)
                 .getBody();
     }
 
-    public Counter createCounter(JsonObject api, Counter newCounter) {
+    public JsonObject createCounter(JsonObject api, JsonObject newCounter) {
         Gson gson = new Gson();
         String url = api.get("url").getAsString() + "/app/colls/counter/docs";
         return this.restTemplate
-                .exchange(url, HttpMethod.POST, createHeader(api, gson.toJson(newCounter, Counter.class)),
-                        Counter.class)
+                .exchange(url, HttpMethod.POST, createHeader(api, gson.toJson(newCounter, JsonObject.class)),
+                        JsonObject.class)
                 .getBody();
     }
 

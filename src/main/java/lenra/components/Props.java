@@ -1,21 +1,19 @@
 
 package lenra.components;
 
-
-
 /**
  * Parameters passed to the listener
  * 
  */
 public class Props {
 
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Props.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        sb.append(Props.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -36,7 +34,6 @@ public class Props {
         if ((other instanceof Props) == false) {
             return false;
         }
-        Props rhs = ((Props) other);
         return true;
     }
 

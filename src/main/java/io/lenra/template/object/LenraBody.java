@@ -3,7 +3,7 @@ package io.lenra.template.object;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-public class LenraBody extends Body {
+public class LenraBody {
     public String widget;
     public String action;
     public String resource;

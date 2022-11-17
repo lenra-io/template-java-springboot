@@ -1,8 +1,7 @@
 package io.lenra.application.Resources;
 
 public class Counter {
-    private String datastore;
-    private int _id;
+    private String _id;
     private int count;
     private String user;
 
@@ -19,12 +18,13 @@ public class Counter {
         return this.count;
     }
 
-    public int getId() {
+    public String getId() {
         return this._id;
     }
 
     public String toString() {
-        return "{\"datastore\" => " + datastore + ", \"_id\" => " + _id + ", \"count\" => " + count + ", \"user\" => "
+        return "{\"_id\" => " + _id + ", \"count\" => " + count
+                + ", \"user\" => "
                 + user + "}";
     }
 

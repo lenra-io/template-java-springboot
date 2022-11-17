@@ -1,21 +1,19 @@
 
 package lenra.components;
 
-
-
 /**
  * The query to apply to the data.
  * 
  */
 public class Query {
 
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Query.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        sb.append(Query.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -36,7 +34,6 @@ public class Query {
         if ((other instanceof Query) == false) {
             return false;
         }
-        Query rhs = ((Query) other);
         return true;
     }
 
