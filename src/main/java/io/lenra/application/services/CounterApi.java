@@ -26,11 +26,11 @@ public class CounterApi {
                 .getBody();
     }
 
-    public JsonObject createCounter(JsonObject api, JsonObject newCounter) {
+    public JsonObject createCounter(JsonObject api, Counter newCounter) {
         Gson gson = new Gson();
         String url = api.get("url").getAsString() + "/app/colls/counter/docs";
         return this.restTemplate
-                .exchange(url, HttpMethod.POST, createHeader(api, gson.toJson(newCounter, JsonObject.class)),
+                .exchange(url, HttpMethod.POST, createHeader(api, gson.toJson(newCounter, Counter.class)),
                         JsonObject.class)
                 .getBody();
     }

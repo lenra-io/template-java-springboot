@@ -18,7 +18,7 @@ public class Menu implements Widget {
         public Object render(JsonArray data, JsonObject props,
                         JsonObject context) {
                 List<Object> child_list = new LinkedList<Object>();
-                // child_list.add(logo());
+                child_list.add(logo());
 
                 child_list.add(header());
 

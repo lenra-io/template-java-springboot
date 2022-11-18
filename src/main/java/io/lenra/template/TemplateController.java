@@ -1,6 +1,12 @@
 package io.lenra.template;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +23,7 @@ public class TemplateController {
 	@PostMapping(value = "/function/{appUuid}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	// TODO: take Lenra classes
 	public Object index(@RequestBody(required = false) LenraBody body,
-			@PathVariable(value = "appUuid") String appUuid) {
+			@PathVariable(value = "appUuid") String appUuid) throws FileNotFoundException {
 		if (body == null) {
 			System.out.println("Handle manifest");
 			return TemplateManifest.getManifest();
@@ -57,8 +63,15 @@ public class TemplateController {
 		}
 	}
 
-	public String handleResources(LenraBody body) {
-		return "";
+	public ResponseEntity<InputStreamResource> handleResources(LenraBody body) throws FileNotFoundException {
+		System.out.println(body.toString());
+		File file = new File("src/main/java/io/lenra/application/resources/" + body.resource);
+		InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
+		return ResponseEntity.ok()
+				.contentLength(file.length())
+				.contentType(MediaType.APPLICATION_OCTET_STREAM)
+				.body(resource);
+
 	}
 
 }

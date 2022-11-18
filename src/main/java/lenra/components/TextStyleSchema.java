@@ -1,13 +1,10 @@
 
 package lenra.components;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * TextStyle
@@ -52,7 +49,8 @@ public class TextStyleSchema {
      */
     @SerializedName("decorationStyle")
     @Expose
-    private TextStyleSchema.TextDecorationStyleSchema decorationStyle = TextStyleSchema.TextDecorationStyleSchema.fromValue("solid");
+    private TextStyleSchema.TextDecorationStyleSchema decorationStyle = TextStyleSchema.TextDecorationStyleSchema
+            .fromValue("solid");
     /**
      * The thickness of the decoration.
      * 
@@ -67,13 +65,14 @@ public class TextStyleSchema {
     @SerializedName("fontFamily")
     @Expose
     private String fontFamily;
-    /**
-     * The list of font families to use if the first font family could not be found.
-     * 
-     */
-    @SerializedName("fontFamilyFallback")
-    @Expose
-    private List<String> fontFamilyFallback = new ArrayList<String>();
+    // /**
+    // * The list of font families to use if the first font family could not be
+    // found.
+    // *
+    // */
+    // @SerializedName("fontFamilyFallback")
+    // @Expose
+    // private List<String> fontFamilyFallback = new ArrayList<String>();
     /**
      * The size of the text.
      * 
@@ -120,9 +119,9 @@ public class TextStyleSchema {
      * A list of Shadows that will be painted underneath the text.
      * 
      */
-    @SerializedName("shadows")
-    @Expose
-    private List<BoxShadowSchema> shadows = new ArrayList<BoxShadowSchema>();
+    // @SerializedName("shadows")
+    // @Expose
+    // private List<BoxShadowSchema> shadows = new ArrayList<BoxShadowSchema>();
     /**
      * textBaseline
      * <p>
@@ -131,7 +130,8 @@ public class TextStyleSchema {
      */
     @SerializedName("textBaseline")
     @Expose
-    private lenra.components.FlexSchema.TextBaselineSchema textBaseline = lenra.components.FlexSchema.TextBaselineSchema.fromValue("alphabetic");
+    private lenra.components.FlexSchema.TextBaselineSchema textBaseline = lenra.components.FlexSchema.TextBaselineSchema
+            .fromValue("alphabetic");
     /**
      * The amount of space to add at each sequence of white-space.
      * 
@@ -286,22 +286,24 @@ public class TextStyleSchema {
      * The list of font families to use if the first font family could not be found.
      * 
      */
-    public List<String> getFontFamilyFallback() {
-        return fontFamilyFallback;
-    }
+    // public List<String> getFontFamilyFallback() {
+    // return fontFamilyFallback;
+    // }
 
-    /**
-     * The list of font families to use if the first font family could not be found.
-     * 
-     */
-    public void setFontFamilyFallback(List<String> fontFamilyFallback) {
-        this.fontFamilyFallback = fontFamilyFallback;
-    }
+    // /**
+    // * The list of font families to use if the first font family could not be
+    // found.
+    // *
+    // */
+    // public void setFontFamilyFallback(List<String> fontFamilyFallback) {
+    // this.fontFamilyFallback = fontFamilyFallback;
+    // }
 
-    public TextStyleSchema withFontFamilyFallback(List<String> fontFamilyFallback) {
-        this.fontFamilyFallback = fontFamilyFallback;
-        return this;
-    }
+    // public TextStyleSchema withFontFamilyFallback(List<String>
+    // fontFamilyFallback) {
+    // this.fontFamilyFallback = fontFamilyFallback;
+    // return this;
+    // }
 
     /**
      * The size of the text.
@@ -433,22 +435,22 @@ public class TextStyleSchema {
      * A list of Shadows that will be painted underneath the text.
      * 
      */
-    public List<BoxShadowSchema> getShadows() {
-        return shadows;
-    }
+    // public List<BoxShadowSchema> getShadows() {
+    // return shadows;
+    // }
 
-    /**
-     * A list of Shadows that will be painted underneath the text.
-     * 
-     */
-    public void setShadows(List<BoxShadowSchema> shadows) {
-        this.shadows = shadows;
-    }
+    // /**
+    // * A list of Shadows that will be painted underneath the text.
+    // *
+    // */
+    // public void setShadows(List<BoxShadowSchema> shadows) {
+    // this.shadows = shadows;
+    // }
 
-    public TextStyleSchema withShadows(List<BoxShadowSchema> shadows) {
-        this.shadows = shadows;
-        return this;
-    }
+    // public TextStyleSchema withShadows(List<BoxShadowSchema> shadows) {
+    // this.shadows = shadows;
+    // return this;
+    // }
 
     /**
      * textBaseline
@@ -499,73 +501,75 @@ public class TextStyleSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(TextStyleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(TextStyleSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("color");
         sb.append('=');
-        sb.append(((this.color == null)?"<null>":this.color));
+        sb.append(((this.color == null) ? "<null>" : this.color));
         sb.append(',');
         sb.append("decoration");
         sb.append('=');
-        sb.append(((this.decoration == null)?"<null>":this.decoration));
+        sb.append(((this.decoration == null) ? "<null>" : this.decoration));
         sb.append(',');
         sb.append("decorationColor");
         sb.append('=');
-        sb.append(((this.decorationColor == null)?"<null>":this.decorationColor));
+        sb.append(((this.decorationColor == null) ? "<null>" : this.decorationColor));
         sb.append(',');
         sb.append("decorationStyle");
         sb.append('=');
-        sb.append(((this.decorationStyle == null)?"<null>":this.decorationStyle));
+        sb.append(((this.decorationStyle == null) ? "<null>" : this.decorationStyle));
         sb.append(',');
         sb.append("decorationThickness");
         sb.append('=');
-        sb.append(((this.decorationThickness == null)?"<null>":this.decorationThickness));
+        sb.append(((this.decorationThickness == null) ? "<null>" : this.decorationThickness));
         sb.append(',');
         sb.append("fontFamily");
         sb.append('=');
-        sb.append(((this.fontFamily == null)?"<null>":this.fontFamily));
+        sb.append(((this.fontFamily == null) ? "<null>" : this.fontFamily));
         sb.append(',');
         sb.append("fontFamilyFallback");
-        sb.append('=');
-        sb.append(((this.fontFamilyFallback == null)?"<null>":this.fontFamilyFallback));
-        sb.append(',');
+        // sb.append('=');
+        // sb.append(((this.fontFamilyFallback == null) ? "<null>" :
+        // this.fontFamilyFallback));
+        // sb.append(',');
         sb.append("fontSize");
         sb.append('=');
-        sb.append(((this.fontSize == null)?"<null>":this.fontSize));
+        sb.append(((this.fontSize == null) ? "<null>" : this.fontSize));
         sb.append(',');
         sb.append("fontStyle");
         sb.append('=');
-        sb.append(((this.fontStyle == null)?"<null>":this.fontStyle));
+        sb.append(((this.fontStyle == null) ? "<null>" : this.fontStyle));
         sb.append(',');
         sb.append("fontWeight");
         sb.append('=');
-        sb.append(((this.fontWeight == null)?"<null>":this.fontWeight));
+        sb.append(((this.fontWeight == null) ? "<null>" : this.fontWeight));
         sb.append(',');
         sb.append("height");
         sb.append('=');
-        sb.append(((this.height == null)?"<null>":this.height));
+        sb.append(((this.height == null) ? "<null>" : this.height));
         sb.append(',');
         sb.append("letterSpacing");
         sb.append('=');
-        sb.append(((this.letterSpacing == null)?"<null>":this.letterSpacing));
+        sb.append(((this.letterSpacing == null) ? "<null>" : this.letterSpacing));
         sb.append(',');
         sb.append("overflow");
         sb.append('=');
-        sb.append(((this.overflow == null)?"<null>":this.overflow));
+        sb.append(((this.overflow == null) ? "<null>" : this.overflow));
         sb.append(',');
         sb.append("shadows");
-        sb.append('=');
-        sb.append(((this.shadows == null)?"<null>":this.shadows));
-        sb.append(',');
+        // sb.append('=');
+        // sb.append(((this.shadows == null) ? "<null>" : this.shadows));
+        // sb.append(',');
         sb.append("textBaseline");
         sb.append('=');
-        sb.append(((this.textBaseline == null)?"<null>":this.textBaseline));
+        sb.append(((this.textBaseline == null) ? "<null>" : this.textBaseline));
         sb.append(',');
         sb.append("wordSpacing");
         sb.append('=');
-        sb.append(((this.wordSpacing == null)?"<null>":this.wordSpacing));
+        sb.append(((this.wordSpacing == null) ? "<null>" : this.wordSpacing));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -575,22 +579,24 @@ public class TextStyleSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.textBaseline == null)? 0 :this.textBaseline.hashCode()));
-        result = ((result* 31)+((this.decorationStyle == null)? 0 :this.decorationStyle.hashCode()));
-        result = ((result* 31)+((this.color == null)? 0 :this.color.hashCode()));
-        result = ((result* 31)+((this.wordSpacing == null)? 0 :this.wordSpacing.hashCode()));
-        result = ((result* 31)+((this.decorationThickness == null)? 0 :this.decorationThickness.hashCode()));
-        result = ((result* 31)+((this.letterSpacing == null)? 0 :this.letterSpacing.hashCode()));
-        result = ((result* 31)+((this.fontStyle == null)? 0 :this.fontStyle.hashCode()));
-        result = ((result* 31)+((this.decorationColor == null)? 0 :this.decorationColor.hashCode()));
-        result = ((result* 31)+((this.fontFamily == null)? 0 :this.fontFamily.hashCode()));
-        result = ((result* 31)+((this.overflow == null)? 0 :this.overflow.hashCode()));
-        result = ((result* 31)+((this.shadows == null)? 0 :this.shadows.hashCode()));
-        result = ((result* 31)+((this.fontSize == null)? 0 :this.fontSize.hashCode()));
-        result = ((result* 31)+((this.decoration == null)? 0 :this.decoration.hashCode()));
-        result = ((result* 31)+((this.fontWeight == null)? 0 :this.fontWeight.hashCode()));
-        result = ((result* 31)+((this.fontFamilyFallback == null)? 0 :this.fontFamilyFallback.hashCode()));
-        result = ((result* 31)+((this.height == null)? 0 :this.height.hashCode()));
+        result = ((result * 31) + ((this.textBaseline == null) ? 0 : this.textBaseline.hashCode()));
+        result = ((result * 31) + ((this.decorationStyle == null) ? 0 : this.decorationStyle.hashCode()));
+        result = ((result * 31) + ((this.color == null) ? 0 : this.color.hashCode()));
+        result = ((result * 31) + ((this.wordSpacing == null) ? 0 : this.wordSpacing.hashCode()));
+        result = ((result * 31) + ((this.decorationThickness == null) ? 0 : this.decorationThickness.hashCode()));
+        result = ((result * 31) + ((this.letterSpacing == null) ? 0 : this.letterSpacing.hashCode()));
+        result = ((result * 31) + ((this.fontStyle == null) ? 0 : this.fontStyle.hashCode()));
+        result = ((result * 31) + ((this.decorationColor == null) ? 0 : this.decorationColor.hashCode()));
+        result = ((result * 31) + ((this.fontFamily == null) ? 0 : this.fontFamily.hashCode()));
+        result = ((result * 31) + ((this.overflow == null) ? 0 : this.overflow.hashCode()));
+        // result = ((result * 31) + ((this.shadows == null) ? 0 :
+        // this.shadows.hashCode()));
+        result = ((result * 31) + ((this.fontSize == null) ? 0 : this.fontSize.hashCode()));
+        result = ((result * 31) + ((this.decoration == null) ? 0 : this.decoration.hashCode()));
+        result = ((result * 31) + ((this.fontWeight == null) ? 0 : this.fontWeight.hashCode()));
+        // result = ((result * 31) + ((this.fontFamilyFallback == null) ? 0 :
+        // this.fontFamilyFallback.hashCode()));
+        result = ((result * 31) + ((this.height == null) ? 0 : this.height.hashCode()));
         return result;
     }
 
@@ -603,9 +609,38 @@ public class TextStyleSchema {
             return false;
         }
         TextStyleSchema rhs = ((TextStyleSchema) other);
-        return (((((((((((((((((this.textBaseline == rhs.textBaseline)||((this.textBaseline!= null)&&this.textBaseline.equals(rhs.textBaseline)))&&((this.decorationStyle == rhs.decorationStyle)||((this.decorationStyle!= null)&&this.decorationStyle.equals(rhs.decorationStyle))))&&((this.color == rhs.color)||((this.color!= null)&&this.color.equals(rhs.color))))&&((this.wordSpacing == rhs.wordSpacing)||((this.wordSpacing!= null)&&this.wordSpacing.equals(rhs.wordSpacing))))&&((this.decorationThickness == rhs.decorationThickness)||((this.decorationThickness!= null)&&this.decorationThickness.equals(rhs.decorationThickness))))&&((this.letterSpacing == rhs.letterSpacing)||((this.letterSpacing!= null)&&this.letterSpacing.equals(rhs.letterSpacing))))&&((this.fontStyle == rhs.fontStyle)||((this.fontStyle!= null)&&this.fontStyle.equals(rhs.fontStyle))))&&((this.decorationColor == rhs.decorationColor)||((this.decorationColor!= null)&&this.decorationColor.equals(rhs.decorationColor))))&&((this.fontFamily == rhs.fontFamily)||((this.fontFamily!= null)&&this.fontFamily.equals(rhs.fontFamily))))&&((this.overflow == rhs.overflow)||((this.overflow!= null)&&this.overflow.equals(rhs.overflow))))&&((this.shadows == rhs.shadows)||((this.shadows!= null)&&this.shadows.equals(rhs.shadows))))&&((this.fontSize == rhs.fontSize)||((this.fontSize!= null)&&this.fontSize.equals(rhs.fontSize))))&&((this.decoration == rhs.decoration)||((this.decoration!= null)&&this.decoration.equals(rhs.decoration))))&&((this.fontWeight == rhs.fontWeight)||((this.fontWeight!= null)&&this.fontWeight.equals(rhs.fontWeight))))&&((this.fontFamilyFallback == rhs.fontFamilyFallback)||((this.fontFamilyFallback!= null)&&this.fontFamilyFallback.equals(rhs.fontFamilyFallback))))&&((this.height == rhs.height)||((this.height!= null)&&this.height.equals(rhs.height))));
+        return (((((((((((((((((this.textBaseline == rhs.textBaseline)
+                || ((this.textBaseline != null) && this.textBaseline.equals(rhs.textBaseline)))
+                && ((this.decorationStyle == rhs.decorationStyle)
+                        || ((this.decorationStyle != null) && this.decorationStyle.equals(rhs.decorationStyle))))
+                && ((this.color == rhs.color) || ((this.color != null) && this.color.equals(rhs.color))))
+                && ((this.wordSpacing == rhs.wordSpacing)
+                        || ((this.wordSpacing != null) && this.wordSpacing.equals(rhs.wordSpacing))))
+                && ((this.decorationThickness == rhs.decorationThickness) || ((this.decorationThickness != null)
+                        && this.decorationThickness.equals(rhs.decorationThickness))))
+                && ((this.letterSpacing == rhs.letterSpacing)
+                        || ((this.letterSpacing != null) && this.letterSpacing.equals(rhs.letterSpacing))))
+                && ((this.fontStyle == rhs.fontStyle)
+                        || ((this.fontStyle != null) && this.fontStyle.equals(rhs.fontStyle))))
+                && ((this.decorationColor == rhs.decorationColor)
+                        || ((this.decorationColor != null) && this.decorationColor.equals(rhs.decorationColor))))
+                && ((this.fontFamily == rhs.fontFamily)
+                        || ((this.fontFamily != null) && this.fontFamily.equals(rhs.fontFamily))))
+                && ((this.overflow == rhs.overflow) || ((this.overflow != null) && this.overflow.equals(rhs.overflow))))
+        // && ((this.shadows == rhs.shadows) || ((this.shadows != null) &&
+        // this.shadows.equals(rhs.shadows)))
+        )
+                && ((this.fontSize == rhs.fontSize) || ((this.fontSize != null) && this.fontSize.equals(rhs.fontSize))))
+                && ((this.decoration == rhs.decoration)
+                        || ((this.decoration != null) && this.decoration.equals(rhs.decoration))))
+                && ((this.fontWeight == rhs.fontWeight)
+                        || ((this.fontWeight != null) && this.fontWeight.equals(rhs.fontWeight))))
+        // && ((this.fontFamilyFallback == rhs.fontFamilyFallback) ||
+        // ((this.fontFamilyFallback != null)
+        // && this.fontFamilyFallback.equals(rhs.fontFamilyFallback)))
+        )
+                && ((this.height == rhs.height) || ((this.height != null) && this.height.equals(rhs.height))));
     }
-
 
     /**
      * The style of the text.
@@ -617,11 +652,12 @@ public class TextStyleSchema {
         ITALIC("italic"),
         @SerializedName("normal")
         NORMAL("normal");
+
         private final String value;
         private final static Map<String, TextStyleSchema.FontStyle> CONSTANTS = new HashMap<String, TextStyleSchema.FontStyle>();
 
         static {
-            for (TextStyleSchema.FontStyle c: values()) {
+            for (TextStyleSchema.FontStyle c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -649,7 +685,6 @@ public class TextStyleSchema {
         }
 
     }
-
 
     /**
      * The weight of the text.
@@ -679,11 +714,12 @@ public class TextStyleSchema {
         W_800("w800"),
         @SerializedName("w900")
         W_900("w900");
+
         private final String value;
         private final static Map<String, TextStyleSchema.FontWeight> CONSTANTS = new HashMap<String, TextStyleSchema.FontWeight>();
 
         static {
-            for (TextStyleSchema.FontWeight c: values()) {
+            for (TextStyleSchema.FontWeight c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -712,7 +748,6 @@ public class TextStyleSchema {
 
     }
 
-
     /**
      * How visual text overflow should be handled.
      * 
@@ -727,11 +762,12 @@ public class TextStyleSchema {
         FADE("fade"),
         @SerializedName("visible")
         VISIBLE("visible");
+
         private final String value;
         private final static Map<String, TextStyleSchema.Overflow> CONSTANTS = new HashMap<String, TextStyleSchema.Overflow>();
 
         static {
-            for (TextStyleSchema.Overflow c: values()) {
+            for (TextStyleSchema.Overflow c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -760,7 +796,6 @@ public class TextStyleSchema {
 
     }
 
-
     /**
      * Text Decoration
      * <p>
@@ -777,11 +812,12 @@ public class TextStyleSchema {
         UNDERLINE("underline"),
         @SerializedName("none")
         NONE("none");
+
         private final String value;
         private final static Map<String, TextStyleSchema.TextDecorationSchema> CONSTANTS = new HashMap<String, TextStyleSchema.TextDecorationSchema>();
 
         static {
-            for (TextStyleSchema.TextDecorationSchema c: values()) {
+            for (TextStyleSchema.TextDecorationSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -810,7 +846,6 @@ public class TextStyleSchema {
 
     }
 
-
     /**
      * Text Decoration Style
      * <p>
@@ -829,11 +864,12 @@ public class TextStyleSchema {
         SOLID("solid"),
         @SerializedName("wavy")
         WAVY("wavy");
+
         private final String value;
         private final static Map<String, TextStyleSchema.TextDecorationStyleSchema> CONSTANTS = new HashMap<String, TextStyleSchema.TextDecorationStyleSchema>();
 
         static {
-            for (TextStyleSchema.TextDecorationStyleSchema c: values()) {
+            for (TextStyleSchema.TextDecorationStyleSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

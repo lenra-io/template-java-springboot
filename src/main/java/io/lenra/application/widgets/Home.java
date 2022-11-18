@@ -33,7 +33,7 @@ public class Home implements Widget {
 
         private Object privateCounter() {
                 JsonObject Query = new JsonObject();
-                Query.addProperty("user", "global");
+                Query.addProperty("user", "@me");
 
                 JsonObject Props = new JsonObject();
                 Props.addProperty("text", "My personnal counter");
