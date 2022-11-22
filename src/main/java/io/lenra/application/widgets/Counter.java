@@ -35,11 +35,9 @@ public class Counter implements Widget {
                 child_list.add(new ButtonSchema()
                                 .withType(ButtonSchema.Type.BUTTON)
                                 .withText("+")
-                                .withOnPressed(
-                                                new ListenerSchema()
-
-                                                                .withAction("increment")
-                                                                .withProps(Props)));
+                                .withOnPressed(new ListenerSchema()
+                                                .withAction("increment")
+                                                .withProps(Props)));
 
                 return new FlexSchema()
                                 .withType(FlexSchema.Type.FLEX)

@@ -16,10 +16,6 @@ public class OnUserFirstJoin implements Listener {
         JsonArray counters = counterApi.executeQuery(api, "counter", query);
 
         if (counters.size() == 0) {
-            // Counter newCounter = new Counter(0, "global");
-            // JsonObject newCounter = new JsonObject();
-            // newCounter.addProperty("count", 0);
-            // newCounter.addProperty("user", "@me");
             Counter newCounter = new Counter(0, "@me");
             counterApi.createCounter(api, newCounter);
         }

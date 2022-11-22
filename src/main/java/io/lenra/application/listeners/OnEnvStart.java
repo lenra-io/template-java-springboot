@@ -16,9 +16,6 @@ public class OnEnvStart implements Listener {
         JsonArray counters = counterApi.executeQuery(api, "counter", query);
 
         if (counters.size() == 0) {
-            // JsonObject newCounter = new JsonObject();
-            // newCounter.addProperty("count", 0);
-            // newCounter.addProperty("user", "global");
             Counter newCounter = new Counter(0, "global");
             counterApi.createCounter(api, newCounter);
         }
