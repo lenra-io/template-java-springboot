@@ -3,7 +3,7 @@ package io.lenra.application.listeners;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import io.lenra.application.Resources.Counter;
+import io.lenra.application.utils.Counter;
 import io.lenra.application.services.CounterApi;
 import io.lenra.template.object.Listener;
 

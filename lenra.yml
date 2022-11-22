@@ -1,0 +1,26 @@
+componentsApi: "1.0"
+generator:
+  dofigen:
+    builders:
+      - name: builder
+        image: openjdk:20-ea-11-jdk
+        adds:
+          - "."
+        workdir: /app
+        script:
+          - ./mvnw package
+          - mv target/ /tmp/
+    image: openjdk:20-ea-11-jdk
+    envs:
+      LOG_LEVEL: debug
+    workdir: /app
+    artifacts:
+      - builder: builder
+        source: "/tmp/target"
+        destination: "/app/"
+    cmd:
+      - java
+      - -jar
+      - template-0.0.1-SNAPSHOT.jar
+    ports:
+      - 3000

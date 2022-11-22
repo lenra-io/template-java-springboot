@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 
 import io.lenra.application.services.CounterApi;
 import io.lenra.template.object.Listener;
-import io.lenra.application.Resources.Counter;
+import io.lenra.application.utils.Counter;
 
 public class Increment implements Listener {
     private CounterApi counterApi = new CounterApi();

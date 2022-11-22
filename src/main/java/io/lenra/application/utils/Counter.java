@@ -1,4 +1,4 @@
-package io.lenra.application.Resources;
+package io.lenra.application.utils;
 
 public class Counter {
     private String _id;

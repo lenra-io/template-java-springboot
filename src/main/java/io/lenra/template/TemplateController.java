@@ -1,7 +1,5 @@
 package io.lenra.template;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import org.springframework.core.io.InputStreamResource;
@@ -65,10 +63,10 @@ public class TemplateController {
 
 	public ResponseEntity<InputStreamResource> handleResources(LenraBody body) throws FileNotFoundException {
 		System.out.println(body.toString());
-		File file = new File("src/main/java/io/lenra/application/resources/" + body.resource);
-		InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
+		InputStreamResource resource = new InputStreamResource(
+				TemplateController.class.getResourceAsStream("/" + body.resource));
+		System.out.println(resource);
 		return ResponseEntity.ok()
-				.contentLength(file.length())
 				.contentType(MediaType.APPLICATION_OCTET_STREAM)
 				.body(resource);
 

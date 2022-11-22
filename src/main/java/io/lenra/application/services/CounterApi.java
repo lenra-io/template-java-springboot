@@ -11,7 +11,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import io.lenra.application.Resources.Counter;
+import io.lenra.application.utils.Counter;
 
 public class CounterApi {
     private final RestTemplate restTemplate;
