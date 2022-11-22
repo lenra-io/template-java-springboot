@@ -46,7 +46,6 @@ public class TemplateController {
 	}
 
 	public Object handleWidget(LenraBody body) {
-		System.out.println(body.toString());
 		Object widget = Manifest.widgets.get(body.widget).render(body.data, body.props, body.context);
 		return widget;
 	}
@@ -62,7 +61,6 @@ public class TemplateController {
 	}
 
 	public ResponseEntity<InputStreamResource> handleResources(LenraBody body) throws FileNotFoundException {
-		System.out.println(body.toString());
 		InputStreamResource resource = new InputStreamResource(
 				TemplateController.class.getResourceAsStream("/" + body.resource));
 		System.out.println(resource);
