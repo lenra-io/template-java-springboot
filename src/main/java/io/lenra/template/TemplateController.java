@@ -18,10 +18,9 @@ import io.lenra.template.object.TemplateManifest;
 @RestController
 public class TemplateController {
 
-	@PostMapping(value = "/function/{appUuid}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	// TODO: take Lenra classes
-	public Object index(@RequestBody(required = false) LenraBody body,
-			@PathVariable(value = "appUuid") String appUuid) throws FileNotFoundException {
+	@PostMapping(value = "/*", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+
+	public Object index(@RequestBody(required = false) LenraBody body) throws FileNotFoundException {
 		if (body == null) {
 			System.out.println("Handle manifest");
 			return TemplateManifest.getManifest();

@@ -10,7 +10,7 @@ generator:
         script:
           - ./mvnw package
           - mv target/ /tmp/
-    image: openjdk:20-ea-11-jdk
+    image: openjdk:11-jre
     envs:
       LOG_LEVEL: debug
     workdir: /app
