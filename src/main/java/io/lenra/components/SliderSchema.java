@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Slider
@@ -382,57 +381,58 @@ public class SliderSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(SliderSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(SliderSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("style");
         sb.append('=');
-        sb.append(((this.style == null)?"<null>":this.style));
+        sb.append(((this.style == null) ? "<null>" : this.style));
         sb.append(',');
         sb.append("autofocus");
         sb.append('=');
-        sb.append(((this.autofocus == null)?"<null>":this.autofocus));
+        sb.append(((this.autofocus == null) ? "<null>" : this.autofocus));
         sb.append(',');
         sb.append("divisions");
         sb.append('=');
-        sb.append(((this.divisions == null)?"<null>":this.divisions));
+        sb.append(((this.divisions == null) ? "<null>" : this.divisions));
         sb.append(',');
         sb.append("label");
         sb.append('=');
-        sb.append(((this.label == null)?"<null>":this.label));
+        sb.append(((this.label == null) ? "<null>" : this.label));
         sb.append(',');
         sb.append("min");
         sb.append('=');
-        sb.append(((this.min == null)?"<null>":this.min));
+        sb.append(((this.min == null) ? "<null>" : this.min));
         sb.append(',');
         sb.append("max");
         sb.append('=');
-        sb.append(((this.max == null)?"<null>":this.max));
+        sb.append(((this.max == null) ? "<null>" : this.max));
         sb.append(',');
         sb.append("onChanged");
         sb.append('=');
-        sb.append(((this.onChanged == null)?"<null>":this.onChanged));
+        sb.append(((this.onChanged == null) ? "<null>" : this.onChanged));
         sb.append(',');
         sb.append("onChangeEnd");
         sb.append('=');
-        sb.append(((this.onChangeEnd == null)?"<null>":this.onChangeEnd));
+        sb.append(((this.onChangeEnd == null) ? "<null>" : this.onChangeEnd));
         sb.append(',');
         sb.append("onChangeStart");
         sb.append('=');
-        sb.append(((this.onChangeStart == null)?"<null>":this.onChangeStart));
+        sb.append(((this.onChangeStart == null) ? "<null>" : this.onChangeStart));
         sb.append(',');
         sb.append("value");
         sb.append('=');
-        sb.append(((this.value == null)?"<null>":this.value));
+        sb.append(((this.value == null) ? "<null>" : this.value));
         sb.append(',');
         sb.append("name");
         sb.append('=');
-        sb.append(((this.name == null)?"<null>":this.name));
+        sb.append(((this.name == null) ? "<null>" : this.name));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -442,18 +442,18 @@ public class SliderSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.onChanged == null)? 0 :this.onChanged.hashCode()));
-        result = ((result* 31)+((this.max == null)? 0 :this.max.hashCode()));
-        result = ((result* 31)+((this.label == null)? 0 :this.label.hashCode()));
-        result = ((result* 31)+((this.onChangeEnd == null)? 0 :this.onChangeEnd.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.autofocus == null)? 0 :this.autofocus.hashCode()));
-        result = ((result* 31)+((this.divisions == null)? 0 :this.divisions.hashCode()));
-        result = ((result* 31)+((this.min == null)? 0 :this.min.hashCode()));
-        result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
-        result = ((result* 31)+((this.style == null)? 0 :this.style.hashCode()));
-        result = ((result* 31)+((this.onChangeStart == null)? 0 :this.onChangeStart.hashCode()));
-        result = ((result* 31)+((this.value == null)? 0 :this.value.hashCode()));
+        result = ((result * 31) + ((this.onChanged == null) ? 0 : this.onChanged.hashCode()));
+        result = ((result * 31) + ((this.max == null) ? 0 : this.max.hashCode()));
+        result = ((result * 31) + ((this.label == null) ? 0 : this.label.hashCode()));
+        result = ((result * 31) + ((this.onChangeEnd == null) ? 0 : this.onChangeEnd.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.autofocus == null) ? 0 : this.autofocus.hashCode()));
+        result = ((result * 31) + ((this.divisions == null) ? 0 : this.divisions.hashCode()));
+        result = ((result * 31) + ((this.min == null) ? 0 : this.min.hashCode()));
+        result = ((result * 31) + ((this.name == null) ? 0 : this.name.hashCode()));
+        result = ((result * 31) + ((this.style == null) ? 0 : this.style.hashCode()));
+        result = ((result * 31) + ((this.onChangeStart == null) ? 0 : this.onChangeStart.hashCode()));
+        result = ((result * 31) + ((this.value == null) ? 0 : this.value.hashCode()));
         return result;
     }
 
@@ -466,9 +466,24 @@ public class SliderSchema {
             return false;
         }
         SliderSchema rhs = ((SliderSchema) other);
-        return (((((((((((((this.onChanged == rhs.onChanged)||((this.onChanged!= null)&&this.onChanged.equals(rhs.onChanged)))&&((this.max == rhs.max)||((this.max!= null)&&this.max.equals(rhs.max))))&&((this.label == rhs.label)||((this.label!= null)&&this.label.equals(rhs.label))))&&((this.onChangeEnd == rhs.onChangeEnd)||((this.onChangeEnd!= null)&&this.onChangeEnd.equals(rhs.onChangeEnd))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.autofocus == rhs.autofocus)||((this.autofocus!= null)&&this.autofocus.equals(rhs.autofocus))))&&((this.divisions == rhs.divisions)||((this.divisions!= null)&&this.divisions.equals(rhs.divisions))))&&((this.min == rhs.min)||((this.min!= null)&&this.min.equals(rhs.min))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))))&&((this.onChangeStart == rhs.onChangeStart)||((this.onChangeStart!= null)&&this.onChangeStart.equals(rhs.onChangeStart))))&&((this.value == rhs.value)||((this.value!= null)&&this.value.equals(rhs.value))));
+        return (((((((((((((this.onChanged == rhs.onChanged)
+                || ((this.onChanged != null) && this.onChanged.equals(rhs.onChanged)))
+                && ((this.max == rhs.max) || ((this.max != null) && this.max.equals(rhs.max))))
+                && ((this.label == rhs.label) || ((this.label != null) && this.label.equals(rhs.label))))
+                && ((this.onChangeEnd == rhs.onChangeEnd)
+                        || ((this.onChangeEnd != null) && this.onChangeEnd.equals(rhs.onChangeEnd))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.autofocus == rhs.autofocus)
+                        || ((this.autofocus != null) && this.autofocus.equals(rhs.autofocus))))
+                && ((this.divisions == rhs.divisions)
+                        || ((this.divisions != null) && this.divisions.equals(rhs.divisions))))
+                && ((this.min == rhs.min) || ((this.min != null) && this.min.equals(rhs.min))))
+                && ((this.name == rhs.name) || ((this.name != null) && this.name.equals(rhs.name))))
+                && ((this.style == rhs.style) || ((this.style != null) && this.style.equals(rhs.style))))
+                && ((this.onChangeStart == rhs.onChangeStart)
+                        || ((this.onChangeStart != null) && this.onChangeStart.equals(rhs.onChangeStart))))
+                && ((this.value == rhs.value) || ((this.value != null) && this.value.equals(rhs.value))));
     }
-
 
     /**
      * The identifier of the component
@@ -478,11 +493,12 @@ public class SliderSchema {
 
         @SerializedName("slider")
         SLIDER("slider");
+
         private final String value;
         private final static Map<String, SliderSchema.Type> CONSTANTS = new HashMap<String, SliderSchema.Type>();
 
         static {
-            for (SliderSchema.Type c: values()) {
+            for (SliderSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Offset
@@ -73,17 +72,18 @@ public class OffsetSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(OffsetSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(OffsetSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("dx");
         sb.append('=');
-        sb.append(((this.dx == null)?"<null>":this.dx));
+        sb.append(((this.dx == null) ? "<null>" : this.dx));
         sb.append(',');
         sb.append("dy");
         sb.append('=');
-        sb.append(((this.dy == null)?"<null>":this.dy));
+        sb.append(((this.dy == null) ? "<null>" : this.dy));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -93,8 +93,8 @@ public class OffsetSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.dx == null)? 0 :this.dx.hashCode()));
-        result = ((result* 31)+((this.dy == null)? 0 :this.dy.hashCode()));
+        result = ((result * 31) + ((this.dx == null) ? 0 : this.dx.hashCode()));
+        result = ((result * 31) + ((this.dy == null) ? 0 : this.dy.hashCode()));
         return result;
     }
 
@@ -107,7 +107,8 @@ public class OffsetSchema {
             return false;
         }
         OffsetSchema rhs = ((OffsetSchema) other);
-        return (((this.dx == rhs.dx)||((this.dx!= null)&&this.dx.equals(rhs.dx)))&&((this.dy == rhs.dy)||((this.dy!= null)&&this.dy.equals(rhs.dy))));
+        return (((this.dx == rhs.dx) || ((this.dx != null) && this.dx.equals(rhs.dx)))
+                && ((this.dy == rhs.dy) || ((this.dy != null) && this.dy.equals(rhs.dy))));
     }
 
 }

@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Radio
@@ -54,7 +53,7 @@ public class RadioSchema {
      */
     @SerializedName("materialTapTargetSize")
     @Expose
-    private lenra.components.CheckboxSchema.MaterialTapTargetSizeSchema materialTapTargetSize;
+    private io.lenra.components.CheckboxSchema.MaterialTapTargetSizeSchema materialTapTargetSize;
     /**
      * Basic Listener
      * <p>
@@ -65,7 +64,8 @@ public class RadioSchema {
     @Expose
     private ListenerSchema onPressed;
     /**
-     * Whether the radio is allowed to go from checked to unchecked when clicking on it.
+     * Whether the radio is allowed to go from checked to unchecked when clicking on
+     * it.
      * 
      */
     @SerializedName("toggleable")
@@ -184,7 +184,7 @@ public class RadioSchema {
      * Element of type MaterialTapTargetSize
      * 
      */
-    public lenra.components.CheckboxSchema.MaterialTapTargetSizeSchema getMaterialTapTargetSize() {
+    public io.lenra.components.CheckboxSchema.MaterialTapTargetSizeSchema getMaterialTapTargetSize() {
         return materialTapTargetSize;
     }
 
@@ -194,11 +194,13 @@ public class RadioSchema {
      * Element of type MaterialTapTargetSize
      * 
      */
-    public void setMaterialTapTargetSize(lenra.components.CheckboxSchema.MaterialTapTargetSizeSchema materialTapTargetSize) {
+    public void setMaterialTapTargetSize(
+            io.lenra.components.CheckboxSchema.MaterialTapTargetSizeSchema materialTapTargetSize) {
         this.materialTapTargetSize = materialTapTargetSize;
     }
 
-    public RadioSchema withMaterialTapTargetSize(lenra.components.CheckboxSchema.MaterialTapTargetSizeSchema materialTapTargetSize) {
+    public RadioSchema withMaterialTapTargetSize(
+            io.lenra.components.CheckboxSchema.MaterialTapTargetSizeSchema materialTapTargetSize) {
         this.materialTapTargetSize = materialTapTargetSize;
         return this;
     }
@@ -229,7 +231,8 @@ public class RadioSchema {
     }
 
     /**
-     * Whether the radio is allowed to go from checked to unchecked when clicking on it.
+     * Whether the radio is allowed to go from checked to unchecked when clicking on
+     * it.
      * 
      */
     public Boolean getToggleable() {
@@ -237,7 +240,8 @@ public class RadioSchema {
     }
 
     /**
-     * Whether the radio is allowed to go from checked to unchecked when clicking on it.
+     * Whether the radio is allowed to go from checked to unchecked when clicking on
+     * it.
      * 
      */
     public void setToggleable(Boolean toggleable) {
@@ -298,45 +302,46 @@ public class RadioSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(RadioSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(RadioSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("autofocus");
         sb.append('=');
-        sb.append(((this.autofocus == null)?"<null>":this.autofocus));
+        sb.append(((this.autofocus == null) ? "<null>" : this.autofocus));
         sb.append(',');
         sb.append("value");
         sb.append('=');
-        sb.append(((this.value == null)?"<null>":this.value));
+        sb.append(((this.value == null) ? "<null>" : this.value));
         sb.append(',');
         sb.append("groupValue");
         sb.append('=');
-        sb.append(((this.groupValue == null)?"<null>":this.groupValue));
+        sb.append(((this.groupValue == null) ? "<null>" : this.groupValue));
         sb.append(',');
         sb.append("materialTapTargetSize");
         sb.append('=');
-        sb.append(((this.materialTapTargetSize == null)?"<null>":this.materialTapTargetSize));
+        sb.append(((this.materialTapTargetSize == null) ? "<null>" : this.materialTapTargetSize));
         sb.append(',');
         sb.append("onPressed");
         sb.append('=');
-        sb.append(((this.onPressed == null)?"<null>":this.onPressed));
+        sb.append(((this.onPressed == null) ? "<null>" : this.onPressed));
         sb.append(',');
         sb.append("toggleable");
         sb.append('=');
-        sb.append(((this.toggleable == null)?"<null>":this.toggleable));
+        sb.append(((this.toggleable == null) ? "<null>" : this.toggleable));
         sb.append(',');
         sb.append("style");
         sb.append('=');
-        sb.append(((this.style == null)?"<null>":this.style));
+        sb.append(((this.style == null) ? "<null>" : this.style));
         sb.append(',');
         sb.append("name");
         sb.append('=');
-        sb.append(((this.name == null)?"<null>":this.name));
+        sb.append(((this.name == null) ? "<null>" : this.name));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -346,15 +351,15 @@ public class RadioSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.toggleable == null)? 0 :this.toggleable.hashCode()));
-        result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
-        result = ((result* 31)+((this.style == null)? 0 :this.style.hashCode()));
-        result = ((result* 31)+((this.groupValue == null)? 0 :this.groupValue.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.autofocus == null)? 0 :this.autofocus.hashCode()));
-        result = ((result* 31)+((this.value == null)? 0 :this.value.hashCode()));
-        result = ((result* 31)+((this.materialTapTargetSize == null)? 0 :this.materialTapTargetSize.hashCode()));
-        result = ((result* 31)+((this.onPressed == null)? 0 :this.onPressed.hashCode()));
+        result = ((result * 31) + ((this.toggleable == null) ? 0 : this.toggleable.hashCode()));
+        result = ((result * 31) + ((this.name == null) ? 0 : this.name.hashCode()));
+        result = ((result * 31) + ((this.style == null) ? 0 : this.style.hashCode()));
+        result = ((result * 31) + ((this.groupValue == null) ? 0 : this.groupValue.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.autofocus == null) ? 0 : this.autofocus.hashCode()));
+        result = ((result * 31) + ((this.value == null) ? 0 : this.value.hashCode()));
+        result = ((result * 31) + ((this.materialTapTargetSize == null) ? 0 : this.materialTapTargetSize.hashCode()));
+        result = ((result * 31) + ((this.onPressed == null) ? 0 : this.onPressed.hashCode()));
         return result;
     }
 
@@ -367,9 +372,21 @@ public class RadioSchema {
             return false;
         }
         RadioSchema rhs = ((RadioSchema) other);
-        return ((((((((((this.toggleable == rhs.toggleable)||((this.toggleable!= null)&&this.toggleable.equals(rhs.toggleable)))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))))&&((this.groupValue == rhs.groupValue)||((this.groupValue!= null)&&this.groupValue.equals(rhs.groupValue))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.autofocus == rhs.autofocus)||((this.autofocus!= null)&&this.autofocus.equals(rhs.autofocus))))&&((this.value == rhs.value)||((this.value!= null)&&this.value.equals(rhs.value))))&&((this.materialTapTargetSize == rhs.materialTapTargetSize)||((this.materialTapTargetSize!= null)&&this.materialTapTargetSize.equals(rhs.materialTapTargetSize))))&&((this.onPressed == rhs.onPressed)||((this.onPressed!= null)&&this.onPressed.equals(rhs.onPressed))));
+        return ((((((((((this.toggleable == rhs.toggleable)
+                || ((this.toggleable != null) && this.toggleable.equals(rhs.toggleable)))
+                && ((this.name == rhs.name) || ((this.name != null) && this.name.equals(rhs.name))))
+                && ((this.style == rhs.style) || ((this.style != null) && this.style.equals(rhs.style))))
+                && ((this.groupValue == rhs.groupValue)
+                        || ((this.groupValue != null) && this.groupValue.equals(rhs.groupValue))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.autofocus == rhs.autofocus)
+                        || ((this.autofocus != null) && this.autofocus.equals(rhs.autofocus))))
+                && ((this.value == rhs.value) || ((this.value != null) && this.value.equals(rhs.value))))
+                && ((this.materialTapTargetSize == rhs.materialTapTargetSize) || ((this.materialTapTargetSize != null)
+                        && this.materialTapTargetSize.equals(rhs.materialTapTargetSize))))
+                && ((this.onPressed == rhs.onPressed)
+                        || ((this.onPressed != null) && this.onPressed.equals(rhs.onPressed))));
     }
-
 
     /**
      * The type of the element
@@ -379,11 +396,12 @@ public class RadioSchema {
 
         @SerializedName("radio")
         RADIO("radio");
+
         private final String value;
         private final static Map<String, RadioSchema.Type> CONSTANTS = new HashMap<String, RadioSchema.Type>();
 
         static {
-            for (RadioSchema.Type c: values()) {
+            for (RadioSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

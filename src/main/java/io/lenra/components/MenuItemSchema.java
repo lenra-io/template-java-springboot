@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * MenuItem
@@ -187,33 +186,34 @@ public class MenuItemSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(MenuItemSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(MenuItemSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("text");
         sb.append('=');
-        sb.append(((this.text == null)?"<null>":this.text));
+        sb.append(((this.text == null) ? "<null>" : this.text));
         sb.append(',');
         sb.append("isSelected");
         sb.append('=');
-        sb.append(((this.isSelected == null)?"<null>":this.isSelected));
+        sb.append(((this.isSelected == null) ? "<null>" : this.isSelected));
         sb.append(',');
         sb.append("disabled");
         sb.append('=');
-        sb.append(((this.disabled == null)?"<null>":this.disabled));
+        sb.append(((this.disabled == null) ? "<null>" : this.disabled));
         sb.append(',');
         sb.append("icon");
         sb.append('=');
-        sb.append(((this.icon == null)?"<null>":this.icon));
+        sb.append(((this.icon == null) ? "<null>" : this.icon));
         sb.append(',');
         sb.append("onPressed");
         sb.append('=');
-        sb.append(((this.onPressed == null)?"<null>":this.onPressed));
+        sb.append(((this.onPressed == null) ? "<null>" : this.onPressed));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -223,12 +223,12 @@ public class MenuItemSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.isSelected == null)? 0 :this.isSelected.hashCode()));
-        result = ((result* 31)+((this.icon == null)? 0 :this.icon.hashCode()));
-        result = ((result* 31)+((this.disabled == null)? 0 :this.disabled.hashCode()));
-        result = ((result* 31)+((this.text == null)? 0 :this.text.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.onPressed == null)? 0 :this.onPressed.hashCode()));
+        result = ((result * 31) + ((this.isSelected == null) ? 0 : this.isSelected.hashCode()));
+        result = ((result * 31) + ((this.icon == null) ? 0 : this.icon.hashCode()));
+        result = ((result * 31) + ((this.disabled == null) ? 0 : this.disabled.hashCode()));
+        result = ((result * 31) + ((this.text == null) ? 0 : this.text.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.onPressed == null) ? 0 : this.onPressed.hashCode()));
         return result;
     }
 
@@ -241,9 +241,15 @@ public class MenuItemSchema {
             return false;
         }
         MenuItemSchema rhs = ((MenuItemSchema) other);
-        return (((((((this.isSelected == rhs.isSelected)||((this.isSelected!= null)&&this.isSelected.equals(rhs.isSelected)))&&((this.icon == rhs.icon)||((this.icon!= null)&&this.icon.equals(rhs.icon))))&&((this.disabled == rhs.disabled)||((this.disabled!= null)&&this.disabled.equals(rhs.disabled))))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.onPressed == rhs.onPressed)||((this.onPressed!= null)&&this.onPressed.equals(rhs.onPressed))));
+        return (((((((this.isSelected == rhs.isSelected)
+                || ((this.isSelected != null) && this.isSelected.equals(rhs.isSelected)))
+                && ((this.icon == rhs.icon) || ((this.icon != null) && this.icon.equals(rhs.icon))))
+                && ((this.disabled == rhs.disabled) || ((this.disabled != null) && this.disabled.equals(rhs.disabled))))
+                && ((this.text == rhs.text) || ((this.text != null) && this.text.equals(rhs.text))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.onPressed == rhs.onPressed)
+                        || ((this.onPressed != null) && this.onPressed.equals(rhs.onPressed))));
     }
-
 
     /**
      * The type of the element
@@ -253,11 +259,12 @@ public class MenuItemSchema {
 
         @SerializedName("menuItem")
         MENU_ITEM("menuItem");
+
         private final String value;
         private final static Map<String, MenuItemSchema.Type> CONSTANTS = new HashMap<String, MenuItemSchema.Type>();
 
         static {
-            for (MenuItemSchema.Type c: values()) {
+            for (MenuItemSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

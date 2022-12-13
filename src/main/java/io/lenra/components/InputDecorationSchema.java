@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * InputDecoration
@@ -235,12 +234,14 @@ public class InputDecorationSchema {
     /**
      * Text Direction
      * <p>
-     * In which direction the elements should be placed following the horizontal axis.
+     * In which direction the elements should be placed following the horizontal
+     * axis.
      * 
      */
     @SerializedName("hintTextDirection")
     @Expose
-    private lenra.components.FlexSchema.TextDirectionSchema hintTextDirection = lenra.components.FlexSchema.TextDirectionSchema.fromValue("ltr");
+    private io.lenra.components.FlexSchema.TextDirectionSchema hintTextDirection = io.lenra.components.FlexSchema.TextDirectionSchema
+            .fromValue("ltr");
     /**
      * Color
      * <p>
@@ -767,7 +768,8 @@ public class InputDecorationSchema {
         this.floatingLabelBehavior = floatingLabelBehavior;
     }
 
-    public InputDecorationSchema withFloatingLabelBehavior(InputDecorationSchema.FloatingLabelBehaviorSchema floatingLabelBehavior) {
+    public InputDecorationSchema withFloatingLabelBehavior(
+            InputDecorationSchema.FloatingLabelBehaviorSchema floatingLabelBehavior) {
         this.floatingLabelBehavior = floatingLabelBehavior;
         return this;
     }
@@ -1009,24 +1011,27 @@ public class InputDecorationSchema {
     /**
      * Text Direction
      * <p>
-     * In which direction the elements should be placed following the horizontal axis.
+     * In which direction the elements should be placed following the horizontal
+     * axis.
      * 
      */
-    public lenra.components.FlexSchema.TextDirectionSchema getHintTextDirection() {
+    public io.lenra.components.FlexSchema.TextDirectionSchema getHintTextDirection() {
         return hintTextDirection;
     }
 
     /**
      * Text Direction
      * <p>
-     * In which direction the elements should be placed following the horizontal axis.
+     * In which direction the elements should be placed following the horizontal
+     * axis.
      * 
      */
-    public void setHintTextDirection(lenra.components.FlexSchema.TextDirectionSchema hintTextDirection) {
+    public void setHintTextDirection(io.lenra.components.FlexSchema.TextDirectionSchema hintTextDirection) {
         this.hintTextDirection = hintTextDirection;
     }
 
-    public InputDecorationSchema withHintTextDirection(lenra.components.FlexSchema.TextDirectionSchema hintTextDirection) {
+    public InputDecorationSchema withHintTextDirection(
+            io.lenra.components.FlexSchema.TextDirectionSchema hintTextDirection) {
         this.hintTextDirection = hintTextDirection;
         return this;
     }
@@ -1463,205 +1468,206 @@ public class InputDecorationSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(InputDecorationSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(InputDecorationSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("alignLabelWithHint");
         sb.append('=');
-        sb.append(((this.alignLabelWithHint == null)?"<null>":this.alignLabelWithHint));
+        sb.append(((this.alignLabelWithHint == null) ? "<null>" : this.alignLabelWithHint));
         sb.append(',');
         sb.append("border");
         sb.append('=');
-        sb.append(((this.border == null)?"<null>":this.border));
+        sb.append(((this.border == null) ? "<null>" : this.border));
         sb.append(',');
         sb.append("constraints");
         sb.append('=');
-        sb.append(((this.constraints == null)?"<null>":this.constraints));
+        sb.append(((this.constraints == null) ? "<null>" : this.constraints));
         sb.append(',');
         sb.append("contentPadding");
         sb.append('=');
-        sb.append(((this.contentPadding == null)?"<null>":this.contentPadding));
+        sb.append(((this.contentPadding == null) ? "<null>" : this.contentPadding));
         sb.append(',');
         sb.append("counter");
         sb.append('=');
-        sb.append(((this.counter == null)?"<null>":this.counter));
+        sb.append(((this.counter == null) ? "<null>" : this.counter));
         sb.append(',');
         sb.append("counterStyle");
         sb.append('=');
-        sb.append(((this.counterStyle == null)?"<null>":this.counterStyle));
+        sb.append(((this.counterStyle == null) ? "<null>" : this.counterStyle));
         sb.append(',');
         sb.append("counterText");
         sb.append('=');
-        sb.append(((this.counterText == null)?"<null>":this.counterText));
+        sb.append(((this.counterText == null) ? "<null>" : this.counterText));
         sb.append(',');
         sb.append("disabledBorder");
         sb.append('=');
-        sb.append(((this.disabledBorder == null)?"<null>":this.disabledBorder));
+        sb.append(((this.disabledBorder == null) ? "<null>" : this.disabledBorder));
         sb.append(',');
         sb.append("enabled");
         sb.append('=');
-        sb.append(((this.enabled == null)?"<null>":this.enabled));
+        sb.append(((this.enabled == null) ? "<null>" : this.enabled));
         sb.append(',');
         sb.append("enabledBorder");
         sb.append('=');
-        sb.append(((this.enabledBorder == null)?"<null>":this.enabledBorder));
+        sb.append(((this.enabledBorder == null) ? "<null>" : this.enabledBorder));
         sb.append(',');
         sb.append("errorBorder");
         sb.append('=');
-        sb.append(((this.errorBorder == null)?"<null>":this.errorBorder));
+        sb.append(((this.errorBorder == null) ? "<null>" : this.errorBorder));
         sb.append(',');
         sb.append("errorMaxLines");
         sb.append('=');
-        sb.append(((this.errorMaxLines == null)?"<null>":this.errorMaxLines));
+        sb.append(((this.errorMaxLines == null) ? "<null>" : this.errorMaxLines));
         sb.append(',');
         sb.append("errorStyle");
         sb.append('=');
-        sb.append(((this.errorStyle == null)?"<null>":this.errorStyle));
+        sb.append(((this.errorStyle == null) ? "<null>" : this.errorStyle));
         sb.append(',');
         sb.append("errorText");
         sb.append('=');
-        sb.append(((this.errorText == null)?"<null>":this.errorText));
+        sb.append(((this.errorText == null) ? "<null>" : this.errorText));
         sb.append(',');
         sb.append("fillColor");
         sb.append('=');
-        sb.append(((this.fillColor == null)?"<null>":this.fillColor));
+        sb.append(((this.fillColor == null) ? "<null>" : this.fillColor));
         sb.append(',');
         sb.append("filled");
         sb.append('=');
-        sb.append(((this.filled == null)?"<null>":this.filled));
+        sb.append(((this.filled == null) ? "<null>" : this.filled));
         sb.append(',');
         sb.append("floatingLabelBehavior");
         sb.append('=');
-        sb.append(((this.floatingLabelBehavior == null)?"<null>":this.floatingLabelBehavior));
+        sb.append(((this.floatingLabelBehavior == null) ? "<null>" : this.floatingLabelBehavior));
         sb.append(',');
         sb.append("floatingLabelStyle");
         sb.append('=');
-        sb.append(((this.floatingLabelStyle == null)?"<null>":this.floatingLabelStyle));
+        sb.append(((this.floatingLabelStyle == null) ? "<null>" : this.floatingLabelStyle));
         sb.append(',');
         sb.append("focusColor");
         sb.append('=');
-        sb.append(((this.focusColor == null)?"<null>":this.focusColor));
+        sb.append(((this.focusColor == null) ? "<null>" : this.focusColor));
         sb.append(',');
         sb.append("focusedBorder");
         sb.append('=');
-        sb.append(((this.focusedBorder == null)?"<null>":this.focusedBorder));
+        sb.append(((this.focusedBorder == null) ? "<null>" : this.focusedBorder));
         sb.append(',');
         sb.append("focusedErrorBorder");
         sb.append('=');
-        sb.append(((this.focusedErrorBorder == null)?"<null>":this.focusedErrorBorder));
+        sb.append(((this.focusedErrorBorder == null) ? "<null>" : this.focusedErrorBorder));
         sb.append(',');
         sb.append("helperMaxLines");
         sb.append('=');
-        sb.append(((this.helperMaxLines == null)?"<null>":this.helperMaxLines));
+        sb.append(((this.helperMaxLines == null) ? "<null>" : this.helperMaxLines));
         sb.append(',');
         sb.append("helperStyle");
         sb.append('=');
-        sb.append(((this.helperStyle == null)?"<null>":this.helperStyle));
+        sb.append(((this.helperStyle == null) ? "<null>" : this.helperStyle));
         sb.append(',');
         sb.append("helperText");
         sb.append('=');
-        sb.append(((this.helperText == null)?"<null>":this.helperText));
+        sb.append(((this.helperText == null) ? "<null>" : this.helperText));
         sb.append(',');
         sb.append("hintMaxLines");
         sb.append('=');
-        sb.append(((this.hintMaxLines == null)?"<null>":this.hintMaxLines));
+        sb.append(((this.hintMaxLines == null) ? "<null>" : this.hintMaxLines));
         sb.append(',');
         sb.append("hintStyle");
         sb.append('=');
-        sb.append(((this.hintStyle == null)?"<null>":this.hintStyle));
+        sb.append(((this.hintStyle == null) ? "<null>" : this.hintStyle));
         sb.append(',');
         sb.append("hintText");
         sb.append('=');
-        sb.append(((this.hintText == null)?"<null>":this.hintText));
+        sb.append(((this.hintText == null) ? "<null>" : this.hintText));
         sb.append(',');
         sb.append("hintTextDirection");
         sb.append('=');
-        sb.append(((this.hintTextDirection == null)?"<null>":this.hintTextDirection));
+        sb.append(((this.hintTextDirection == null) ? "<null>" : this.hintTextDirection));
         sb.append(',');
         sb.append("hoverColor");
         sb.append('=');
-        sb.append(((this.hoverColor == null)?"<null>":this.hoverColor));
+        sb.append(((this.hoverColor == null) ? "<null>" : this.hoverColor));
         sb.append(',');
         sb.append("icon");
         sb.append('=');
-        sb.append(((this.icon == null)?"<null>":this.icon));
+        sb.append(((this.icon == null) ? "<null>" : this.icon));
         sb.append(',');
         sb.append("iconColor");
         sb.append('=');
-        sb.append(((this.iconColor == null)?"<null>":this.iconColor));
+        sb.append(((this.iconColor == null) ? "<null>" : this.iconColor));
         sb.append(',');
         sb.append("isCollapsed");
         sb.append('=');
-        sb.append(((this.isCollapsed == null)?"<null>":this.isCollapsed));
+        sb.append(((this.isCollapsed == null) ? "<null>" : this.isCollapsed));
         sb.append(',');
         sb.append("isDense");
         sb.append('=');
-        sb.append(((this.isDense == null)?"<null>":this.isDense));
+        sb.append(((this.isDense == null) ? "<null>" : this.isDense));
         sb.append(',');
         sb.append("label");
         sb.append('=');
-        sb.append(((this.label == null)?"<null>":this.label));
+        sb.append(((this.label == null) ? "<null>" : this.label));
         sb.append(',');
         sb.append("labelStyle");
         sb.append('=');
-        sb.append(((this.labelStyle == null)?"<null>":this.labelStyle));
+        sb.append(((this.labelStyle == null) ? "<null>" : this.labelStyle));
         sb.append(',');
         sb.append("labelText");
         sb.append('=');
-        sb.append(((this.labelText == null)?"<null>":this.labelText));
+        sb.append(((this.labelText == null) ? "<null>" : this.labelText));
         sb.append(',');
         sb.append("prefix");
         sb.append('=');
-        sb.append(((this.prefix == null)?"<null>":this.prefix));
+        sb.append(((this.prefix == null) ? "<null>" : this.prefix));
         sb.append(',');
         sb.append("prefixIcon");
         sb.append('=');
-        sb.append(((this.prefixIcon == null)?"<null>":this.prefixIcon));
+        sb.append(((this.prefixIcon == null) ? "<null>" : this.prefixIcon));
         sb.append(',');
         sb.append("prefixIconColor");
         sb.append('=');
-        sb.append(((this.prefixIconColor == null)?"<null>":this.prefixIconColor));
+        sb.append(((this.prefixIconColor == null) ? "<null>" : this.prefixIconColor));
         sb.append(',');
         sb.append("prefixIconConstraints");
         sb.append('=');
-        sb.append(((this.prefixIconConstraints == null)?"<null>":this.prefixIconConstraints));
+        sb.append(((this.prefixIconConstraints == null) ? "<null>" : this.prefixIconConstraints));
         sb.append(',');
         sb.append("prefixStyle");
         sb.append('=');
-        sb.append(((this.prefixStyle == null)?"<null>":this.prefixStyle));
+        sb.append(((this.prefixStyle == null) ? "<null>" : this.prefixStyle));
         sb.append(',');
         sb.append("prefixText");
         sb.append('=');
-        sb.append(((this.prefixText == null)?"<null>":this.prefixText));
+        sb.append(((this.prefixText == null) ? "<null>" : this.prefixText));
         sb.append(',');
         sb.append("semanticCounterText");
         sb.append('=');
-        sb.append(((this.semanticCounterText == null)?"<null>":this.semanticCounterText));
+        sb.append(((this.semanticCounterText == null) ? "<null>" : this.semanticCounterText));
         sb.append(',');
         sb.append("suffix");
         sb.append('=');
-        sb.append(((this.suffix == null)?"<null>":this.suffix));
+        sb.append(((this.suffix == null) ? "<null>" : this.suffix));
         sb.append(',');
         sb.append("suffixIcon");
         sb.append('=');
-        sb.append(((this.suffixIcon == null)?"<null>":this.suffixIcon));
+        sb.append(((this.suffixIcon == null) ? "<null>" : this.suffixIcon));
         sb.append(',');
         sb.append("suffixIconColor");
         sb.append('=');
-        sb.append(((this.suffixIconColor == null)?"<null>":this.suffixIconColor));
+        sb.append(((this.suffixIconColor == null) ? "<null>" : this.suffixIconColor));
         sb.append(',');
         sb.append("suffixIconConstraints");
         sb.append('=');
-        sb.append(((this.suffixIconConstraints == null)?"<null>":this.suffixIconConstraints));
+        sb.append(((this.suffixIconConstraints == null) ? "<null>" : this.suffixIconConstraints));
         sb.append(',');
         sb.append("suffixStyle");
         sb.append('=');
-        sb.append(((this.suffixStyle == null)?"<null>":this.suffixStyle));
+        sb.append(((this.suffixStyle == null) ? "<null>" : this.suffixStyle));
         sb.append(',');
         sb.append("suffixText");
         sb.append('=');
-        sb.append(((this.suffixText == null)?"<null>":this.suffixText));
+        sb.append(((this.suffixText == null) ? "<null>" : this.suffixText));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -1671,55 +1677,55 @@ public class InputDecorationSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.isCollapsed == null)? 0 :this.isCollapsed.hashCode()));
-        result = ((result* 31)+((this.prefixIconColor == null)? 0 :this.prefixIconColor.hashCode()));
-        result = ((result* 31)+((this.hintMaxLines == null)? 0 :this.hintMaxLines.hashCode()));
-        result = ((result* 31)+((this.prefix == null)? 0 :this.prefix.hashCode()));
-        result = ((result* 31)+((this.labelText == null)? 0 :this.labelText.hashCode()));
-        result = ((result* 31)+((this.hoverColor == null)? 0 :this.hoverColor.hashCode()));
-        result = ((result* 31)+((this.prefixIconConstraints == null)? 0 :this.prefixIconConstraints.hashCode()));
-        result = ((result* 31)+((this.isDense == null)? 0 :this.isDense.hashCode()));
-        result = ((result* 31)+((this.suffix == null)? 0 :this.suffix.hashCode()));
-        result = ((result* 31)+((this.constraints == null)? 0 :this.constraints.hashCode()));
-        result = ((result* 31)+((this.helperMaxLines == null)? 0 :this.helperMaxLines.hashCode()));
-        result = ((result* 31)+((this.counterStyle == null)? 0 :this.counterStyle.hashCode()));
-        result = ((result* 31)+((this.labelStyle == null)? 0 :this.labelStyle.hashCode()));
-        result = ((result* 31)+((this.semanticCounterText == null)? 0 :this.semanticCounterText.hashCode()));
-        result = ((result* 31)+((this.border == null)? 0 :this.border.hashCode()));
-        result = ((result* 31)+((this.counterText == null)? 0 :this.counterText.hashCode()));
-        result = ((result* 31)+((this.suffixStyle == null)? 0 :this.suffixStyle.hashCode()));
-        result = ((result* 31)+((this.enabledBorder == null)? 0 :this.enabledBorder.hashCode()));
-        result = ((result* 31)+((this.helperText == null)? 0 :this.helperText.hashCode()));
-        result = ((result* 31)+((this.errorMaxLines == null)? 0 :this.errorMaxLines.hashCode()));
-        result = ((result* 31)+((this.suffixIconColor == null)? 0 :this.suffixIconColor.hashCode()));
-        result = ((result* 31)+((this.suffixIconConstraints == null)? 0 :this.suffixIconConstraints.hashCode()));
-        result = ((result* 31)+((this.focusedBorder == null)? 0 :this.focusedBorder.hashCode()));
-        result = ((result* 31)+((this.floatingLabelBehavior == null)? 0 :this.floatingLabelBehavior.hashCode()));
-        result = ((result* 31)+((this.focusColor == null)? 0 :this.focusColor.hashCode()));
-        result = ((result* 31)+((this.hintTextDirection == null)? 0 :this.hintTextDirection.hashCode()));
-        result = ((result* 31)+((this.suffixText == null)? 0 :this.suffixText.hashCode()));
-        result = ((result* 31)+((this.hintStyle == null)? 0 :this.hintStyle.hashCode()));
-        result = ((result* 31)+((this.prefixIcon == null)? 0 :this.prefixIcon.hashCode()));
-        result = ((result* 31)+((this.disabledBorder == null)? 0 :this.disabledBorder.hashCode()));
-        result = ((result* 31)+((this.prefixText == null)? 0 :this.prefixText.hashCode()));
-        result = ((result* 31)+((this.contentPadding == null)? 0 :this.contentPadding.hashCode()));
-        result = ((result* 31)+((this.focusedErrorBorder == null)? 0 :this.focusedErrorBorder.hashCode()));
-        result = ((result* 31)+((this.icon == null)? 0 :this.icon.hashCode()));
-        result = ((result* 31)+((this.suffixIcon == null)? 0 :this.suffixIcon.hashCode()));
-        result = ((result* 31)+((this.alignLabelWithHint == null)? 0 :this.alignLabelWithHint.hashCode()));
-        result = ((result* 31)+((this.helperStyle == null)? 0 :this.helperStyle.hashCode()));
-        result = ((result* 31)+((this.prefixStyle == null)? 0 :this.prefixStyle.hashCode()));
-        result = ((result* 31)+((this.enabled == null)? 0 :this.enabled.hashCode()));
-        result = ((result* 31)+((this.fillColor == null)? 0 :this.fillColor.hashCode()));
-        result = ((result* 31)+((this.errorStyle == null)? 0 :this.errorStyle.hashCode()));
-        result = ((result* 31)+((this.errorBorder == null)? 0 :this.errorBorder.hashCode()));
-        result = ((result* 31)+((this.floatingLabelStyle == null)? 0 :this.floatingLabelStyle.hashCode()));
-        result = ((result* 31)+((this.filled == null)? 0 :this.filled.hashCode()));
-        result = ((result* 31)+((this.counter == null)? 0 :this.counter.hashCode()));
-        result = ((result* 31)+((this.label == null)? 0 :this.label.hashCode()));
-        result = ((result* 31)+((this.errorText == null)? 0 :this.errorText.hashCode()));
-        result = ((result* 31)+((this.hintText == null)? 0 :this.hintText.hashCode()));
-        result = ((result* 31)+((this.iconColor == null)? 0 :this.iconColor.hashCode()));
+        result = ((result * 31) + ((this.isCollapsed == null) ? 0 : this.isCollapsed.hashCode()));
+        result = ((result * 31) + ((this.prefixIconColor == null) ? 0 : this.prefixIconColor.hashCode()));
+        result = ((result * 31) + ((this.hintMaxLines == null) ? 0 : this.hintMaxLines.hashCode()));
+        result = ((result * 31) + ((this.prefix == null) ? 0 : this.prefix.hashCode()));
+        result = ((result * 31) + ((this.labelText == null) ? 0 : this.labelText.hashCode()));
+        result = ((result * 31) + ((this.hoverColor == null) ? 0 : this.hoverColor.hashCode()));
+        result = ((result * 31) + ((this.prefixIconConstraints == null) ? 0 : this.prefixIconConstraints.hashCode()));
+        result = ((result * 31) + ((this.isDense == null) ? 0 : this.isDense.hashCode()));
+        result = ((result * 31) + ((this.suffix == null) ? 0 : this.suffix.hashCode()));
+        result = ((result * 31) + ((this.constraints == null) ? 0 : this.constraints.hashCode()));
+        result = ((result * 31) + ((this.helperMaxLines == null) ? 0 : this.helperMaxLines.hashCode()));
+        result = ((result * 31) + ((this.counterStyle == null) ? 0 : this.counterStyle.hashCode()));
+        result = ((result * 31) + ((this.labelStyle == null) ? 0 : this.labelStyle.hashCode()));
+        result = ((result * 31) + ((this.semanticCounterText == null) ? 0 : this.semanticCounterText.hashCode()));
+        result = ((result * 31) + ((this.border == null) ? 0 : this.border.hashCode()));
+        result = ((result * 31) + ((this.counterText == null) ? 0 : this.counterText.hashCode()));
+        result = ((result * 31) + ((this.suffixStyle == null) ? 0 : this.suffixStyle.hashCode()));
+        result = ((result * 31) + ((this.enabledBorder == null) ? 0 : this.enabledBorder.hashCode()));
+        result = ((result * 31) + ((this.helperText == null) ? 0 : this.helperText.hashCode()));
+        result = ((result * 31) + ((this.errorMaxLines == null) ? 0 : this.errorMaxLines.hashCode()));
+        result = ((result * 31) + ((this.suffixIconColor == null) ? 0 : this.suffixIconColor.hashCode()));
+        result = ((result * 31) + ((this.suffixIconConstraints == null) ? 0 : this.suffixIconConstraints.hashCode()));
+        result = ((result * 31) + ((this.focusedBorder == null) ? 0 : this.focusedBorder.hashCode()));
+        result = ((result * 31) + ((this.floatingLabelBehavior == null) ? 0 : this.floatingLabelBehavior.hashCode()));
+        result = ((result * 31) + ((this.focusColor == null) ? 0 : this.focusColor.hashCode()));
+        result = ((result * 31) + ((this.hintTextDirection == null) ? 0 : this.hintTextDirection.hashCode()));
+        result = ((result * 31) + ((this.suffixText == null) ? 0 : this.suffixText.hashCode()));
+        result = ((result * 31) + ((this.hintStyle == null) ? 0 : this.hintStyle.hashCode()));
+        result = ((result * 31) + ((this.prefixIcon == null) ? 0 : this.prefixIcon.hashCode()));
+        result = ((result * 31) + ((this.disabledBorder == null) ? 0 : this.disabledBorder.hashCode()));
+        result = ((result * 31) + ((this.prefixText == null) ? 0 : this.prefixText.hashCode()));
+        result = ((result * 31) + ((this.contentPadding == null) ? 0 : this.contentPadding.hashCode()));
+        result = ((result * 31) + ((this.focusedErrorBorder == null) ? 0 : this.focusedErrorBorder.hashCode()));
+        result = ((result * 31) + ((this.icon == null) ? 0 : this.icon.hashCode()));
+        result = ((result * 31) + ((this.suffixIcon == null) ? 0 : this.suffixIcon.hashCode()));
+        result = ((result * 31) + ((this.alignLabelWithHint == null) ? 0 : this.alignLabelWithHint.hashCode()));
+        result = ((result * 31) + ((this.helperStyle == null) ? 0 : this.helperStyle.hashCode()));
+        result = ((result * 31) + ((this.prefixStyle == null) ? 0 : this.prefixStyle.hashCode()));
+        result = ((result * 31) + ((this.enabled == null) ? 0 : this.enabled.hashCode()));
+        result = ((result * 31) + ((this.fillColor == null) ? 0 : this.fillColor.hashCode()));
+        result = ((result * 31) + ((this.errorStyle == null) ? 0 : this.errorStyle.hashCode()));
+        result = ((result * 31) + ((this.errorBorder == null) ? 0 : this.errorBorder.hashCode()));
+        result = ((result * 31) + ((this.floatingLabelStyle == null) ? 0 : this.floatingLabelStyle.hashCode()));
+        result = ((result * 31) + ((this.filled == null) ? 0 : this.filled.hashCode()));
+        result = ((result * 31) + ((this.counter == null) ? 0 : this.counter.hashCode()));
+        result = ((result * 31) + ((this.label == null) ? 0 : this.label.hashCode()));
+        result = ((result * 31) + ((this.errorText == null) ? 0 : this.errorText.hashCode()));
+        result = ((result * 31) + ((this.hintText == null) ? 0 : this.hintText.hashCode()));
+        result = ((result * 31) + ((this.iconColor == null) ? 0 : this.iconColor.hashCode()));
         return result;
     }
 
@@ -1732,9 +1738,95 @@ public class InputDecorationSchema {
             return false;
         }
         InputDecorationSchema rhs = ((InputDecorationSchema) other);
-        return ((((((((((((((((((((((((((((((((((((((((((((((((((this.isCollapsed == rhs.isCollapsed)||((this.isCollapsed!= null)&&this.isCollapsed.equals(rhs.isCollapsed)))&&((this.prefixIconColor == rhs.prefixIconColor)||((this.prefixIconColor!= null)&&this.prefixIconColor.equals(rhs.prefixIconColor))))&&((this.hintMaxLines == rhs.hintMaxLines)||((this.hintMaxLines!= null)&&this.hintMaxLines.equals(rhs.hintMaxLines))))&&((this.prefix == rhs.prefix)||((this.prefix!= null)&&this.prefix.equals(rhs.prefix))))&&((this.labelText == rhs.labelText)||((this.labelText!= null)&&this.labelText.equals(rhs.labelText))))&&((this.hoverColor == rhs.hoverColor)||((this.hoverColor!= null)&&this.hoverColor.equals(rhs.hoverColor))))&&((this.prefixIconConstraints == rhs.prefixIconConstraints)||((this.prefixIconConstraints!= null)&&this.prefixIconConstraints.equals(rhs.prefixIconConstraints))))&&((this.isDense == rhs.isDense)||((this.isDense!= null)&&this.isDense.equals(rhs.isDense))))&&((this.suffix == rhs.suffix)||((this.suffix!= null)&&this.suffix.equals(rhs.suffix))))&&((this.constraints == rhs.constraints)||((this.constraints!= null)&&this.constraints.equals(rhs.constraints))))&&((this.helperMaxLines == rhs.helperMaxLines)||((this.helperMaxLines!= null)&&this.helperMaxLines.equals(rhs.helperMaxLines))))&&((this.counterStyle == rhs.counterStyle)||((this.counterStyle!= null)&&this.counterStyle.equals(rhs.counterStyle))))&&((this.labelStyle == rhs.labelStyle)||((this.labelStyle!= null)&&this.labelStyle.equals(rhs.labelStyle))))&&((this.semanticCounterText == rhs.semanticCounterText)||((this.semanticCounterText!= null)&&this.semanticCounterText.equals(rhs.semanticCounterText))))&&((this.border == rhs.border)||((this.border!= null)&&this.border.equals(rhs.border))))&&((this.counterText == rhs.counterText)||((this.counterText!= null)&&this.counterText.equals(rhs.counterText))))&&((this.suffixStyle == rhs.suffixStyle)||((this.suffixStyle!= null)&&this.suffixStyle.equals(rhs.suffixStyle))))&&((this.enabledBorder == rhs.enabledBorder)||((this.enabledBorder!= null)&&this.enabledBorder.equals(rhs.enabledBorder))))&&((this.helperText == rhs.helperText)||((this.helperText!= null)&&this.helperText.equals(rhs.helperText))))&&((this.errorMaxLines == rhs.errorMaxLines)||((this.errorMaxLines!= null)&&this.errorMaxLines.equals(rhs.errorMaxLines))))&&((this.suffixIconColor == rhs.suffixIconColor)||((this.suffixIconColor!= null)&&this.suffixIconColor.equals(rhs.suffixIconColor))))&&((this.suffixIconConstraints == rhs.suffixIconConstraints)||((this.suffixIconConstraints!= null)&&this.suffixIconConstraints.equals(rhs.suffixIconConstraints))))&&((this.focusedBorder == rhs.focusedBorder)||((this.focusedBorder!= null)&&this.focusedBorder.equals(rhs.focusedBorder))))&&((this.floatingLabelBehavior == rhs.floatingLabelBehavior)||((this.floatingLabelBehavior!= null)&&this.floatingLabelBehavior.equals(rhs.floatingLabelBehavior))))&&((this.focusColor == rhs.focusColor)||((this.focusColor!= null)&&this.focusColor.equals(rhs.focusColor))))&&((this.hintTextDirection == rhs.hintTextDirection)||((this.hintTextDirection!= null)&&this.hintTextDirection.equals(rhs.hintTextDirection))))&&((this.suffixText == rhs.suffixText)||((this.suffixText!= null)&&this.suffixText.equals(rhs.suffixText))))&&((this.hintStyle == rhs.hintStyle)||((this.hintStyle!= null)&&this.hintStyle.equals(rhs.hintStyle))))&&((this.prefixIcon == rhs.prefixIcon)||((this.prefixIcon!= null)&&this.prefixIcon.equals(rhs.prefixIcon))))&&((this.disabledBorder == rhs.disabledBorder)||((this.disabledBorder!= null)&&this.disabledBorder.equals(rhs.disabledBorder))))&&((this.prefixText == rhs.prefixText)||((this.prefixText!= null)&&this.prefixText.equals(rhs.prefixText))))&&((this.contentPadding == rhs.contentPadding)||((this.contentPadding!= null)&&this.contentPadding.equals(rhs.contentPadding))))&&((this.focusedErrorBorder == rhs.focusedErrorBorder)||((this.focusedErrorBorder!= null)&&this.focusedErrorBorder.equals(rhs.focusedErrorBorder))))&&((this.icon == rhs.icon)||((this.icon!= null)&&this.icon.equals(rhs.icon))))&&((this.suffixIcon == rhs.suffixIcon)||((this.suffixIcon!= null)&&this.suffixIcon.equals(rhs.suffixIcon))))&&((this.alignLabelWithHint == rhs.alignLabelWithHint)||((this.alignLabelWithHint!= null)&&this.alignLabelWithHint.equals(rhs.alignLabelWithHint))))&&((this.helperStyle == rhs.helperStyle)||((this.helperStyle!= null)&&this.helperStyle.equals(rhs.helperStyle))))&&((this.prefixStyle == rhs.prefixStyle)||((this.prefixStyle!= null)&&this.prefixStyle.equals(rhs.prefixStyle))))&&((this.enabled == rhs.enabled)||((this.enabled!= null)&&this.enabled.equals(rhs.enabled))))&&((this.fillColor == rhs.fillColor)||((this.fillColor!= null)&&this.fillColor.equals(rhs.fillColor))))&&((this.errorStyle == rhs.errorStyle)||((this.errorStyle!= null)&&this.errorStyle.equals(rhs.errorStyle))))&&((this.errorBorder == rhs.errorBorder)||((this.errorBorder!= null)&&this.errorBorder.equals(rhs.errorBorder))))&&((this.floatingLabelStyle == rhs.floatingLabelStyle)||((this.floatingLabelStyle!= null)&&this.floatingLabelStyle.equals(rhs.floatingLabelStyle))))&&((this.filled == rhs.filled)||((this.filled!= null)&&this.filled.equals(rhs.filled))))&&((this.counter == rhs.counter)||((this.counter!= null)&&this.counter.equals(rhs.counter))))&&((this.label == rhs.label)||((this.label!= null)&&this.label.equals(rhs.label))))&&((this.errorText == rhs.errorText)||((this.errorText!= null)&&this.errorText.equals(rhs.errorText))))&&((this.hintText == rhs.hintText)||((this.hintText!= null)&&this.hintText.equals(rhs.hintText))))&&((this.iconColor == rhs.iconColor)||((this.iconColor!= null)&&this.iconColor.equals(rhs.iconColor))));
+        return ((((((((((((((((((((((((((((((((((((((((((((((((((this.isCollapsed == rhs.isCollapsed)
+                || ((this.isCollapsed != null) && this.isCollapsed.equals(rhs.isCollapsed)))
+                && ((this.prefixIconColor == rhs.prefixIconColor)
+                        || ((this.prefixIconColor != null) && this.prefixIconColor.equals(rhs.prefixIconColor))))
+                && ((this.hintMaxLines == rhs.hintMaxLines)
+                        || ((this.hintMaxLines != null) && this.hintMaxLines.equals(rhs.hintMaxLines))))
+                && ((this.prefix == rhs.prefix) || ((this.prefix != null) && this.prefix.equals(rhs.prefix))))
+                && ((this.labelText == rhs.labelText)
+                        || ((this.labelText != null) && this.labelText.equals(rhs.labelText))))
+                && ((this.hoverColor == rhs.hoverColor)
+                        || ((this.hoverColor != null) && this.hoverColor.equals(rhs.hoverColor))))
+                && ((this.prefixIconConstraints == rhs.prefixIconConstraints) || ((this.prefixIconConstraints != null)
+                        && this.prefixIconConstraints.equals(rhs.prefixIconConstraints))))
+                && ((this.isDense == rhs.isDense) || ((this.isDense != null) && this.isDense.equals(rhs.isDense))))
+                && ((this.suffix == rhs.suffix) || ((this.suffix != null) && this.suffix.equals(rhs.suffix))))
+                && ((this.constraints == rhs.constraints)
+                        || ((this.constraints != null) && this.constraints.equals(rhs.constraints))))
+                && ((this.helperMaxLines == rhs.helperMaxLines)
+                        || ((this.helperMaxLines != null) && this.helperMaxLines.equals(rhs.helperMaxLines))))
+                && ((this.counterStyle == rhs.counterStyle)
+                        || ((this.counterStyle != null) && this.counterStyle.equals(rhs.counterStyle))))
+                && ((this.labelStyle == rhs.labelStyle)
+                        || ((this.labelStyle != null) && this.labelStyle.equals(rhs.labelStyle))))
+                && ((this.semanticCounterText == rhs.semanticCounterText) || ((this.semanticCounterText != null)
+                        && this.semanticCounterText.equals(rhs.semanticCounterText))))
+                && ((this.border == rhs.border) || ((this.border != null) && this.border.equals(rhs.border))))
+                && ((this.counterText == rhs.counterText)
+                        || ((this.counterText != null) && this.counterText.equals(rhs.counterText))))
+                && ((this.suffixStyle == rhs.suffixStyle)
+                        || ((this.suffixStyle != null) && this.suffixStyle.equals(rhs.suffixStyle))))
+                && ((this.enabledBorder == rhs.enabledBorder)
+                        || ((this.enabledBorder != null) && this.enabledBorder.equals(rhs.enabledBorder))))
+                && ((this.helperText == rhs.helperText)
+                        || ((this.helperText != null) && this.helperText.equals(rhs.helperText))))
+                && ((this.errorMaxLines == rhs.errorMaxLines)
+                        || ((this.errorMaxLines != null) && this.errorMaxLines.equals(rhs.errorMaxLines))))
+                && ((this.suffixIconColor == rhs.suffixIconColor)
+                        || ((this.suffixIconColor != null) && this.suffixIconColor.equals(rhs.suffixIconColor))))
+                && ((this.suffixIconConstraints == rhs.suffixIconConstraints) || ((this.suffixIconConstraints != null)
+                        && this.suffixIconConstraints.equals(rhs.suffixIconConstraints))))
+                && ((this.focusedBorder == rhs.focusedBorder)
+                        || ((this.focusedBorder != null) && this.focusedBorder.equals(rhs.focusedBorder))))
+                && ((this.floatingLabelBehavior == rhs.floatingLabelBehavior) || ((this.floatingLabelBehavior != null)
+                        && this.floatingLabelBehavior.equals(rhs.floatingLabelBehavior))))
+                && ((this.focusColor == rhs.focusColor)
+                        || ((this.focusColor != null) && this.focusColor.equals(rhs.focusColor))))
+                && ((this.hintTextDirection == rhs.hintTextDirection)
+                        || ((this.hintTextDirection != null) && this.hintTextDirection.equals(rhs.hintTextDirection))))
+                && ((this.suffixText == rhs.suffixText)
+                        || ((this.suffixText != null) && this.suffixText.equals(rhs.suffixText))))
+                && ((this.hintStyle == rhs.hintStyle)
+                        || ((this.hintStyle != null) && this.hintStyle.equals(rhs.hintStyle))))
+                && ((this.prefixIcon == rhs.prefixIcon)
+                        || ((this.prefixIcon != null) && this.prefixIcon.equals(rhs.prefixIcon))))
+                && ((this.disabledBorder == rhs.disabledBorder)
+                        || ((this.disabledBorder != null) && this.disabledBorder.equals(rhs.disabledBorder))))
+                && ((this.prefixText == rhs.prefixText)
+                        || ((this.prefixText != null) && this.prefixText.equals(rhs.prefixText))))
+                && ((this.contentPadding == rhs.contentPadding)
+                        || ((this.contentPadding != null) && this.contentPadding.equals(rhs.contentPadding))))
+                && ((this.focusedErrorBorder == rhs.focusedErrorBorder) || ((this.focusedErrorBorder != null)
+                        && this.focusedErrorBorder.equals(rhs.focusedErrorBorder))))
+                && ((this.icon == rhs.icon) || ((this.icon != null) && this.icon.equals(rhs.icon))))
+                && ((this.suffixIcon == rhs.suffixIcon)
+                        || ((this.suffixIcon != null) && this.suffixIcon.equals(rhs.suffixIcon))))
+                && ((this.alignLabelWithHint == rhs.alignLabelWithHint) || ((this.alignLabelWithHint != null)
+                        && this.alignLabelWithHint.equals(rhs.alignLabelWithHint))))
+                && ((this.helperStyle == rhs.helperStyle)
+                        || ((this.helperStyle != null) && this.helperStyle.equals(rhs.helperStyle))))
+                && ((this.prefixStyle == rhs.prefixStyle)
+                        || ((this.prefixStyle != null) && this.prefixStyle.equals(rhs.prefixStyle))))
+                && ((this.enabled == rhs.enabled) || ((this.enabled != null) && this.enabled.equals(rhs.enabled))))
+                && ((this.fillColor == rhs.fillColor)
+                        || ((this.fillColor != null) && this.fillColor.equals(rhs.fillColor))))
+                && ((this.errorStyle == rhs.errorStyle)
+                        || ((this.errorStyle != null) && this.errorStyle.equals(rhs.errorStyle))))
+                && ((this.errorBorder == rhs.errorBorder)
+                        || ((this.errorBorder != null) && this.errorBorder.equals(rhs.errorBorder))))
+                && ((this.floatingLabelStyle == rhs.floatingLabelStyle) || ((this.floatingLabelStyle != null)
+                        && this.floatingLabelStyle.equals(rhs.floatingLabelStyle))))
+                && ((this.filled == rhs.filled) || ((this.filled != null) && this.filled.equals(rhs.filled))))
+                && ((this.counter == rhs.counter) || ((this.counter != null) && this.counter.equals(rhs.counter))))
+                && ((this.label == rhs.label) || ((this.label != null) && this.label.equals(rhs.label))))
+                && ((this.errorText == rhs.errorText)
+                        || ((this.errorText != null) && this.errorText.equals(rhs.errorText))))
+                && ((this.hintText == rhs.hintText) || ((this.hintText != null) && this.hintText.equals(rhs.hintText))))
+                && ((this.iconColor == rhs.iconColor)
+                        || ((this.iconColor != null) && this.iconColor.equals(rhs.iconColor))));
     }
-
 
     /**
      * FloatingLabelBehavior
@@ -1750,11 +1842,12 @@ public class InputDecorationSchema {
         AUTO("auto"),
         @SerializedName("never")
         NEVER("never");
+
         private final String value;
         private final static Map<String, InputDecorationSchema.FloatingLabelBehaviorSchema> CONSTANTS = new HashMap<String, InputDecorationSchema.FloatingLabelBehaviorSchema>();
 
         static {
-            for (InputDecorationSchema.FloatingLabelBehaviorSchema c: values()) {
+            for (InputDecorationSchema.FloatingLabelBehaviorSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

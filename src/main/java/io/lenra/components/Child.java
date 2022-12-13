@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,13 +28,14 @@ public class Child {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Child.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Child.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -44,7 +45,7 @@ public class Child {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
         return result;
     }
 
@@ -57,18 +58,19 @@ public class Child {
             return false;
         }
         Child rhs = ((Child) other);
-        return ((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type)));
+        return ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type)));
     }
 
     public enum Type {
 
         @SerializedName("text")
         TEXT("text");
+
         private final String value;
         private final static Map<String, Child.Type> CONSTANTS = new HashMap<String, Child.Type>();
 
         static {
-            for (Child.Type c: values()) {
+            for (Child.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * BoxShadow
@@ -141,25 +140,26 @@ public class BoxShadowSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(BoxShadowSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(BoxShadowSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("color");
         sb.append('=');
-        sb.append(((this.color == null)?"<null>":this.color));
+        sb.append(((this.color == null) ? "<null>" : this.color));
         sb.append(',');
         sb.append("blurRadius");
         sb.append('=');
-        sb.append(((this.blurRadius == null)?"<null>":this.blurRadius));
+        sb.append(((this.blurRadius == null) ? "<null>" : this.blurRadius));
         sb.append(',');
         sb.append("spreadRadius");
         sb.append('=');
-        sb.append(((this.spreadRadius == null)?"<null>":this.spreadRadius));
+        sb.append(((this.spreadRadius == null) ? "<null>" : this.spreadRadius));
         sb.append(',');
         sb.append("offset");
         sb.append('=');
-        sb.append(((this.offset == null)?"<null>":this.offset));
+        sb.append(((this.offset == null) ? "<null>" : this.offset));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -169,10 +169,10 @@ public class BoxShadowSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.spreadRadius == null)? 0 :this.spreadRadius.hashCode()));
-        result = ((result* 31)+((this.color == null)? 0 :this.color.hashCode()));
-        result = ((result* 31)+((this.offset == null)? 0 :this.offset.hashCode()));
-        result = ((result* 31)+((this.blurRadius == null)? 0 :this.blurRadius.hashCode()));
+        result = ((result * 31) + ((this.spreadRadius == null) ? 0 : this.spreadRadius.hashCode()));
+        result = ((result * 31) + ((this.color == null) ? 0 : this.color.hashCode()));
+        result = ((result * 31) + ((this.offset == null) ? 0 : this.offset.hashCode()));
+        result = ((result * 31) + ((this.blurRadius == null) ? 0 : this.blurRadius.hashCode()));
         return result;
     }
 
@@ -185,7 +185,12 @@ public class BoxShadowSchema {
             return false;
         }
         BoxShadowSchema rhs = ((BoxShadowSchema) other);
-        return (((((this.spreadRadius == rhs.spreadRadius)||((this.spreadRadius!= null)&&this.spreadRadius.equals(rhs.spreadRadius)))&&((this.color == rhs.color)||((this.color!= null)&&this.color.equals(rhs.color))))&&((this.offset == rhs.offset)||((this.offset!= null)&&this.offset.equals(rhs.offset))))&&((this.blurRadius == rhs.blurRadius)||((this.blurRadius!= null)&&this.blurRadius.equals(rhs.blurRadius))));
+        return (((((this.spreadRadius == rhs.spreadRadius)
+                || ((this.spreadRadius != null) && this.spreadRadius.equals(rhs.spreadRadius)))
+                && ((this.color == rhs.color) || ((this.color != null) && this.color.equals(rhs.color))))
+                && ((this.offset == rhs.offset) || ((this.offset != null) && this.offset.equals(rhs.offset))))
+                && ((this.blurRadius == rhs.blurRadius)
+                        || ((this.blurRadius != null) && this.blurRadius.equals(rhs.blurRadius))));
     }
 
 }

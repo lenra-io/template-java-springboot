@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * SliderStyle
@@ -119,21 +118,22 @@ public class SliderStyleSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(SliderStyleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(SliderStyleSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("activeColor");
         sb.append('=');
-        sb.append(((this.activeColor == null)?"<null>":this.activeColor));
+        sb.append(((this.activeColor == null) ? "<null>" : this.activeColor));
         sb.append(',');
         sb.append("inactiveColor");
         sb.append('=');
-        sb.append(((this.inactiveColor == null)?"<null>":this.inactiveColor));
+        sb.append(((this.inactiveColor == null) ? "<null>" : this.inactiveColor));
         sb.append(',');
         sb.append("thumbColor");
         sb.append('=');
-        sb.append(((this.thumbColor == null)?"<null>":this.thumbColor));
+        sb.append(((this.thumbColor == null) ? "<null>" : this.thumbColor));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -143,9 +143,9 @@ public class SliderStyleSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.thumbColor == null)? 0 :this.thumbColor.hashCode()));
-        result = ((result* 31)+((this.inactiveColor == null)? 0 :this.inactiveColor.hashCode()));
-        result = ((result* 31)+((this.activeColor == null)? 0 :this.activeColor.hashCode()));
+        result = ((result * 31) + ((this.thumbColor == null) ? 0 : this.thumbColor.hashCode()));
+        result = ((result * 31) + ((this.inactiveColor == null) ? 0 : this.inactiveColor.hashCode()));
+        result = ((result * 31) + ((this.activeColor == null) ? 0 : this.activeColor.hashCode()));
         return result;
     }
 
@@ -158,7 +158,12 @@ public class SliderStyleSchema {
             return false;
         }
         SliderStyleSchema rhs = ((SliderStyleSchema) other);
-        return ((((this.thumbColor == rhs.thumbColor)||((this.thumbColor!= null)&&this.thumbColor.equals(rhs.thumbColor)))&&((this.inactiveColor == rhs.inactiveColor)||((this.inactiveColor!= null)&&this.inactiveColor.equals(rhs.inactiveColor))))&&((this.activeColor == rhs.activeColor)||((this.activeColor!= null)&&this.activeColor.equals(rhs.activeColor))));
+        return ((((this.thumbColor == rhs.thumbColor)
+                || ((this.thumbColor != null) && this.thumbColor.equals(rhs.thumbColor)))
+                && ((this.inactiveColor == rhs.inactiveColor)
+                        || ((this.inactiveColor != null) && this.inactiveColor.equals(rhs.inactiveColor))))
+                && ((this.activeColor == rhs.activeColor)
+                        || ((this.activeColor != null) && this.activeColor.equals(rhs.activeColor))));
     }
 
 }

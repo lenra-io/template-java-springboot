@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Overlay Entry
@@ -32,7 +31,8 @@ public class OverlayEntrySchema {
     @Expose
     private Object child;
     /**
-     * Whether this entry must be included in the tree even if there is a fully opaque entry above it.
+     * Whether this entry must be included in the tree even if there is a fully
+     * opaque entry above it.
      * 
      */
     @SerializedName("maintainState")
@@ -100,7 +100,8 @@ public class OverlayEntrySchema {
     }
 
     /**
-     * Whether this entry must be included in the tree even if there is a fully opaque entry above it.
+     * Whether this entry must be included in the tree even if there is a fully
+     * opaque entry above it.
      * 
      */
     public Boolean getMaintainState() {
@@ -108,7 +109,8 @@ public class OverlayEntrySchema {
     }
 
     /**
-     * Whether this entry must be included in the tree even if there is a fully opaque entry above it.
+     * Whether this entry must be included in the tree even if there is a fully
+     * opaque entry above it.
      * 
      */
     public void setMaintainState(Boolean maintainState) {
@@ -165,29 +167,30 @@ public class OverlayEntrySchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(OverlayEntrySchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(OverlayEntrySchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("child");
         sb.append('=');
-        sb.append(((this.child == null)?"<null>":this.child));
+        sb.append(((this.child == null) ? "<null>" : this.child));
         sb.append(',');
         sb.append("maintainState");
         sb.append('=');
-        sb.append(((this.maintainState == null)?"<null>":this.maintainState));
+        sb.append(((this.maintainState == null) ? "<null>" : this.maintainState));
         sb.append(',');
         sb.append("opaque");
         sb.append('=');
-        sb.append(((this.opaque == null)?"<null>":this.opaque));
+        sb.append(((this.opaque == null) ? "<null>" : this.opaque));
         sb.append(',');
         sb.append("showOverlay");
         sb.append('=');
-        sb.append(((this.showOverlay == null)?"<null>":this.showOverlay));
+        sb.append(((this.showOverlay == null) ? "<null>" : this.showOverlay));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -197,11 +200,11 @@ public class OverlayEntrySchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.maintainState == null)? 0 :this.maintainState.hashCode()));
-        result = ((result* 31)+((this.opaque == null)? 0 :this.opaque.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.showOverlay == null)? 0 :this.showOverlay.hashCode()));
-        result = ((result* 31)+((this.child == null)? 0 :this.child.hashCode()));
+        result = ((result * 31) + ((this.maintainState == null) ? 0 : this.maintainState.hashCode()));
+        result = ((result * 31) + ((this.opaque == null) ? 0 : this.opaque.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.showOverlay == null) ? 0 : this.showOverlay.hashCode()));
+        result = ((result * 31) + ((this.child == null) ? 0 : this.child.hashCode()));
         return result;
     }
 
@@ -214,9 +217,14 @@ public class OverlayEntrySchema {
             return false;
         }
         OverlayEntrySchema rhs = ((OverlayEntrySchema) other);
-        return ((((((this.maintainState == rhs.maintainState)||((this.maintainState!= null)&&this.maintainState.equals(rhs.maintainState)))&&((this.opaque == rhs.opaque)||((this.opaque!= null)&&this.opaque.equals(rhs.opaque))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.showOverlay == rhs.showOverlay)||((this.showOverlay!= null)&&this.showOverlay.equals(rhs.showOverlay))))&&((this.child == rhs.child)||((this.child!= null)&&this.child.equals(rhs.child))));
+        return ((((((this.maintainState == rhs.maintainState)
+                || ((this.maintainState != null) && this.maintainState.equals(rhs.maintainState)))
+                && ((this.opaque == rhs.opaque) || ((this.opaque != null) && this.opaque.equals(rhs.opaque))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.showOverlay == rhs.showOverlay)
+                        || ((this.showOverlay != null) && this.showOverlay.equals(rhs.showOverlay))))
+                && ((this.child == rhs.child) || ((this.child != null) && this.child.equals(rhs.child))));
     }
-
 
     /**
      * The identifier of the component
@@ -226,11 +234,12 @@ public class OverlayEntrySchema {
 
         @SerializedName("overlayEntry")
         OVERLAY_ENTRY("overlayEntry");
+
         private final String value;
         private final static Map<String, OverlayEntrySchema.Type> CONSTANTS = new HashMap<String, OverlayEntrySchema.Type>();
 
         static {
-            for (OverlayEntrySchema.Type c: values()) {
+            for (OverlayEntrySchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

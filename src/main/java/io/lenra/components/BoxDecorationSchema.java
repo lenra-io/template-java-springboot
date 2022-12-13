@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * BoxDecoration
@@ -155,25 +154,26 @@ public class BoxDecorationSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(BoxDecorationSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(BoxDecorationSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("borderRadius");
         sb.append('=');
-        sb.append(((this.borderRadius == null)?"<null>":this.borderRadius));
+        sb.append(((this.borderRadius == null) ? "<null>" : this.borderRadius));
         sb.append(',');
         sb.append("boxShadow");
         sb.append('=');
-        sb.append(((this.boxShadow == null)?"<null>":this.boxShadow));
+        sb.append(((this.boxShadow == null) ? "<null>" : this.boxShadow));
         sb.append(',');
         sb.append("color");
         sb.append('=');
-        sb.append(((this.color == null)?"<null>":this.color));
+        sb.append(((this.color == null) ? "<null>" : this.color));
         sb.append(',');
         sb.append("shape");
         sb.append('=');
-        sb.append(((this.shape == null)?"<null>":this.shape));
+        sb.append(((this.shape == null) ? "<null>" : this.shape));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -183,10 +183,10 @@ public class BoxDecorationSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.boxShadow == null)? 0 :this.boxShadow.hashCode()));
-        result = ((result* 31)+((this.borderRadius == null)? 0 :this.borderRadius.hashCode()));
-        result = ((result* 31)+((this.color == null)? 0 :this.color.hashCode()));
-        result = ((result* 31)+((this.shape == null)? 0 :this.shape.hashCode()));
+        result = ((result * 31) + ((this.boxShadow == null) ? 0 : this.boxShadow.hashCode()));
+        result = ((result * 31) + ((this.borderRadius == null) ? 0 : this.borderRadius.hashCode()));
+        result = ((result * 31) + ((this.color == null) ? 0 : this.color.hashCode()));
+        result = ((result * 31) + ((this.shape == null) ? 0 : this.shape.hashCode()));
         return result;
     }
 
@@ -199,9 +199,13 @@ public class BoxDecorationSchema {
             return false;
         }
         BoxDecorationSchema rhs = ((BoxDecorationSchema) other);
-        return (((((this.boxShadow == rhs.boxShadow)||((this.boxShadow!= null)&&this.boxShadow.equals(rhs.boxShadow)))&&((this.borderRadius == rhs.borderRadius)||((this.borderRadius!= null)&&this.borderRadius.equals(rhs.borderRadius))))&&((this.color == rhs.color)||((this.color!= null)&&this.color.equals(rhs.color))))&&((this.shape == rhs.shape)||((this.shape!= null)&&this.shape.equals(rhs.shape))));
+        return (((((this.boxShadow == rhs.boxShadow)
+                || ((this.boxShadow != null) && this.boxShadow.equals(rhs.boxShadow)))
+                && ((this.borderRadius == rhs.borderRadius)
+                        || ((this.borderRadius != null) && this.borderRadius.equals(rhs.borderRadius))))
+                && ((this.color == rhs.color) || ((this.color != null) && this.color.equals(rhs.color))))
+                && ((this.shape == rhs.shape) || ((this.shape != null) && this.shape.equals(rhs.shape))));
     }
-
 
     /**
      * BoxShape
@@ -215,11 +219,12 @@ public class BoxDecorationSchema {
         CIRCLE("circle"),
         @SerializedName("rectangle")
         RECTANGLE("rectangle");
+
         private final String value;
         private final static Map<String, BoxDecorationSchema.BoxShapeSchema> CONSTANTS = new HashMap<String, BoxDecorationSchema.BoxShapeSchema>();
 
         static {
-            for (BoxDecorationSchema.BoxShapeSchema c: values()) {
+            for (BoxDecorationSchema.BoxShapeSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

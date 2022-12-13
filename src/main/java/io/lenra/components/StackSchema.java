@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Stack
@@ -41,7 +40,8 @@ public class StackSchema {
      */
     @SerializedName("alignment")
     @Expose
-    private lenra.components.ImageSchema.AlignmentSchema alignment = lenra.components.ImageSchema.AlignmentSchema.fromValue("center");
+    private io.lenra.components.ImageSchema.AlignmentSchema alignment = io.lenra.components.ImageSchema.AlignmentSchema
+            .fromValue("center");
     /**
      * StackFit
      * <p>
@@ -104,7 +104,7 @@ public class StackSchema {
      * The alignment to use.
      * 
      */
-    public lenra.components.ImageSchema.AlignmentSchema getAlignment() {
+    public io.lenra.components.ImageSchema.AlignmentSchema getAlignment() {
         return alignment;
     }
 
@@ -114,11 +114,11 @@ public class StackSchema {
      * The alignment to use.
      * 
      */
-    public void setAlignment(lenra.components.ImageSchema.AlignmentSchema alignment) {
+    public void setAlignment(io.lenra.components.ImageSchema.AlignmentSchema alignment) {
         this.alignment = alignment;
     }
 
-    public StackSchema withAlignment(lenra.components.ImageSchema.AlignmentSchema alignment) {
+    public StackSchema withAlignment(io.lenra.components.ImageSchema.AlignmentSchema alignment) {
         this.alignment = alignment;
         return this;
     }
@@ -151,25 +151,26 @@ public class StackSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(StackSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(StackSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("children");
         sb.append('=');
-        sb.append(((this.children == null)?"<null>":this.children));
+        sb.append(((this.children == null) ? "<null>" : this.children));
         sb.append(',');
         sb.append("alignment");
         sb.append('=');
-        sb.append(((this.alignment == null)?"<null>":this.alignment));
+        sb.append(((this.alignment == null) ? "<null>" : this.alignment));
         sb.append(',');
         sb.append("fit");
         sb.append('=');
-        sb.append(((this.fit == null)?"<null>":this.fit));
+        sb.append(((this.fit == null) ? "<null>" : this.fit));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -179,10 +180,10 @@ public class StackSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.fit == null)? 0 :this.fit.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.alignment == null)? 0 :this.alignment.hashCode()));
-        result = ((result* 31)+((this.children == null)? 0 :this.children.hashCode()));
+        result = ((result * 31) + ((this.fit == null) ? 0 : this.fit.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.alignment == null) ? 0 : this.alignment.hashCode()));
+        result = ((result * 31) + ((this.children == null) ? 0 : this.children.hashCode()));
         return result;
     }
 
@@ -195,9 +196,13 @@ public class StackSchema {
             return false;
         }
         StackSchema rhs = ((StackSchema) other);
-        return (((((this.fit == rhs.fit)||((this.fit!= null)&&this.fit.equals(rhs.fit)))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.alignment == rhs.alignment)||((this.alignment!= null)&&this.alignment.equals(rhs.alignment))))&&((this.children == rhs.children)||((this.children!= null)&&this.children.equals(rhs.children))));
+        return (((((this.fit == rhs.fit) || ((this.fit != null) && this.fit.equals(rhs.fit)))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.alignment == rhs.alignment)
+                        || ((this.alignment != null) && this.alignment.equals(rhs.alignment))))
+                && ((this.children == rhs.children)
+                        || ((this.children != null) && this.children.equals(rhs.children))));
     }
-
 
     /**
      * StackFit
@@ -213,11 +218,12 @@ public class StackSchema {
         LOOSE("loose"),
         @SerializedName("passthrough")
         PASSTHROUGH("passthrough");
+
         private final String value;
         private final static Map<String, StackSchema.StackFitSchema> CONSTANTS = new HashMap<String, StackSchema.StackFitSchema>();
 
         static {
-            for (StackSchema.StackFitSchema c: values()) {
+            for (StackSchema.StackFitSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -246,7 +252,6 @@ public class StackSchema {
 
     }
 
-
     /**
      * The identifier of the component
      * 
@@ -255,11 +260,12 @@ public class StackSchema {
 
         @SerializedName("stack")
         STACK("stack");
+
         private final String value;
         private final static Map<String, StackSchema.Type> CONSTANTS = new HashMap<String, StackSchema.Type>();
 
         static {
-            for (StackSchema.Type c: values()) {
+            for (StackSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

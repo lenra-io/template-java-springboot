@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;

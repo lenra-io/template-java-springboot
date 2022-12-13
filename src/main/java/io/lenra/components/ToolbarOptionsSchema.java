@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * toolbarOptions
@@ -73,17 +72,18 @@ public class ToolbarOptionsSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(ToolbarOptionsSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(ToolbarOptionsSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("decimal");
         sb.append('=');
-        sb.append(((this.decimal == null)?"<null>":this.decimal));
+        sb.append(((this.decimal == null) ? "<null>" : this.decimal));
         sb.append(',');
         sb.append("signed");
         sb.append('=');
-        sb.append(((this.signed == null)?"<null>":this.signed));
+        sb.append(((this.signed == null) ? "<null>" : this.signed));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -93,8 +93,8 @@ public class ToolbarOptionsSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.decimal == null)? 0 :this.decimal.hashCode()));
-        result = ((result* 31)+((this.signed == null)? 0 :this.signed.hashCode()));
+        result = ((result * 31) + ((this.decimal == null) ? 0 : this.decimal.hashCode()));
+        result = ((result * 31) + ((this.signed == null) ? 0 : this.signed.hashCode()));
         return result;
     }
 
@@ -107,7 +107,8 @@ public class ToolbarOptionsSchema {
             return false;
         }
         ToolbarOptionsSchema rhs = ((ToolbarOptionsSchema) other);
-        return (((this.decimal == rhs.decimal)||((this.decimal!= null)&&this.decimal.equals(rhs.decimal)))&&((this.signed == rhs.signed)||((this.signed!= null)&&this.signed.equals(rhs.signed))));
+        return (((this.decimal == rhs.decimal) || ((this.decimal != null) && this.decimal.equals(rhs.decimal)))
+                && ((this.signed == rhs.signed) || ((this.signed != null) && this.signed.equals(rhs.signed))));
     }
 
 }

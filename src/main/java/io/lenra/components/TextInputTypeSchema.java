@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * textInputType
@@ -129,25 +128,26 @@ public class TextInputTypeSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(TextInputTypeSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(TextInputTypeSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("copy");
         sb.append('=');
-        sb.append(((this.copy == null)?"<null>":this.copy));
+        sb.append(((this.copy == null) ? "<null>" : this.copy));
         sb.append(',');
         sb.append("cut");
         sb.append('=');
-        sb.append(((this.cut == null)?"<null>":this.cut));
+        sb.append(((this.cut == null) ? "<null>" : this.cut));
         sb.append(',');
         sb.append("paste");
         sb.append('=');
-        sb.append(((this.paste == null)?"<null>":this.paste));
+        sb.append(((this.paste == null) ? "<null>" : this.paste));
         sb.append(',');
         sb.append("selectAll");
         sb.append('=');
-        sb.append(((this.selectAll == null)?"<null>":this.selectAll));
+        sb.append(((this.selectAll == null) ? "<null>" : this.selectAll));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -157,10 +157,10 @@ public class TextInputTypeSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.selectAll == null)? 0 :this.selectAll.hashCode()));
-        result = ((result* 31)+((this.copy == null)? 0 :this.copy.hashCode()));
-        result = ((result* 31)+((this.cut == null)? 0 :this.cut.hashCode()));
-        result = ((result* 31)+((this.paste == null)? 0 :this.paste.hashCode()));
+        result = ((result * 31) + ((this.selectAll == null) ? 0 : this.selectAll.hashCode()));
+        result = ((result * 31) + ((this.copy == null) ? 0 : this.copy.hashCode()));
+        result = ((result * 31) + ((this.cut == null) ? 0 : this.cut.hashCode()));
+        result = ((result * 31) + ((this.paste == null) ? 0 : this.paste.hashCode()));
         return result;
     }
 
@@ -173,7 +173,11 @@ public class TextInputTypeSchema {
             return false;
         }
         TextInputTypeSchema rhs = ((TextInputTypeSchema) other);
-        return (((((this.selectAll == rhs.selectAll)||((this.selectAll!= null)&&this.selectAll.equals(rhs.selectAll)))&&((this.copy == rhs.copy)||((this.copy!= null)&&this.copy.equals(rhs.copy))))&&((this.cut == rhs.cut)||((this.cut!= null)&&this.cut.equals(rhs.cut))))&&((this.paste == rhs.paste)||((this.paste!= null)&&this.paste.equals(rhs.paste))));
+        return (((((this.selectAll == rhs.selectAll)
+                || ((this.selectAll != null) && this.selectAll.equals(rhs.selectAll)))
+                && ((this.copy == rhs.copy) || ((this.copy != null) && this.copy.equals(rhs.copy))))
+                && ((this.cut == rhs.cut) || ((this.cut != null) && this.cut.equals(rhs.cut))))
+                && ((this.paste == rhs.paste) || ((this.paste != null) && this.paste.equals(rhs.paste))));
     }
 
 }

@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Image
@@ -24,7 +23,8 @@ public class ImageSchema {
     @Expose
     private ImageSchema.Type type;
     /**
-     * The URL to the image. Will fetch the application's image if the URL does not start with `http(s)://`.
+     * The URL to the image. Will fetch the application's image if the URL does not
+     * start with `http(s)://`.
      * (Required)
      * 
      */
@@ -96,14 +96,16 @@ public class ImageSchema {
     @Expose
     private ImageSchema.BoxFitSchema fit = ImageSchema.BoxFitSchema.fromValue("contain");
     /**
-     * A placeholder to display while the image is loading or to add effects to the image.
+     * A placeholder to display while the image is loading or to add effects to the
+     * image.
      * 
      */
     @SerializedName("framePlaceholder")
     @Expose
     private Object framePlaceholder;
     /**
-     * Whether the old image (true) or nothing (false) is shown when the image provider changes.
+     * Whether the old image (true) or nothing (false) is shown when the image
+     * provider changes.
      * 
      */
     @SerializedName("gaplessPlayback")
@@ -133,7 +135,8 @@ public class ImageSchema {
     @Expose
     private ImageSchema.ImageRepeatSchema repeat = ImageSchema.ImageRepeatSchema.fromValue("noRepeat");
     /**
-     * A semantic description of the image. This is used for TalkBack on Android and VoiceOver on IOS.
+     * A semantic description of the image. This is used for TalkBack on Android and
+     * VoiceOver on IOS.
      * 
      */
     @SerializedName("semanticLabel")
@@ -164,7 +167,8 @@ public class ImageSchema {
     }
 
     /**
-     * The URL to the image. Will fetch the application's image if the URL does not start with `http(s)://`.
+     * The URL to the image. Will fetch the application's image if the URL does not
+     * start with `http(s)://`.
      * (Required)
      * 
      */
@@ -173,7 +177,8 @@ public class ImageSchema {
     }
 
     /**
-     * The URL to the image. Will fetch the application's image if the URL does not start with `http(s)://`.
+     * The URL to the image. Will fetch the application's image if the URL does not
+     * start with `http(s)://`.
      * (Required)
      * 
      */
@@ -371,7 +376,8 @@ public class ImageSchema {
     }
 
     /**
-     * A placeholder to display while the image is loading or to add effects to the image.
+     * A placeholder to display while the image is loading or to add effects to the
+     * image.
      * 
      */
     public Object getFramePlaceholder() {
@@ -379,7 +385,8 @@ public class ImageSchema {
     }
 
     /**
-     * A placeholder to display while the image is loading or to add effects to the image.
+     * A placeholder to display while the image is loading or to add effects to the
+     * image.
      * 
      */
     public void setFramePlaceholder(Object framePlaceholder) {
@@ -392,7 +399,8 @@ public class ImageSchema {
     }
 
     /**
-     * Whether the old image (true) or nothing (false) is shown when the image provider changes.
+     * Whether the old image (true) or nothing (false) is shown when the image
+     * provider changes.
      * 
      */
     public Boolean getGaplessPlayback() {
@@ -400,7 +408,8 @@ public class ImageSchema {
     }
 
     /**
-     * Whether the old image (true) or nothing (false) is shown when the image provider changes.
+     * Whether the old image (true) or nothing (false) is shown when the image
+     * provider changes.
      * 
      */
     public void setGaplessPlayback(Boolean gaplessPlayback) {
@@ -480,7 +489,8 @@ public class ImageSchema {
     }
 
     /**
-     * A semantic description of the image. This is used for TalkBack on Android and VoiceOver on IOS.
+     * A semantic description of the image. This is used for TalkBack on Android and
+     * VoiceOver on IOS.
      * 
      */
     public String getSemanticLabel() {
@@ -488,7 +498,8 @@ public class ImageSchema {
     }
 
     /**
-     * A semantic description of the image. This is used for TalkBack on Android and VoiceOver on IOS.
+     * A semantic description of the image. This is used for TalkBack on Android and
+     * VoiceOver on IOS.
      * 
      */
     public void setSemanticLabel(String semanticLabel) {
@@ -503,73 +514,74 @@ public class ImageSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(ImageSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(ImageSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("src");
         sb.append('=');
-        sb.append(((this.src == null)?"<null>":this.src));
+        sb.append(((this.src == null) ? "<null>" : this.src));
         sb.append(',');
         sb.append("width");
         sb.append('=');
-        sb.append(((this.width == null)?"<null>":this.width));
+        sb.append(((this.width == null) ? "<null>" : this.width));
         sb.append(',');
         sb.append("height");
         sb.append('=');
-        sb.append(((this.height == null)?"<null>":this.height));
+        sb.append(((this.height == null) ? "<null>" : this.height));
         sb.append(',');
         sb.append("alignment");
         sb.append('=');
-        sb.append(((this.alignment == null)?"<null>":this.alignment));
+        sb.append(((this.alignment == null) ? "<null>" : this.alignment));
         sb.append(',');
         sb.append("centerSlice");
         sb.append('=');
-        sb.append(((this.centerSlice == null)?"<null>":this.centerSlice));
+        sb.append(((this.centerSlice == null) ? "<null>" : this.centerSlice));
         sb.append(',');
         sb.append("errorPlaceholder");
         sb.append('=');
-        sb.append(((this.errorPlaceholder == null)?"<null>":this.errorPlaceholder));
+        sb.append(((this.errorPlaceholder == null) ? "<null>" : this.errorPlaceholder));
         sb.append(',');
         sb.append("excludeFromSemantics");
         sb.append('=');
-        sb.append(((this.excludeFromSemantics == null)?"<null>":this.excludeFromSemantics));
+        sb.append(((this.excludeFromSemantics == null) ? "<null>" : this.excludeFromSemantics));
         sb.append(',');
         sb.append("filterQuality");
         sb.append('=');
-        sb.append(((this.filterQuality == null)?"<null>":this.filterQuality));
+        sb.append(((this.filterQuality == null) ? "<null>" : this.filterQuality));
         sb.append(',');
         sb.append("fit");
         sb.append('=');
-        sb.append(((this.fit == null)?"<null>":this.fit));
+        sb.append(((this.fit == null) ? "<null>" : this.fit));
         sb.append(',');
         sb.append("framePlaceholder");
         sb.append('=');
-        sb.append(((this.framePlaceholder == null)?"<null>":this.framePlaceholder));
+        sb.append(((this.framePlaceholder == null) ? "<null>" : this.framePlaceholder));
         sb.append(',');
         sb.append("gaplessPlayback");
         sb.append('=');
-        sb.append(((this.gaplessPlayback == null)?"<null>":this.gaplessPlayback));
+        sb.append(((this.gaplessPlayback == null) ? "<null>" : this.gaplessPlayback));
         sb.append(',');
         sb.append("isAntiAlias");
         sb.append('=');
-        sb.append(((this.isAntiAlias == null)?"<null>":this.isAntiAlias));
+        sb.append(((this.isAntiAlias == null) ? "<null>" : this.isAntiAlias));
         sb.append(',');
         sb.append("loadingPlaceholder");
         sb.append('=');
-        sb.append(((this.loadingPlaceholder == null)?"<null>":this.loadingPlaceholder));
+        sb.append(((this.loadingPlaceholder == null) ? "<null>" : this.loadingPlaceholder));
         sb.append(',');
         sb.append("repeat");
         sb.append('=');
-        sb.append(((this.repeat == null)?"<null>":this.repeat));
+        sb.append(((this.repeat == null) ? "<null>" : this.repeat));
         sb.append(',');
         sb.append("semanticLabel");
         sb.append('=');
-        sb.append(((this.semanticLabel == null)?"<null>":this.semanticLabel));
+        sb.append(((this.semanticLabel == null) ? "<null>" : this.semanticLabel));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -579,22 +591,22 @@ public class ImageSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.centerSlice == null)? 0 :this.centerSlice.hashCode()));
-        result = ((result* 31)+((this.gaplessPlayback == null)? 0 :this.gaplessPlayback.hashCode()));
-        result = ((result* 31)+((this.filterQuality == null)? 0 :this.filterQuality.hashCode()));
-        result = ((result* 31)+((this.src == null)? 0 :this.src.hashCode()));
-        result = ((result* 31)+((this.errorPlaceholder == null)? 0 :this.errorPlaceholder.hashCode()));
-        result = ((result* 31)+((this.framePlaceholder == null)? 0 :this.framePlaceholder.hashCode()));
-        result = ((result* 31)+((this.loadingPlaceholder == null)? 0 :this.loadingPlaceholder.hashCode()));
-        result = ((result* 31)+((this.excludeFromSemantics == null)? 0 :this.excludeFromSemantics.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.fit == null)? 0 :this.fit.hashCode()));
-        result = ((result* 31)+((this.isAntiAlias == null)? 0 :this.isAntiAlias.hashCode()));
-        result = ((result* 31)+((this.repeat == null)? 0 :this.repeat.hashCode()));
-        result = ((result* 31)+((this.width == null)? 0 :this.width.hashCode()));
-        result = ((result* 31)+((this.alignment == null)? 0 :this.alignment.hashCode()));
-        result = ((result* 31)+((this.semanticLabel == null)? 0 :this.semanticLabel.hashCode()));
-        result = ((result* 31)+((this.height == null)? 0 :this.height.hashCode()));
+        result = ((result * 31) + ((this.centerSlice == null) ? 0 : this.centerSlice.hashCode()));
+        result = ((result * 31) + ((this.gaplessPlayback == null) ? 0 : this.gaplessPlayback.hashCode()));
+        result = ((result * 31) + ((this.filterQuality == null) ? 0 : this.filterQuality.hashCode()));
+        result = ((result * 31) + ((this.src == null) ? 0 : this.src.hashCode()));
+        result = ((result * 31) + ((this.errorPlaceholder == null) ? 0 : this.errorPlaceholder.hashCode()));
+        result = ((result * 31) + ((this.framePlaceholder == null) ? 0 : this.framePlaceholder.hashCode()));
+        result = ((result * 31) + ((this.loadingPlaceholder == null) ? 0 : this.loadingPlaceholder.hashCode()));
+        result = ((result * 31) + ((this.excludeFromSemantics == null) ? 0 : this.excludeFromSemantics.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.fit == null) ? 0 : this.fit.hashCode()));
+        result = ((result * 31) + ((this.isAntiAlias == null) ? 0 : this.isAntiAlias.hashCode()));
+        result = ((result * 31) + ((this.repeat == null) ? 0 : this.repeat.hashCode()));
+        result = ((result * 31) + ((this.width == null) ? 0 : this.width.hashCode()));
+        result = ((result * 31) + ((this.alignment == null) ? 0 : this.alignment.hashCode()));
+        result = ((result * 31) + ((this.semanticLabel == null) ? 0 : this.semanticLabel.hashCode()));
+        result = ((result * 31) + ((this.height == null) ? 0 : this.height.hashCode()));
         return result;
     }
 
@@ -607,9 +619,33 @@ public class ImageSchema {
             return false;
         }
         ImageSchema rhs = ((ImageSchema) other);
-        return (((((((((((((((((this.centerSlice == rhs.centerSlice)||((this.centerSlice!= null)&&this.centerSlice.equals(rhs.centerSlice)))&&((this.gaplessPlayback == rhs.gaplessPlayback)||((this.gaplessPlayback!= null)&&this.gaplessPlayback.equals(rhs.gaplessPlayback))))&&((this.filterQuality == rhs.filterQuality)||((this.filterQuality!= null)&&this.filterQuality.equals(rhs.filterQuality))))&&((this.src == rhs.src)||((this.src!= null)&&this.src.equals(rhs.src))))&&((this.errorPlaceholder == rhs.errorPlaceholder)||((this.errorPlaceholder!= null)&&this.errorPlaceholder.equals(rhs.errorPlaceholder))))&&((this.framePlaceholder == rhs.framePlaceholder)||((this.framePlaceholder!= null)&&this.framePlaceholder.equals(rhs.framePlaceholder))))&&((this.loadingPlaceholder == rhs.loadingPlaceholder)||((this.loadingPlaceholder!= null)&&this.loadingPlaceholder.equals(rhs.loadingPlaceholder))))&&((this.excludeFromSemantics == rhs.excludeFromSemantics)||((this.excludeFromSemantics!= null)&&this.excludeFromSemantics.equals(rhs.excludeFromSemantics))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.fit == rhs.fit)||((this.fit!= null)&&this.fit.equals(rhs.fit))))&&((this.isAntiAlias == rhs.isAntiAlias)||((this.isAntiAlias!= null)&&this.isAntiAlias.equals(rhs.isAntiAlias))))&&((this.repeat == rhs.repeat)||((this.repeat!= null)&&this.repeat.equals(rhs.repeat))))&&((this.width == rhs.width)||((this.width!= null)&&this.width.equals(rhs.width))))&&((this.alignment == rhs.alignment)||((this.alignment!= null)&&this.alignment.equals(rhs.alignment))))&&((this.semanticLabel == rhs.semanticLabel)||((this.semanticLabel!= null)&&this.semanticLabel.equals(rhs.semanticLabel))))&&((this.height == rhs.height)||((this.height!= null)&&this.height.equals(rhs.height))));
+        return (((((((((((((((((this.centerSlice == rhs.centerSlice)
+                || ((this.centerSlice != null) && this.centerSlice.equals(rhs.centerSlice)))
+                && ((this.gaplessPlayback == rhs.gaplessPlayback)
+                        || ((this.gaplessPlayback != null) && this.gaplessPlayback.equals(rhs.gaplessPlayback))))
+                && ((this.filterQuality == rhs.filterQuality)
+                        || ((this.filterQuality != null) && this.filterQuality.equals(rhs.filterQuality))))
+                && ((this.src == rhs.src) || ((this.src != null) && this.src.equals(rhs.src))))
+                && ((this.errorPlaceholder == rhs.errorPlaceholder)
+                        || ((this.errorPlaceholder != null) && this.errorPlaceholder.equals(rhs.errorPlaceholder))))
+                && ((this.framePlaceholder == rhs.framePlaceholder)
+                        || ((this.framePlaceholder != null) && this.framePlaceholder.equals(rhs.framePlaceholder))))
+                && ((this.loadingPlaceholder == rhs.loadingPlaceholder) || ((this.loadingPlaceholder != null)
+                        && this.loadingPlaceholder.equals(rhs.loadingPlaceholder))))
+                && ((this.excludeFromSemantics == rhs.excludeFromSemantics) || ((this.excludeFromSemantics != null)
+                        && this.excludeFromSemantics.equals(rhs.excludeFromSemantics))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.fit == rhs.fit) || ((this.fit != null) && this.fit.equals(rhs.fit))))
+                && ((this.isAntiAlias == rhs.isAntiAlias)
+                        || ((this.isAntiAlias != null) && this.isAntiAlias.equals(rhs.isAntiAlias))))
+                && ((this.repeat == rhs.repeat) || ((this.repeat != null) && this.repeat.equals(rhs.repeat))))
+                && ((this.width == rhs.width) || ((this.width != null) && this.width.equals(rhs.width))))
+                && ((this.alignment == rhs.alignment)
+                        || ((this.alignment != null) && this.alignment.equals(rhs.alignment))))
+                && ((this.semanticLabel == rhs.semanticLabel)
+                        || ((this.semanticLabel != null) && this.semanticLabel.equals(rhs.semanticLabel))))
+                && ((this.height == rhs.height) || ((this.height != null) && this.height.equals(rhs.height))));
     }
-
 
     /**
      * Alignment
@@ -637,11 +673,12 @@ public class ImageSchema {
         TOP_LEFT("topLeft"),
         @SerializedName("topRight")
         TOP_RIGHT("topRight");
+
         private final String value;
         private final static Map<String, ImageSchema.AlignmentSchema> CONSTANTS = new HashMap<String, ImageSchema.AlignmentSchema>();
 
         static {
-            for (ImageSchema.AlignmentSchema c: values()) {
+            for (ImageSchema.AlignmentSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -670,7 +707,6 @@ public class ImageSchema {
 
     }
 
-
     /**
      * Box Fit
      * <p>
@@ -693,11 +729,12 @@ public class ImageSchema {
         NONE("none"),
         @SerializedName("scaleDown")
         SCALE_DOWN("scaleDown");
+
         private final String value;
         private final static Map<String, ImageSchema.BoxFitSchema> CONSTANTS = new HashMap<String, ImageSchema.BoxFitSchema>();
 
         static {
-            for (ImageSchema.BoxFitSchema c: values()) {
+            for (ImageSchema.BoxFitSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -726,7 +763,6 @@ public class ImageSchema {
 
     }
 
-
     /**
      * Filter Quality
      * <p>
@@ -743,11 +779,12 @@ public class ImageSchema {
         LOW("low"),
         @SerializedName("none")
         NONE("none");
+
         private final String value;
         private final static Map<String, ImageSchema.FilterQualitySchema> CONSTANTS = new HashMap<String, ImageSchema.FilterQualitySchema>();
 
         static {
-            for (ImageSchema.FilterQualitySchema c: values()) {
+            for (ImageSchema.FilterQualitySchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -776,7 +813,6 @@ public class ImageSchema {
 
     }
 
-
     /**
      * Image Repeat
      * <p>
@@ -793,11 +829,12 @@ public class ImageSchema {
         REPEAT_X("repeatX"),
         @SerializedName("repeatY")
         REPEAT_Y("repeatY");
+
         private final String value;
         private final static Map<String, ImageSchema.ImageRepeatSchema> CONSTANTS = new HashMap<String, ImageSchema.ImageRepeatSchema>();
 
         static {
-            for (ImageSchema.ImageRepeatSchema c: values()) {
+            for (ImageSchema.ImageRepeatSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -826,7 +863,6 @@ public class ImageSchema {
 
     }
 
-
     /**
      * The type of the element
      * 
@@ -835,11 +871,12 @@ public class ImageSchema {
 
         @SerializedName("image")
         IMAGE("image");
+
         private final String value;
         private final static Map<String, ImageSchema.Type> CONSTANTS = new HashMap<String, ImageSchema.Type>();
 
         static {
-            for (ImageSchema.Type c: values()) {
+            for (ImageSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

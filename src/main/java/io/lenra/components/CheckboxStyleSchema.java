@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * CheckboxStyle
@@ -66,7 +65,8 @@ public class CheckboxStyleSchema {
      */
     @SerializedName("visualDensity")
     @Expose
-    private CheckboxStyleSchema.VisualDensitySchema visualDensity = CheckboxStyleSchema.VisualDensitySchema.fromValue("standard");
+    private CheckboxStyleSchema.VisualDensitySchema visualDensity = CheckboxStyleSchema.VisualDensitySchema
+            .fromValue("standard");
     /**
      * OutlinedBorder
      * <p>
@@ -285,41 +285,42 @@ public class CheckboxStyleSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(CheckboxStyleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(CheckboxStyleSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("activeColor");
         sb.append('=');
-        sb.append(((this.activeColor == null)?"<null>":this.activeColor));
+        sb.append(((this.activeColor == null) ? "<null>" : this.activeColor));
         sb.append(',');
         sb.append("checkColor");
         sb.append('=');
-        sb.append(((this.checkColor == null)?"<null>":this.checkColor));
+        sb.append(((this.checkColor == null) ? "<null>" : this.checkColor));
         sb.append(',');
         sb.append("focusColor");
         sb.append('=');
-        sb.append(((this.focusColor == null)?"<null>":this.focusColor));
+        sb.append(((this.focusColor == null) ? "<null>" : this.focusColor));
         sb.append(',');
         sb.append("hoverColor");
         sb.append('=');
-        sb.append(((this.hoverColor == null)?"<null>":this.hoverColor));
+        sb.append(((this.hoverColor == null) ? "<null>" : this.hoverColor));
         sb.append(',');
         sb.append("splashRadius");
         sb.append('=');
-        sb.append(((this.splashRadius == null)?"<null>":this.splashRadius));
+        sb.append(((this.splashRadius == null) ? "<null>" : this.splashRadius));
         sb.append(',');
         sb.append("visualDensity");
         sb.append('=');
-        sb.append(((this.visualDensity == null)?"<null>":this.visualDensity));
+        sb.append(((this.visualDensity == null) ? "<null>" : this.visualDensity));
         sb.append(',');
         sb.append("shape");
         sb.append('=');
-        sb.append(((this.shape == null)?"<null>":this.shape));
+        sb.append(((this.shape == null) ? "<null>" : this.shape));
         sb.append(',');
         sb.append("side");
         sb.append('=');
-        sb.append(((this.side == null)?"<null>":this.side));
+        sb.append(((this.side == null) ? "<null>" : this.side));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -329,14 +330,14 @@ public class CheckboxStyleSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.side == null)? 0 :this.side.hashCode()));
-        result = ((result* 31)+((this.activeColor == null)? 0 :this.activeColor.hashCode()));
-        result = ((result* 31)+((this.shape == null)? 0 :this.shape.hashCode()));
-        result = ((result* 31)+((this.checkColor == null)? 0 :this.checkColor.hashCode()));
-        result = ((result* 31)+((this.focusColor == null)? 0 :this.focusColor.hashCode()));
-        result = ((result* 31)+((this.visualDensity == null)? 0 :this.visualDensity.hashCode()));
-        result = ((result* 31)+((this.hoverColor == null)? 0 :this.hoverColor.hashCode()));
-        result = ((result* 31)+((this.splashRadius == null)? 0 :this.splashRadius.hashCode()));
+        result = ((result * 31) + ((this.side == null) ? 0 : this.side.hashCode()));
+        result = ((result * 31) + ((this.activeColor == null) ? 0 : this.activeColor.hashCode()));
+        result = ((result * 31) + ((this.shape == null) ? 0 : this.shape.hashCode()));
+        result = ((result * 31) + ((this.checkColor == null) ? 0 : this.checkColor.hashCode()));
+        result = ((result * 31) + ((this.focusColor == null) ? 0 : this.focusColor.hashCode()));
+        result = ((result * 31) + ((this.visualDensity == null) ? 0 : this.visualDensity.hashCode()));
+        result = ((result * 31) + ((this.hoverColor == null) ? 0 : this.hoverColor.hashCode()));
+        result = ((result * 31) + ((this.splashRadius == null) ? 0 : this.splashRadius.hashCode()));
         return result;
     }
 
@@ -349,9 +350,21 @@ public class CheckboxStyleSchema {
             return false;
         }
         CheckboxStyleSchema rhs = ((CheckboxStyleSchema) other);
-        return (((((((((this.side == rhs.side)||((this.side!= null)&&this.side.equals(rhs.side)))&&((this.activeColor == rhs.activeColor)||((this.activeColor!= null)&&this.activeColor.equals(rhs.activeColor))))&&((this.shape == rhs.shape)||((this.shape!= null)&&this.shape.equals(rhs.shape))))&&((this.checkColor == rhs.checkColor)||((this.checkColor!= null)&&this.checkColor.equals(rhs.checkColor))))&&((this.focusColor == rhs.focusColor)||((this.focusColor!= null)&&this.focusColor.equals(rhs.focusColor))))&&((this.visualDensity == rhs.visualDensity)||((this.visualDensity!= null)&&this.visualDensity.equals(rhs.visualDensity))))&&((this.hoverColor == rhs.hoverColor)||((this.hoverColor!= null)&&this.hoverColor.equals(rhs.hoverColor))))&&((this.splashRadius == rhs.splashRadius)||((this.splashRadius!= null)&&this.splashRadius.equals(rhs.splashRadius))));
+        return (((((((((this.side == rhs.side) || ((this.side != null) && this.side.equals(rhs.side)))
+                && ((this.activeColor == rhs.activeColor)
+                        || ((this.activeColor != null) && this.activeColor.equals(rhs.activeColor))))
+                && ((this.shape == rhs.shape) || ((this.shape != null) && this.shape.equals(rhs.shape))))
+                && ((this.checkColor == rhs.checkColor)
+                        || ((this.checkColor != null) && this.checkColor.equals(rhs.checkColor))))
+                && ((this.focusColor == rhs.focusColor)
+                        || ((this.focusColor != null) && this.focusColor.equals(rhs.focusColor))))
+                && ((this.visualDensity == rhs.visualDensity)
+                        || ((this.visualDensity != null) && this.visualDensity.equals(rhs.visualDensity))))
+                && ((this.hoverColor == rhs.hoverColor)
+                        || ((this.hoverColor != null) && this.hoverColor.equals(rhs.hoverColor))))
+                && ((this.splashRadius == rhs.splashRadius)
+                        || ((this.splashRadius != null) && this.splashRadius.equals(rhs.splashRadius))));
     }
-
 
     /**
      * VisualDensity
@@ -367,11 +380,12 @@ public class CheckboxStyleSchema {
         COMPACT("compact"),
         @SerializedName("standard")
         STANDARD("standard");
+
         private final String value;
         private final static Map<String, CheckboxStyleSchema.VisualDensitySchema> CONSTANTS = new HashMap<String, CheckboxStyleSchema.VisualDensitySchema>();
 
         static {
-            for (CheckboxStyleSchema.VisualDensitySchema c: values()) {
+            for (CheckboxStyleSchema.VisualDensitySchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

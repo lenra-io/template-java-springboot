@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Wrap
@@ -41,7 +40,8 @@ public class WrapSchema {
      */
     @SerializedName("direction")
     @Expose
-    private lenra.components.FlexSchema.DirectionSchema direction = lenra.components.FlexSchema.DirectionSchema.fromValue("horizontal");
+    private io.lenra.components.FlexSchema.DirectionSchema direction = io.lenra.components.FlexSchema.DirectionSchema
+            .fromValue("horizontal");
     /**
      * Wrap CrossAlignment
      * <p>
@@ -50,7 +50,8 @@ public class WrapSchema {
      */
     @SerializedName("crossAxisAlignment")
     @Expose
-    private WrapSchema.WrapCrossAlignmentSchema crossAxisAlignment = WrapSchema.WrapCrossAlignmentSchema.fromValue("start");
+    private WrapSchema.WrapCrossAlignmentSchema crossAxisAlignment = WrapSchema.WrapCrossAlignmentSchema
+            .fromValue("start");
     /**
      * The spacing between each child of the wrap.
      * 
@@ -86,12 +87,14 @@ public class WrapSchema {
     /**
      * Text Direction
      * <p>
-     * In which direction the elements should be placed following the horizontal axis.
+     * In which direction the elements should be placed following the horizontal
+     * axis.
      * 
      */
     @SerializedName("horizontalDirection")
     @Expose
-    private lenra.components.FlexSchema.TextDirectionSchema horizontalDirection = lenra.components.FlexSchema.TextDirectionSchema.fromValue("ltr");
+    private io.lenra.components.FlexSchema.TextDirectionSchema horizontalDirection = io.lenra.components.FlexSchema.TextDirectionSchema
+            .fromValue("ltr");
     /**
      * Vertical Direction
      * <p>
@@ -100,7 +103,8 @@ public class WrapSchema {
      */
     @SerializedName("verticalDirection")
     @Expose
-    private lenra.components.FlexSchema.VerticalDirectionSchema verticalDirection = lenra.components.FlexSchema.VerticalDirectionSchema.fromValue("down");
+    private io.lenra.components.FlexSchema.VerticalDirectionSchema verticalDirection = io.lenra.components.FlexSchema.VerticalDirectionSchema
+            .fromValue("down");
 
     /**
      * The identifier of the component
@@ -154,7 +158,7 @@ public class WrapSchema {
      * The direction of the component (horizontal/vertical)
      * 
      */
-    public lenra.components.FlexSchema.DirectionSchema getDirection() {
+    public io.lenra.components.FlexSchema.DirectionSchema getDirection() {
         return direction;
     }
 
@@ -164,11 +168,11 @@ public class WrapSchema {
      * The direction of the component (horizontal/vertical)
      * 
      */
-    public void setDirection(lenra.components.FlexSchema.DirectionSchema direction) {
+    public void setDirection(io.lenra.components.FlexSchema.DirectionSchema direction) {
         this.direction = direction;
     }
 
-    public WrapSchema withDirection(lenra.components.FlexSchema.DirectionSchema direction) {
+    public WrapSchema withDirection(io.lenra.components.FlexSchema.DirectionSchema direction) {
         this.direction = direction;
         return this;
     }
@@ -293,24 +297,26 @@ public class WrapSchema {
     /**
      * Text Direction
      * <p>
-     * In which direction the elements should be placed following the horizontal axis.
+     * In which direction the elements should be placed following the horizontal
+     * axis.
      * 
      */
-    public lenra.components.FlexSchema.TextDirectionSchema getHorizontalDirection() {
+    public io.lenra.components.FlexSchema.TextDirectionSchema getHorizontalDirection() {
         return horizontalDirection;
     }
 
     /**
      * Text Direction
      * <p>
-     * In which direction the elements should be placed following the horizontal axis.
+     * In which direction the elements should be placed following the horizontal
+     * axis.
      * 
      */
-    public void setHorizontalDirection(lenra.components.FlexSchema.TextDirectionSchema horizontalDirection) {
+    public void setHorizontalDirection(io.lenra.components.FlexSchema.TextDirectionSchema horizontalDirection) {
         this.horizontalDirection = horizontalDirection;
     }
 
-    public WrapSchema withHorizontalDirection(lenra.components.FlexSchema.TextDirectionSchema horizontalDirection) {
+    public WrapSchema withHorizontalDirection(io.lenra.components.FlexSchema.TextDirectionSchema horizontalDirection) {
         this.horizontalDirection = horizontalDirection;
         return this;
     }
@@ -321,7 +327,7 @@ public class WrapSchema {
      * How the objects should be aligned following the vertical axis.
      * 
      */
-    public lenra.components.FlexSchema.VerticalDirectionSchema getVerticalDirection() {
+    public io.lenra.components.FlexSchema.VerticalDirectionSchema getVerticalDirection() {
         return verticalDirection;
     }
 
@@ -331,11 +337,11 @@ public class WrapSchema {
      * How the objects should be aligned following the vertical axis.
      * 
      */
-    public void setVerticalDirection(lenra.components.FlexSchema.VerticalDirectionSchema verticalDirection) {
+    public void setVerticalDirection(io.lenra.components.FlexSchema.VerticalDirectionSchema verticalDirection) {
         this.verticalDirection = verticalDirection;
     }
 
-    public WrapSchema withVerticalDirection(lenra.components.FlexSchema.VerticalDirectionSchema verticalDirection) {
+    public WrapSchema withVerticalDirection(io.lenra.components.FlexSchema.VerticalDirectionSchema verticalDirection) {
         this.verticalDirection = verticalDirection;
         return this;
     }
@@ -343,49 +349,50 @@ public class WrapSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(WrapSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(WrapSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("children");
         sb.append('=');
-        sb.append(((this.children == null)?"<null>":this.children));
+        sb.append(((this.children == null) ? "<null>" : this.children));
         sb.append(',');
         sb.append("direction");
         sb.append('=');
-        sb.append(((this.direction == null)?"<null>":this.direction));
+        sb.append(((this.direction == null) ? "<null>" : this.direction));
         sb.append(',');
         sb.append("crossAxisAlignment");
         sb.append('=');
-        sb.append(((this.crossAxisAlignment == null)?"<null>":this.crossAxisAlignment));
+        sb.append(((this.crossAxisAlignment == null) ? "<null>" : this.crossAxisAlignment));
         sb.append(',');
         sb.append("spacing");
         sb.append('=');
-        sb.append(((this.spacing == null)?"<null>":this.spacing));
+        sb.append(((this.spacing == null) ? "<null>" : this.spacing));
         sb.append(',');
         sb.append("runSpacing");
         sb.append('=');
-        sb.append(((this.runSpacing == null)?"<null>":this.runSpacing));
+        sb.append(((this.runSpacing == null) ? "<null>" : this.runSpacing));
         sb.append(',');
         sb.append("alignment");
         sb.append('=');
-        sb.append(((this.alignment == null)?"<null>":this.alignment));
+        sb.append(((this.alignment == null) ? "<null>" : this.alignment));
         sb.append(',');
         sb.append("runAlignment");
         sb.append('=');
-        sb.append(((this.runAlignment == null)?"<null>":this.runAlignment));
+        sb.append(((this.runAlignment == null) ? "<null>" : this.runAlignment));
         sb.append(',');
         sb.append("horizontalDirection");
         sb.append('=');
-        sb.append(((this.horizontalDirection == null)?"<null>":this.horizontalDirection));
+        sb.append(((this.horizontalDirection == null) ? "<null>" : this.horizontalDirection));
         sb.append(',');
         sb.append("verticalDirection");
         sb.append('=');
-        sb.append(((this.verticalDirection == null)?"<null>":this.verticalDirection));
+        sb.append(((this.verticalDirection == null) ? "<null>" : this.verticalDirection));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -395,16 +402,16 @@ public class WrapSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.spacing == null)? 0 :this.spacing.hashCode()));
-        result = ((result* 31)+((this.children == null)? 0 :this.children.hashCode()));
-        result = ((result* 31)+((this.crossAxisAlignment == null)? 0 :this.crossAxisAlignment.hashCode()));
-        result = ((result* 31)+((this.horizontalDirection == null)? 0 :this.horizontalDirection.hashCode()));
-        result = ((result* 31)+((this.runAlignment == null)? 0 :this.runAlignment.hashCode()));
-        result = ((result* 31)+((this.verticalDirection == null)? 0 :this.verticalDirection.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.alignment == null)? 0 :this.alignment.hashCode()));
-        result = ((result* 31)+((this.runSpacing == null)? 0 :this.runSpacing.hashCode()));
-        result = ((result* 31)+((this.direction == null)? 0 :this.direction.hashCode()));
+        result = ((result * 31) + ((this.spacing == null) ? 0 : this.spacing.hashCode()));
+        result = ((result * 31) + ((this.children == null) ? 0 : this.children.hashCode()));
+        result = ((result * 31) + ((this.crossAxisAlignment == null) ? 0 : this.crossAxisAlignment.hashCode()));
+        result = ((result * 31) + ((this.horizontalDirection == null) ? 0 : this.horizontalDirection.hashCode()));
+        result = ((result * 31) + ((this.runAlignment == null) ? 0 : this.runAlignment.hashCode()));
+        result = ((result * 31) + ((this.verticalDirection == null) ? 0 : this.verticalDirection.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.alignment == null) ? 0 : this.alignment.hashCode()));
+        result = ((result * 31) + ((this.runSpacing == null) ? 0 : this.runSpacing.hashCode()));
+        result = ((result * 31) + ((this.direction == null) ? 0 : this.direction.hashCode()));
         return result;
     }
 
@@ -417,9 +424,24 @@ public class WrapSchema {
             return false;
         }
         WrapSchema rhs = ((WrapSchema) other);
-        return (((((((((((this.spacing == rhs.spacing)||((this.spacing!= null)&&this.spacing.equals(rhs.spacing)))&&((this.children == rhs.children)||((this.children!= null)&&this.children.equals(rhs.children))))&&((this.crossAxisAlignment == rhs.crossAxisAlignment)||((this.crossAxisAlignment!= null)&&this.crossAxisAlignment.equals(rhs.crossAxisAlignment))))&&((this.horizontalDirection == rhs.horizontalDirection)||((this.horizontalDirection!= null)&&this.horizontalDirection.equals(rhs.horizontalDirection))))&&((this.runAlignment == rhs.runAlignment)||((this.runAlignment!= null)&&this.runAlignment.equals(rhs.runAlignment))))&&((this.verticalDirection == rhs.verticalDirection)||((this.verticalDirection!= null)&&this.verticalDirection.equals(rhs.verticalDirection))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.alignment == rhs.alignment)||((this.alignment!= null)&&this.alignment.equals(rhs.alignment))))&&((this.runSpacing == rhs.runSpacing)||((this.runSpacing!= null)&&this.runSpacing.equals(rhs.runSpacing))))&&((this.direction == rhs.direction)||((this.direction!= null)&&this.direction.equals(rhs.direction))));
+        return (((((((((((this.spacing == rhs.spacing) || ((this.spacing != null) && this.spacing.equals(rhs.spacing)))
+                && ((this.children == rhs.children) || ((this.children != null) && this.children.equals(rhs.children))))
+                && ((this.crossAxisAlignment == rhs.crossAxisAlignment) || ((this.crossAxisAlignment != null)
+                        && this.crossAxisAlignment.equals(rhs.crossAxisAlignment))))
+                && ((this.horizontalDirection == rhs.horizontalDirection) || ((this.horizontalDirection != null)
+                        && this.horizontalDirection.equals(rhs.horizontalDirection))))
+                && ((this.runAlignment == rhs.runAlignment)
+                        || ((this.runAlignment != null) && this.runAlignment.equals(rhs.runAlignment))))
+                && ((this.verticalDirection == rhs.verticalDirection)
+                        || ((this.verticalDirection != null) && this.verticalDirection.equals(rhs.verticalDirection))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.alignment == rhs.alignment)
+                        || ((this.alignment != null) && this.alignment.equals(rhs.alignment))))
+                && ((this.runSpacing == rhs.runSpacing)
+                        || ((this.runSpacing != null) && this.runSpacing.equals(rhs.runSpacing))))
+                && ((this.direction == rhs.direction)
+                        || ((this.direction != null) && this.direction.equals(rhs.direction))));
     }
-
 
     /**
      * The identifier of the component
@@ -429,11 +451,12 @@ public class WrapSchema {
 
         @SerializedName("wrap")
         WRAP("wrap");
+
         private final String value;
         private final static Map<String, WrapSchema.Type> CONSTANTS = new HashMap<String, WrapSchema.Type>();
 
         static {
-            for (WrapSchema.Type c: values()) {
+            for (WrapSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -462,7 +485,6 @@ public class WrapSchema {
 
     }
 
-
     /**
      * Wrap Alignment
      * <p>
@@ -483,11 +505,12 @@ public class WrapSchema {
         SPACE_AROUND("spaceAround"),
         @SerializedName("spaceEvenly")
         SPACE_EVENLY("spaceEvenly");
+
         private final String value;
         private final static Map<String, WrapSchema.WrapAlignmentSchema> CONSTANTS = new HashMap<String, WrapSchema.WrapAlignmentSchema>();
 
         static {
-            for (WrapSchema.WrapAlignmentSchema c: values()) {
+            for (WrapSchema.WrapAlignmentSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -516,7 +539,6 @@ public class WrapSchema {
 
     }
 
-
     /**
      * Wrap CrossAlignment
      * <p>
@@ -531,11 +553,12 @@ public class WrapSchema {
         END("end"),
         @SerializedName("center")
         CENTER("center");
+
         private final String value;
         private final static Map<String, WrapSchema.WrapCrossAlignmentSchema> CONSTANTS = new HashMap<String, WrapSchema.WrapCrossAlignmentSchema>();
 
         static {
-            for (WrapSchema.WrapCrossAlignmentSchema c: values()) {
+            for (WrapSchema.WrapCrossAlignmentSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

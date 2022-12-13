@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 /**
  * The query to apply to the data.

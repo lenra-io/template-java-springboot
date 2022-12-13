@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * OutlinedBorder
@@ -51,13 +50,14 @@ public class OutlinedBorderSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(OutlinedBorderSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(OutlinedBorderSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("side");
         sb.append('=');
-        sb.append(((this.side == null)?"<null>":this.side));
+        sb.append(((this.side == null) ? "<null>" : this.side));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -67,7 +67,7 @@ public class OutlinedBorderSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.side == null)? 0 :this.side.hashCode()));
+        result = ((result * 31) + ((this.side == null) ? 0 : this.side.hashCode()));
         return result;
     }
 
@@ -80,7 +80,7 @@ public class OutlinedBorderSchema {
             return false;
         }
         OutlinedBorderSchema rhs = ((OutlinedBorderSchema) other);
-        return ((this.side == rhs.side)||((this.side!= null)&&this.side.equals(rhs.side)));
+        return ((this.side == rhs.side) || ((this.side != null) && this.side.equals(rhs.side)));
     }
 
 }

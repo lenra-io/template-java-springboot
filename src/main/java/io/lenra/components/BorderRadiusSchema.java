@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * BorderRadius
@@ -81,25 +80,26 @@ public class BorderRadiusSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(BorderRadiusSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(BorderRadiusSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("topLeft");
         sb.append('=');
-        sb.append(((this.topLeft == null)?"<null>":this.topLeft));
+        sb.append(((this.topLeft == null) ? "<null>" : this.topLeft));
         sb.append(',');
         sb.append("topRight");
         sb.append('=');
-        sb.append(((this.topRight == null)?"<null>":this.topRight));
+        sb.append(((this.topRight == null) ? "<null>" : this.topRight));
         sb.append(',');
         sb.append("bottomLeft");
         sb.append('=');
-        sb.append(((this.bottomLeft == null)?"<null>":this.bottomLeft));
+        sb.append(((this.bottomLeft == null) ? "<null>" : this.bottomLeft));
         sb.append(',');
         sb.append("bottomRight");
         sb.append('=');
-        sb.append(((this.bottomRight == null)?"<null>":this.bottomRight));
+        sb.append(((this.bottomRight == null) ? "<null>" : this.bottomRight));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -109,10 +109,10 @@ public class BorderRadiusSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.topRight == null)? 0 :this.topRight.hashCode()));
-        result = ((result* 31)+((this.bottomLeft == null)? 0 :this.bottomLeft.hashCode()));
-        result = ((result* 31)+((this.bottomRight == null)? 0 :this.bottomRight.hashCode()));
-        result = ((result* 31)+((this.topLeft == null)? 0 :this.topLeft.hashCode()));
+        result = ((result * 31) + ((this.topRight == null) ? 0 : this.topRight.hashCode()));
+        result = ((result * 31) + ((this.bottomLeft == null) ? 0 : this.bottomLeft.hashCode()));
+        result = ((result * 31) + ((this.bottomRight == null) ? 0 : this.bottomRight.hashCode()));
+        result = ((result * 31) + ((this.topLeft == null) ? 0 : this.topLeft.hashCode()));
         return result;
     }
 
@@ -125,7 +125,12 @@ public class BorderRadiusSchema {
             return false;
         }
         BorderRadiusSchema rhs = ((BorderRadiusSchema) other);
-        return (((((this.topRight == rhs.topRight)||((this.topRight!= null)&&this.topRight.equals(rhs.topRight)))&&((this.bottomLeft == rhs.bottomLeft)||((this.bottomLeft!= null)&&this.bottomLeft.equals(rhs.bottomLeft))))&&((this.bottomRight == rhs.bottomRight)||((this.bottomRight!= null)&&this.bottomRight.equals(rhs.bottomRight))))&&((this.topLeft == rhs.topLeft)||((this.topLeft!= null)&&this.topLeft.equals(rhs.topLeft))));
+        return (((((this.topRight == rhs.topRight) || ((this.topRight != null) && this.topRight.equals(rhs.topRight)))
+                && ((this.bottomLeft == rhs.bottomLeft)
+                        || ((this.bottomLeft != null) && this.bottomLeft.equals(rhs.bottomLeft))))
+                && ((this.bottomRight == rhs.bottomRight)
+                        || ((this.bottomRight != null) && this.bottomRight.equals(rhs.bottomRight))))
+                && ((this.topLeft == rhs.topLeft) || ((this.topLeft != null) && this.topLeft.equals(rhs.topLeft))));
     }
 
 }

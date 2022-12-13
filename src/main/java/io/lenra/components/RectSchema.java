@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Rect
@@ -129,25 +128,26 @@ public class RectSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(RectSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(RectSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("left");
         sb.append('=');
-        sb.append(((this.left == null)?"<null>":this.left));
+        sb.append(((this.left == null) ? "<null>" : this.left));
         sb.append(',');
         sb.append("top");
         sb.append('=');
-        sb.append(((this.top == null)?"<null>":this.top));
+        sb.append(((this.top == null) ? "<null>" : this.top));
         sb.append(',');
         sb.append("width");
         sb.append('=');
-        sb.append(((this.width == null)?"<null>":this.width));
+        sb.append(((this.width == null) ? "<null>" : this.width));
         sb.append(',');
         sb.append("height");
         sb.append('=');
-        sb.append(((this.height == null)?"<null>":this.height));
+        sb.append(((this.height == null) ? "<null>" : this.height));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -157,10 +157,10 @@ public class RectSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.width == null)? 0 :this.width.hashCode()));
-        result = ((result* 31)+((this.top == null)? 0 :this.top.hashCode()));
-        result = ((result* 31)+((this.left == null)? 0 :this.left.hashCode()));
-        result = ((result* 31)+((this.height == null)? 0 :this.height.hashCode()));
+        result = ((result * 31) + ((this.width == null) ? 0 : this.width.hashCode()));
+        result = ((result * 31) + ((this.top == null) ? 0 : this.top.hashCode()));
+        result = ((result * 31) + ((this.left == null) ? 0 : this.left.hashCode()));
+        result = ((result * 31) + ((this.height == null) ? 0 : this.height.hashCode()));
         return result;
     }
 
@@ -173,7 +173,10 @@ public class RectSchema {
             return false;
         }
         RectSchema rhs = ((RectSchema) other);
-        return (((((this.width == rhs.width)||((this.width!= null)&&this.width.equals(rhs.width)))&&((this.top == rhs.top)||((this.top!= null)&&this.top.equals(rhs.top))))&&((this.left == rhs.left)||((this.left!= null)&&this.left.equals(rhs.left))))&&((this.height == rhs.height)||((this.height!= null)&&this.height.equals(rhs.height))));
+        return (((((this.width == rhs.width) || ((this.width != null) && this.width.equals(rhs.width)))
+                && ((this.top == rhs.top) || ((this.top != null) && this.top.equals(rhs.top))))
+                && ((this.left == rhs.left) || ((this.left != null) && this.left.equals(rhs.left))))
+                && ((this.height == rhs.height) || ((this.height != null) && this.height.equals(rhs.height))));
     }
 
 }

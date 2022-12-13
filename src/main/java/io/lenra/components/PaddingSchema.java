@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Padding
@@ -81,25 +80,26 @@ public class PaddingSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(PaddingSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(PaddingSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("top");
         sb.append('=');
-        sb.append(((this.top == null)?"<null>":this.top));
+        sb.append(((this.top == null) ? "<null>" : this.top));
         sb.append(',');
         sb.append("left");
         sb.append('=');
-        sb.append(((this.left == null)?"<null>":this.left));
+        sb.append(((this.left == null) ? "<null>" : this.left));
         sb.append(',');
         sb.append("bottom");
         sb.append('=');
-        sb.append(((this.bottom == null)?"<null>":this.bottom));
+        sb.append(((this.bottom == null) ? "<null>" : this.bottom));
         sb.append(',');
         sb.append("right");
         sb.append('=');
-        sb.append(((this.right == null)?"<null>":this.right));
+        sb.append(((this.right == null) ? "<null>" : this.right));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -109,10 +109,10 @@ public class PaddingSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.right == null)? 0 :this.right.hashCode()));
-        result = ((result* 31)+((this.top == null)? 0 :this.top.hashCode()));
-        result = ((result* 31)+((this.left == null)? 0 :this.left.hashCode()));
-        result = ((result* 31)+((this.bottom == null)? 0 :this.bottom.hashCode()));
+        result = ((result * 31) + ((this.right == null) ? 0 : this.right.hashCode()));
+        result = ((result * 31) + ((this.top == null) ? 0 : this.top.hashCode()));
+        result = ((result * 31) + ((this.left == null) ? 0 : this.left.hashCode()));
+        result = ((result * 31) + ((this.bottom == null) ? 0 : this.bottom.hashCode()));
         return result;
     }
 
@@ -125,7 +125,10 @@ public class PaddingSchema {
             return false;
         }
         PaddingSchema rhs = ((PaddingSchema) other);
-        return (((((this.right == rhs.right)||((this.right!= null)&&this.right.equals(rhs.right)))&&((this.top == rhs.top)||((this.top!= null)&&this.top.equals(rhs.top))))&&((this.left == rhs.left)||((this.left!= null)&&this.left.equals(rhs.left))))&&((this.bottom == rhs.bottom)||((this.bottom!= null)&&this.bottom.equals(rhs.bottom))));
+        return (((((this.right == rhs.right) || ((this.right != null) && this.right.equals(rhs.right)))
+                && ((this.top == rhs.top) || ((this.top != null) && this.top.equals(rhs.top))))
+                && ((this.left == rhs.left) || ((this.left != null) && this.left.equals(rhs.left))))
+                && ((this.bottom == rhs.bottom) || ((this.bottom != null) && this.bottom.equals(rhs.bottom))));
     }
 
 }

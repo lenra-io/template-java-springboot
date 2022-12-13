@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * ToggleStyle
@@ -307,45 +306,46 @@ public class ToggleStyleSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(ToggleStyleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(ToggleStyleSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("activeColor");
         sb.append('=');
-        sb.append(((this.activeColor == null)?"<null>":this.activeColor));
+        sb.append(((this.activeColor == null) ? "<null>" : this.activeColor));
         sb.append(',');
         sb.append("activeTrackColor");
         sb.append('=');
-        sb.append(((this.activeTrackColor == null)?"<null>":this.activeTrackColor));
+        sb.append(((this.activeTrackColor == null) ? "<null>" : this.activeTrackColor));
         sb.append(',');
         sb.append("inactiveTrackColor");
         sb.append('=');
-        sb.append(((this.inactiveTrackColor == null)?"<null>":this.inactiveTrackColor));
+        sb.append(((this.inactiveTrackColor == null) ? "<null>" : this.inactiveTrackColor));
         sb.append(',');
         sb.append("inactiveThumbColor");
         sb.append('=');
-        sb.append(((this.inactiveThumbColor == null)?"<null>":this.inactiveThumbColor));
+        sb.append(((this.inactiveThumbColor == null) ? "<null>" : this.inactiveThumbColor));
         sb.append(',');
         sb.append("hoverColor");
         sb.append('=');
-        sb.append(((this.hoverColor == null)?"<null>":this.hoverColor));
+        sb.append(((this.hoverColor == null) ? "<null>" : this.hoverColor));
         sb.append(',');
         sb.append("focusColor");
         sb.append('=');
-        sb.append(((this.focusColor == null)?"<null>":this.focusColor));
+        sb.append(((this.focusColor == null) ? "<null>" : this.focusColor));
         sb.append(',');
         sb.append("activeThumbImage");
         sb.append('=');
-        sb.append(((this.activeThumbImage == null)?"<null>":this.activeThumbImage));
+        sb.append(((this.activeThumbImage == null) ? "<null>" : this.activeThumbImage));
         sb.append(',');
         sb.append("inactiveThumbImage");
         sb.append('=');
-        sb.append(((this.inactiveThumbImage == null)?"<null>":this.inactiveThumbImage));
+        sb.append(((this.inactiveThumbImage == null) ? "<null>" : this.inactiveThumbImage));
         sb.append(',');
         sb.append("materialTapTargetSize");
         sb.append('=');
-        sb.append(((this.materialTapTargetSize == null)?"<null>":this.materialTapTargetSize));
+        sb.append(((this.materialTapTargetSize == null) ? "<null>" : this.materialTapTargetSize));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -355,15 +355,15 @@ public class ToggleStyleSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.activeColor == null)? 0 :this.activeColor.hashCode()));
-        result = ((result* 31)+((this.focusColor == null)? 0 :this.focusColor.hashCode()));
-        result = ((result* 31)+((this.inactiveThumbImage == null)? 0 :this.inactiveThumbImage.hashCode()));
-        result = ((result* 31)+((this.inactiveTrackColor == null)? 0 :this.inactiveTrackColor.hashCode()));
-        result = ((result* 31)+((this.hoverColor == null)? 0 :this.hoverColor.hashCode()));
-        result = ((result* 31)+((this.activeThumbImage == null)? 0 :this.activeThumbImage.hashCode()));
-        result = ((result* 31)+((this.inactiveThumbColor == null)? 0 :this.inactiveThumbColor.hashCode()));
-        result = ((result* 31)+((this.materialTapTargetSize == null)? 0 :this.materialTapTargetSize.hashCode()));
-        result = ((result* 31)+((this.activeTrackColor == null)? 0 :this.activeTrackColor.hashCode()));
+        result = ((result * 31) + ((this.activeColor == null) ? 0 : this.activeColor.hashCode()));
+        result = ((result * 31) + ((this.focusColor == null) ? 0 : this.focusColor.hashCode()));
+        result = ((result * 31) + ((this.inactiveThumbImage == null) ? 0 : this.inactiveThumbImage.hashCode()));
+        result = ((result * 31) + ((this.inactiveTrackColor == null) ? 0 : this.inactiveTrackColor.hashCode()));
+        result = ((result * 31) + ((this.hoverColor == null) ? 0 : this.hoverColor.hashCode()));
+        result = ((result * 31) + ((this.activeThumbImage == null) ? 0 : this.activeThumbImage.hashCode()));
+        result = ((result * 31) + ((this.inactiveThumbColor == null) ? 0 : this.inactiveThumbColor.hashCode()));
+        result = ((result * 31) + ((this.materialTapTargetSize == null) ? 0 : this.materialTapTargetSize.hashCode()));
+        result = ((result * 31) + ((this.activeTrackColor == null) ? 0 : this.activeTrackColor.hashCode()));
         return result;
     }
 
@@ -376,7 +376,24 @@ public class ToggleStyleSchema {
             return false;
         }
         ToggleStyleSchema rhs = ((ToggleStyleSchema) other);
-        return ((((((((((this.activeColor == rhs.activeColor)||((this.activeColor!= null)&&this.activeColor.equals(rhs.activeColor)))&&((this.focusColor == rhs.focusColor)||((this.focusColor!= null)&&this.focusColor.equals(rhs.focusColor))))&&((this.inactiveThumbImage == rhs.inactiveThumbImage)||((this.inactiveThumbImage!= null)&&this.inactiveThumbImage.equals(rhs.inactiveThumbImage))))&&((this.inactiveTrackColor == rhs.inactiveTrackColor)||((this.inactiveTrackColor!= null)&&this.inactiveTrackColor.equals(rhs.inactiveTrackColor))))&&((this.hoverColor == rhs.hoverColor)||((this.hoverColor!= null)&&this.hoverColor.equals(rhs.hoverColor))))&&((this.activeThumbImage == rhs.activeThumbImage)||((this.activeThumbImage!= null)&&this.activeThumbImage.equals(rhs.activeThumbImage))))&&((this.inactiveThumbColor == rhs.inactiveThumbColor)||((this.inactiveThumbColor!= null)&&this.inactiveThumbColor.equals(rhs.inactiveThumbColor))))&&((this.materialTapTargetSize == rhs.materialTapTargetSize)||((this.materialTapTargetSize!= null)&&this.materialTapTargetSize.equals(rhs.materialTapTargetSize))))&&((this.activeTrackColor == rhs.activeTrackColor)||((this.activeTrackColor!= null)&&this.activeTrackColor.equals(rhs.activeTrackColor))));
+        return ((((((((((this.activeColor == rhs.activeColor)
+                || ((this.activeColor != null) && this.activeColor.equals(rhs.activeColor)))
+                && ((this.focusColor == rhs.focusColor)
+                        || ((this.focusColor != null) && this.focusColor.equals(rhs.focusColor))))
+                && ((this.inactiveThumbImage == rhs.inactiveThumbImage) || ((this.inactiveThumbImage != null)
+                        && this.inactiveThumbImage.equals(rhs.inactiveThumbImage))))
+                && ((this.inactiveTrackColor == rhs.inactiveTrackColor) || ((this.inactiveTrackColor != null)
+                        && this.inactiveTrackColor.equals(rhs.inactiveTrackColor))))
+                && ((this.hoverColor == rhs.hoverColor)
+                        || ((this.hoverColor != null) && this.hoverColor.equals(rhs.hoverColor))))
+                && ((this.activeThumbImage == rhs.activeThumbImage)
+                        || ((this.activeThumbImage != null) && this.activeThumbImage.equals(rhs.activeThumbImage))))
+                && ((this.inactiveThumbColor == rhs.inactiveThumbColor) || ((this.inactiveThumbColor != null)
+                        && this.inactiveThumbColor.equals(rhs.inactiveThumbColor))))
+                && ((this.materialTapTargetSize == rhs.materialTapTargetSize) || ((this.materialTapTargetSize != null)
+                        && this.materialTapTargetSize.equals(rhs.materialTapTargetSize))))
+                && ((this.activeTrackColor == rhs.activeTrackColor)
+                        || ((this.activeTrackColor != null) && this.activeTrackColor.equals(rhs.activeTrackColor))));
     }
 
     public enum MaterialTapTargetSize {
@@ -385,11 +402,12 @@ public class ToggleStyleSchema {
         PADDED("padded"),
         @SerializedName("shrinkWrap")
         SHRINK_WRAP("shrinkWrap");
+
         private final String value;
         private final static Map<String, ToggleStyleSchema.MaterialTapTargetSize> CONSTANTS = new HashMap<String, ToggleStyleSchema.MaterialTapTargetSize>();
 
         static {
-            for (ToggleStyleSchema.MaterialTapTargetSize c: values()) {
+            for (ToggleStyleSchema.MaterialTapTargetSize c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

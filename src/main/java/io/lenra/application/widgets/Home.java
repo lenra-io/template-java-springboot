@@ -7,10 +7,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import io.lenra.template.object.Widget;
-import lenra.components.*;
-import lenra.components.FlexSchema.CrossAxisAlignment;
-import lenra.components.FlexSchema.DirectionSchema;
-import lenra.components.FlexSchema.MainAxisAlignment;
+import io.lenra.components.*;
+import io.lenra.components.FlexSchema.CrossAxisAlignment;
+import io.lenra.components.FlexSchema.DirectionSchema;
+import io.lenra.components.FlexSchema.MainAxisAlignment;
 
 public class Home implements Widget {
 

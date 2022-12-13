@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Menu
@@ -83,17 +82,18 @@ public class MenuSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(MenuSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(MenuSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("children");
         sb.append('=');
-        sb.append(((this.children == null)?"<null>":this.children));
+        sb.append(((this.children == null) ? "<null>" : this.children));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -103,8 +103,8 @@ public class MenuSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.children == null)? 0 :this.children.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.children == null) ? 0 : this.children.hashCode()));
         return result;
     }
 
@@ -117,9 +117,10 @@ public class MenuSchema {
             return false;
         }
         MenuSchema rhs = ((MenuSchema) other);
-        return (((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type)))&&((this.children == rhs.children)||((this.children!= null)&&this.children.equals(rhs.children))));
+        return (((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type)))
+                && ((this.children == rhs.children)
+                        || ((this.children != null) && this.children.equals(rhs.children))));
     }
-
 
     /**
      * The type of the element
@@ -129,11 +130,12 @@ public class MenuSchema {
 
         @SerializedName("menu")
         MENU("menu");
+
         private final String value;
         private final static Map<String, MenuSchema.Type> CONSTANTS = new HashMap<String, MenuSchema.Type>();
 
         static {
-            for (MenuSchema.Type c: values()) {
+            for (MenuSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

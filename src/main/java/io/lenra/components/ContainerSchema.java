@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Container
@@ -217,33 +216,34 @@ public class ContainerSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(ContainerSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(ContainerSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("child");
         sb.append('=');
-        sb.append(((this.child == null)?"<null>":this.child));
+        sb.append(((this.child == null) ? "<null>" : this.child));
         sb.append(',');
         sb.append("border");
         sb.append('=');
-        sb.append(((this.border == null)?"<null>":this.border));
+        sb.append(((this.border == null) ? "<null>" : this.border));
         sb.append(',');
         sb.append("padding");
         sb.append('=');
-        sb.append(((this.padding == null)?"<null>":this.padding));
+        sb.append(((this.padding == null) ? "<null>" : this.padding));
         sb.append(',');
         sb.append("constraints");
         sb.append('=');
-        sb.append(((this.constraints == null)?"<null>":this.constraints));
+        sb.append(((this.constraints == null) ? "<null>" : this.constraints));
         sb.append(',');
         sb.append("decoration");
         sb.append('=');
-        sb.append(((this.decoration == null)?"<null>":this.decoration));
+        sb.append(((this.decoration == null) ? "<null>" : this.decoration));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -253,12 +253,12 @@ public class ContainerSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.border == null)? 0 :this.border.hashCode()));
-        result = ((result* 31)+((this.padding == null)? 0 :this.padding.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.constraints == null)? 0 :this.constraints.hashCode()));
-        result = ((result* 31)+((this.decoration == null)? 0 :this.decoration.hashCode()));
-        result = ((result* 31)+((this.child == null)? 0 :this.child.hashCode()));
+        result = ((result * 31) + ((this.border == null) ? 0 : this.border.hashCode()));
+        result = ((result * 31) + ((this.padding == null) ? 0 : this.padding.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.constraints == null) ? 0 : this.constraints.hashCode()));
+        result = ((result * 31) + ((this.decoration == null) ? 0 : this.decoration.hashCode()));
+        result = ((result * 31) + ((this.child == null) ? 0 : this.child.hashCode()));
         return result;
     }
 
@@ -271,9 +271,15 @@ public class ContainerSchema {
             return false;
         }
         ContainerSchema rhs = ((ContainerSchema) other);
-        return (((((((this.border == rhs.border)||((this.border!= null)&&this.border.equals(rhs.border)))&&((this.padding == rhs.padding)||((this.padding!= null)&&this.padding.equals(rhs.padding))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.constraints == rhs.constraints)||((this.constraints!= null)&&this.constraints.equals(rhs.constraints))))&&((this.decoration == rhs.decoration)||((this.decoration!= null)&&this.decoration.equals(rhs.decoration))))&&((this.child == rhs.child)||((this.child!= null)&&this.child.equals(rhs.child))));
+        return (((((((this.border == rhs.border) || ((this.border != null) && this.border.equals(rhs.border)))
+                && ((this.padding == rhs.padding) || ((this.padding != null) && this.padding.equals(rhs.padding))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.constraints == rhs.constraints)
+                        || ((this.constraints != null) && this.constraints.equals(rhs.constraints))))
+                && ((this.decoration == rhs.decoration)
+                        || ((this.decoration != null) && this.decoration.equals(rhs.decoration))))
+                && ((this.child == rhs.child) || ((this.child != null) && this.child.equals(rhs.child))));
     }
-
 
     /**
      * The identifier of the component
@@ -283,11 +289,12 @@ public class ContainerSchema {
 
         @SerializedName("container")
         CONTAINER("container");
+
         private final String value;
         private final static Map<String, ContainerSchema.Type> CONSTANTS = new HashMap<String, ContainerSchema.Type>();
 
         static {
-            for (ContainerSchema.Type c: values()) {
+            for (ContainerSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

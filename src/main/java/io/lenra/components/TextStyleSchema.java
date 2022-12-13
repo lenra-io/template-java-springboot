@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -130,7 +130,7 @@ public class TextStyleSchema {
      */
     @SerializedName("textBaseline")
     @Expose
-    private lenra.components.FlexSchema.TextBaselineSchema textBaseline = lenra.components.FlexSchema.TextBaselineSchema
+    private io.lenra.components.FlexSchema.TextBaselineSchema textBaseline = io.lenra.components.FlexSchema.TextBaselineSchema
             .fromValue("alphabetic");
     /**
      * The amount of space to add at each sequence of white-space.
@@ -458,7 +458,7 @@ public class TextStyleSchema {
      * A horizontal line used for aligning text.
      * 
      */
-    public lenra.components.FlexSchema.TextBaselineSchema getTextBaseline() {
+    public io.lenra.components.FlexSchema.TextBaselineSchema getTextBaseline() {
         return textBaseline;
     }
 
@@ -468,11 +468,11 @@ public class TextStyleSchema {
      * A horizontal line used for aligning text.
      * 
      */
-    public void setTextBaseline(lenra.components.FlexSchema.TextBaselineSchema textBaseline) {
+    public void setTextBaseline(io.lenra.components.FlexSchema.TextBaselineSchema textBaseline) {
         this.textBaseline = textBaseline;
     }
 
-    public TextStyleSchema withTextBaseline(lenra.components.FlexSchema.TextBaselineSchema textBaseline) {
+    public TextStyleSchema withTextBaseline(io.lenra.components.FlexSchema.TextBaselineSchema textBaseline) {
         this.textBaseline = textBaseline;
         return this;
     }

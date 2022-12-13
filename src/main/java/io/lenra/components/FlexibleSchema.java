@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Flexible
@@ -143,25 +142,26 @@ public class FlexibleSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(FlexibleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(FlexibleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("flex");
         sb.append('=');
-        sb.append(((this.flex == null)?"<null>":this.flex));
+        sb.append(((this.flex == null) ? "<null>" : this.flex));
         sb.append(',');
         sb.append("fit");
         sb.append('=');
-        sb.append(((this.fit == null)?"<null>":this.fit));
+        sb.append(((this.fit == null) ? "<null>" : this.fit));
         sb.append(',');
         sb.append("child");
         sb.append('=');
-        sb.append(((this.child == null)?"<null>":this.child));
+        sb.append(((this.child == null) ? "<null>" : this.child));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -171,10 +171,10 @@ public class FlexibleSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.fit == null)? 0 :this.fit.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.flex == null)? 0 :this.flex.hashCode()));
-        result = ((result* 31)+((this.child == null)? 0 :this.child.hashCode()));
+        result = ((result * 31) + ((this.fit == null) ? 0 : this.fit.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.flex == null) ? 0 : this.flex.hashCode()));
+        result = ((result * 31) + ((this.child == null) ? 0 : this.child.hashCode()));
         return result;
     }
 
@@ -187,9 +187,11 @@ public class FlexibleSchema {
             return false;
         }
         FlexibleSchema rhs = ((FlexibleSchema) other);
-        return (((((this.fit == rhs.fit)||((this.fit!= null)&&this.fit.equals(rhs.fit)))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.flex == rhs.flex)||((this.flex!= null)&&this.flex.equals(rhs.flex))))&&((this.child == rhs.child)||((this.child!= null)&&this.child.equals(rhs.child))));
+        return (((((this.fit == rhs.fit) || ((this.fit != null) && this.fit.equals(rhs.fit)))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.flex == rhs.flex) || ((this.flex != null) && this.flex.equals(rhs.flex))))
+                && ((this.child == rhs.child) || ((this.child != null) && this.child.equals(rhs.child))));
     }
-
 
     /**
      * flexFit
@@ -203,11 +205,12 @@ public class FlexibleSchema {
         LOOSE("loose"),
         @SerializedName("tight")
         TIGHT("tight");
+
         private final String value;
         private final static Map<String, FlexibleSchema.FlexFitSchema> CONSTANTS = new HashMap<String, FlexibleSchema.FlexFitSchema>();
 
         static {
-            for (FlexibleSchema.FlexFitSchema c: values()) {
+            for (FlexibleSchema.FlexFitSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -236,7 +239,6 @@ public class FlexibleSchema {
 
     }
 
-
     /**
      * The type of the element
      * 
@@ -245,11 +247,12 @@ public class FlexibleSchema {
 
         @SerializedName("flexible")
         FLEXIBLE("flexible");
+
         private final String value;
         private final static Map<String, FlexibleSchema.Type> CONSTANTS = new HashMap<String, FlexibleSchema.Type>();
 
         static {
-            for (FlexibleSchema.Type c: values()) {
+            for (FlexibleSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

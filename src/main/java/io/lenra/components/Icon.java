@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,13 +28,14 @@ public class Icon {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Icon.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Icon.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -44,7 +45,7 @@ public class Icon {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
         return result;
     }
 
@@ -57,18 +58,19 @@ public class Icon {
             return false;
         }
         Icon rhs = ((Icon) other);
-        return ((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type)));
+        return ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type)));
     }
 
     public enum Type {
 
         @SerializedName("icon")
         ICON("icon");
+
         private final String value;
         private final static Map<String, Icon.Type> CONSTANTS = new HashMap<String, Icon.Type>();
 
         static {
-            for (Icon.Type c: values()) {
+            for (Icon.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

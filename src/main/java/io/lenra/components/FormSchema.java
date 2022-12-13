@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Form
@@ -115,21 +114,22 @@ public class FormSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(FormSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(FormSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("child");
         sb.append('=');
-        sb.append(((this.child == null)?"<null>":this.child));
+        sb.append(((this.child == null) ? "<null>" : this.child));
         sb.append(',');
         sb.append("onSubmit");
         sb.append('=');
-        sb.append(((this.onSubmit == null)?"<null>":this.onSubmit));
+        sb.append(((this.onSubmit == null) ? "<null>" : this.onSubmit));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -139,9 +139,9 @@ public class FormSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.onSubmit == null)? 0 :this.onSubmit.hashCode()));
-        result = ((result* 31)+((this.child == null)? 0 :this.child.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.onSubmit == null) ? 0 : this.onSubmit.hashCode()));
+        result = ((result * 31) + ((this.child == null) ? 0 : this.child.hashCode()));
         return result;
     }
 
@@ -154,9 +154,10 @@ public class FormSchema {
             return false;
         }
         FormSchema rhs = ((FormSchema) other);
-        return ((((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type)))&&((this.onSubmit == rhs.onSubmit)||((this.onSubmit!= null)&&this.onSubmit.equals(rhs.onSubmit))))&&((this.child == rhs.child)||((this.child!= null)&&this.child.equals(rhs.child))));
+        return ((((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type)))
+                && ((this.onSubmit == rhs.onSubmit) || ((this.onSubmit != null) && this.onSubmit.equals(rhs.onSubmit))))
+                && ((this.child == rhs.child) || ((this.child != null) && this.child.equals(rhs.child))));
     }
-
 
     /**
      * The type of the element
@@ -166,11 +167,12 @@ public class FormSchema {
 
         @SerializedName("form")
         FORM("form");
+
         private final String value;
         private final static Map<String, FormSchema.Type> CONSTANTS = new HashMap<String, FormSchema.Type>();
 
         static {
-            for (FormSchema.Type c: values()) {
+            for (FormSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

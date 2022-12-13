@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Dropdown Button
@@ -46,7 +45,8 @@ public class DropdownButtonSchema {
      */
     @SerializedName("size")
     @Expose
-    private lenra.components.ButtonSchema.SizeSchema size = lenra.components.ButtonSchema.SizeSchema.fromValue("medium");
+    private io.lenra.components.ButtonSchema.SizeSchema size = io.lenra.components.ButtonSchema.SizeSchema
+            .fromValue("medium");
     /**
      * Style
      * <p>
@@ -55,7 +55,8 @@ public class DropdownButtonSchema {
      */
     @SerializedName("mainStyle")
     @Expose
-    private lenra.components.ButtonSchema.StyleSchema mainStyle = lenra.components.ButtonSchema.StyleSchema.fromValue("primary");
+    private io.lenra.components.ButtonSchema.StyleSchema mainStyle = io.lenra.components.ButtonSchema.StyleSchema
+            .fromValue("primary");
     /**
      * 
      * (Required)
@@ -141,7 +142,7 @@ public class DropdownButtonSchema {
      * The size to use, the component will be sized according to the value.
      * 
      */
-    public lenra.components.ButtonSchema.SizeSchema getSize() {
+    public io.lenra.components.ButtonSchema.SizeSchema getSize() {
         return size;
     }
 
@@ -151,11 +152,11 @@ public class DropdownButtonSchema {
      * The size to use, the component will be sized according to the value.
      * 
      */
-    public void setSize(lenra.components.ButtonSchema.SizeSchema size) {
+    public void setSize(io.lenra.components.ButtonSchema.SizeSchema size) {
         this.size = size;
     }
 
-    public DropdownButtonSchema withSize(lenra.components.ButtonSchema.SizeSchema size) {
+    public DropdownButtonSchema withSize(io.lenra.components.ButtonSchema.SizeSchema size) {
         this.size = size;
         return this;
     }
@@ -166,7 +167,7 @@ public class DropdownButtonSchema {
      * The style to use, the component will be changed according to the theme.
      * 
      */
-    public lenra.components.ButtonSchema.StyleSchema getMainStyle() {
+    public io.lenra.components.ButtonSchema.StyleSchema getMainStyle() {
         return mainStyle;
     }
 
@@ -176,11 +177,11 @@ public class DropdownButtonSchema {
      * The style to use, the component will be changed according to the theme.
      * 
      */
-    public void setMainStyle(lenra.components.ButtonSchema.StyleSchema mainStyle) {
+    public void setMainStyle(io.lenra.components.ButtonSchema.StyleSchema mainStyle) {
         this.mainStyle = mainStyle;
     }
 
-    public DropdownButtonSchema withMainStyle(lenra.components.ButtonSchema.StyleSchema mainStyle) {
+    public DropdownButtonSchema withMainStyle(io.lenra.components.ButtonSchema.StyleSchema mainStyle) {
         this.mainStyle = mainStyle;
         return this;
     }
@@ -224,37 +225,38 @@ public class DropdownButtonSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(DropdownButtonSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(DropdownButtonSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("text");
         sb.append('=');
-        sb.append(((this.text == null)?"<null>":this.text));
+        sb.append(((this.text == null) ? "<null>" : this.text));
         sb.append(',');
         sb.append("disabled");
         sb.append('=');
-        sb.append(((this.disabled == null)?"<null>":this.disabled));
+        sb.append(((this.disabled == null) ? "<null>" : this.disabled));
         sb.append(',');
         sb.append("size");
         sb.append('=');
-        sb.append(((this.size == null)?"<null>":this.size));
+        sb.append(((this.size == null) ? "<null>" : this.size));
         sb.append(',');
         sb.append("mainStyle");
         sb.append('=');
-        sb.append(((this.mainStyle == null)?"<null>":this.mainStyle));
+        sb.append(((this.mainStyle == null) ? "<null>" : this.mainStyle));
         sb.append(',');
         sb.append("child");
         sb.append('=');
-        sb.append(((this.child == null)?"<null>":this.child));
+        sb.append(((this.child == null) ? "<null>" : this.child));
         sb.append(',');
         sb.append("icon");
         sb.append('=');
-        sb.append(((this.icon == null)?"<null>":this.icon));
+        sb.append(((this.icon == null) ? "<null>" : this.icon));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -264,13 +266,13 @@ public class DropdownButtonSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.size == null)? 0 :this.size.hashCode()));
-        result = ((result* 31)+((this.mainStyle == null)? 0 :this.mainStyle.hashCode()));
-        result = ((result* 31)+((this.icon == null)? 0 :this.icon.hashCode()));
-        result = ((result* 31)+((this.disabled == null)? 0 :this.disabled.hashCode()));
-        result = ((result* 31)+((this.text == null)? 0 :this.text.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.child == null)? 0 :this.child.hashCode()));
+        result = ((result * 31) + ((this.size == null) ? 0 : this.size.hashCode()));
+        result = ((result * 31) + ((this.mainStyle == null) ? 0 : this.mainStyle.hashCode()));
+        result = ((result * 31) + ((this.icon == null) ? 0 : this.icon.hashCode()));
+        result = ((result * 31) + ((this.disabled == null) ? 0 : this.disabled.hashCode()));
+        result = ((result * 31) + ((this.text == null) ? 0 : this.text.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.child == null) ? 0 : this.child.hashCode()));
         return result;
     }
 
@@ -283,9 +285,15 @@ public class DropdownButtonSchema {
             return false;
         }
         DropdownButtonSchema rhs = ((DropdownButtonSchema) other);
-        return ((((((((this.size == rhs.size)||((this.size!= null)&&this.size.equals(rhs.size)))&&((this.mainStyle == rhs.mainStyle)||((this.mainStyle!= null)&&this.mainStyle.equals(rhs.mainStyle))))&&((this.icon == rhs.icon)||((this.icon!= null)&&this.icon.equals(rhs.icon))))&&((this.disabled == rhs.disabled)||((this.disabled!= null)&&this.disabled.equals(rhs.disabled))))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.child == rhs.child)||((this.child!= null)&&this.child.equals(rhs.child))));
+        return ((((((((this.size == rhs.size) || ((this.size != null) && this.size.equals(rhs.size)))
+                && ((this.mainStyle == rhs.mainStyle)
+                        || ((this.mainStyle != null) && this.mainStyle.equals(rhs.mainStyle))))
+                && ((this.icon == rhs.icon) || ((this.icon != null) && this.icon.equals(rhs.icon))))
+                && ((this.disabled == rhs.disabled) || ((this.disabled != null) && this.disabled.equals(rhs.disabled))))
+                && ((this.text == rhs.text) || ((this.text != null) && this.text.equals(rhs.text))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.child == rhs.child) || ((this.child != null) && this.child.equals(rhs.child))));
     }
-
 
     /**
      * The identifier of the component
@@ -295,11 +303,12 @@ public class DropdownButtonSchema {
 
         @SerializedName("dropdownButton")
         DROPDOWN_BUTTON("dropdownButton");
+
         private final String value;
         private final static Map<String, DropdownButtonSchema.Type> CONSTANTS = new HashMap<String, DropdownButtonSchema.Type>();
 
         static {
-            for (DropdownButtonSchema.Type c: values()) {
+            for (DropdownButtonSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

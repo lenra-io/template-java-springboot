@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -139,11 +139,12 @@ public enum AutofillHintsSchema {
     URL("url"),
     @SerializedName("username")
     USERNAME("username");
+
     private final String value;
     private final static Map<String, AutofillHintsSchema> CONSTANTS = new HashMap<String, AutofillHintsSchema>();
 
     static {
-        for (AutofillHintsSchema c: values()) {
+        for (AutofillHintsSchema c : values()) {
             CONSTANTS.put(c.value, c);
         }
     }

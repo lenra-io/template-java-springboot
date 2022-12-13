@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * TextFieldStyle
@@ -344,7 +343,8 @@ public class TextFieldStyleSchema {
         this.selectionHeightStyle = selectionHeightStyle;
     }
 
-    public TextFieldStyleSchema withSelectionHeightStyle(TextFieldStyleSchema.BoxHeightStyleSchema selectionHeightStyle) {
+    public TextFieldStyleSchema withSelectionHeightStyle(
+            TextFieldStyleSchema.BoxHeightStyleSchema selectionHeightStyle) {
         this.selectionHeightStyle = selectionHeightStyle;
         return this;
     }
@@ -477,65 +477,66 @@ public class TextFieldStyleSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(TextFieldStyleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(TextFieldStyleSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("cursorColor");
         sb.append('=');
-        sb.append(((this.cursorColor == null)?"<null>":this.cursorColor));
+        sb.append(((this.cursorColor == null) ? "<null>" : this.cursorColor));
         sb.append(',');
         sb.append("cursorHeight");
         sb.append('=');
-        sb.append(((this.cursorHeight == null)?"<null>":this.cursorHeight));
+        sb.append(((this.cursorHeight == null) ? "<null>" : this.cursorHeight));
         sb.append(',');
         sb.append("cursorRadius");
         sb.append('=');
-        sb.append(((this.cursorRadius == null)?"<null>":this.cursorRadius));
+        sb.append(((this.cursorRadius == null) ? "<null>" : this.cursorRadius));
         sb.append(',');
         sb.append("cursorWidth");
         sb.append('=');
-        sb.append(((this.cursorWidth == null)?"<null>":this.cursorWidth));
+        sb.append(((this.cursorWidth == null) ? "<null>" : this.cursorWidth));
         sb.append(',');
         sb.append("decoration");
         sb.append('=');
-        sb.append(((this.decoration == null)?"<null>":this.decoration));
+        sb.append(((this.decoration == null) ? "<null>" : this.decoration));
         sb.append(',');
         sb.append("keyboardAppearance");
         sb.append('=');
-        sb.append(((this.keyboardAppearance == null)?"<null>":this.keyboardAppearance));
+        sb.append(((this.keyboardAppearance == null) ? "<null>" : this.keyboardAppearance));
         sb.append(',');
         sb.append("obscuringCharacter");
         sb.append('=');
-        sb.append(((this.obscuringCharacter == null)?"<null>":this.obscuringCharacter));
+        sb.append(((this.obscuringCharacter == null) ? "<null>" : this.obscuringCharacter));
         sb.append(',');
         sb.append("scrollPadding");
         sb.append('=');
-        sb.append(((this.scrollPadding == null)?"<null>":this.scrollPadding));
+        sb.append(((this.scrollPadding == null) ? "<null>" : this.scrollPadding));
         sb.append(',');
         sb.append("selectionHeightStyle");
         sb.append('=');
-        sb.append(((this.selectionHeightStyle == null)?"<null>":this.selectionHeightStyle));
+        sb.append(((this.selectionHeightStyle == null) ? "<null>" : this.selectionHeightStyle));
         sb.append(',');
         sb.append("selectionWidthStyle");
         sb.append('=');
-        sb.append(((this.selectionWidthStyle == null)?"<null>":this.selectionWidthStyle));
+        sb.append(((this.selectionWidthStyle == null) ? "<null>" : this.selectionWidthStyle));
         sb.append(',');
         sb.append("strutStyle");
         sb.append('=');
-        sb.append(((this.strutStyle == null)?"<null>":this.strutStyle));
+        sb.append(((this.strutStyle == null) ? "<null>" : this.strutStyle));
         sb.append(',');
         sb.append("textStyle");
         sb.append('=');
-        sb.append(((this.textStyle == null)?"<null>":this.textStyle));
+        sb.append(((this.textStyle == null) ? "<null>" : this.textStyle));
         sb.append(',');
         sb.append("textAlign");
         sb.append('=');
-        sb.append(((this.textAlign == null)?"<null>":this.textAlign));
+        sb.append(((this.textAlign == null) ? "<null>" : this.textAlign));
         sb.append(',');
         sb.append("textAlignVertical");
         sb.append('=');
-        sb.append(((this.textAlignVertical == null)?"<null>":this.textAlignVertical));
+        sb.append(((this.textAlignVertical == null) ? "<null>" : this.textAlignVertical));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -545,20 +546,20 @@ public class TextFieldStyleSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.scrollPadding == null)? 0 :this.scrollPadding.hashCode()));
-        result = ((result* 31)+((this.textAlignVertical == null)? 0 :this.textAlignVertical.hashCode()));
-        result = ((result* 31)+((this.textAlign == null)? 0 :this.textAlign.hashCode()));
-        result = ((result* 31)+((this.cursorWidth == null)? 0 :this.cursorWidth.hashCode()));
-        result = ((result* 31)+((this.cursorHeight == null)? 0 :this.cursorHeight.hashCode()));
-        result = ((result* 31)+((this.cursorColor == null)? 0 :this.cursorColor.hashCode()));
-        result = ((result* 31)+((this.cursorRadius == null)? 0 :this.cursorRadius.hashCode()));
-        result = ((result* 31)+((this.keyboardAppearance == null)? 0 :this.keyboardAppearance.hashCode()));
-        result = ((result* 31)+((this.selectionWidthStyle == null)? 0 :this.selectionWidthStyle.hashCode()));
-        result = ((result* 31)+((this.selectionHeightStyle == null)? 0 :this.selectionHeightStyle.hashCode()));
-        result = ((result* 31)+((this.strutStyle == null)? 0 :this.strutStyle.hashCode()));
-        result = ((result* 31)+((this.textStyle == null)? 0 :this.textStyle.hashCode()));
-        result = ((result* 31)+((this.decoration == null)? 0 :this.decoration.hashCode()));
-        result = ((result* 31)+((this.obscuringCharacter == null)? 0 :this.obscuringCharacter.hashCode()));
+        result = ((result * 31) + ((this.scrollPadding == null) ? 0 : this.scrollPadding.hashCode()));
+        result = ((result * 31) + ((this.textAlignVertical == null) ? 0 : this.textAlignVertical.hashCode()));
+        result = ((result * 31) + ((this.textAlign == null) ? 0 : this.textAlign.hashCode()));
+        result = ((result * 31) + ((this.cursorWidth == null) ? 0 : this.cursorWidth.hashCode()));
+        result = ((result * 31) + ((this.cursorHeight == null) ? 0 : this.cursorHeight.hashCode()));
+        result = ((result * 31) + ((this.cursorColor == null) ? 0 : this.cursorColor.hashCode()));
+        result = ((result * 31) + ((this.cursorRadius == null) ? 0 : this.cursorRadius.hashCode()));
+        result = ((result * 31) + ((this.keyboardAppearance == null) ? 0 : this.keyboardAppearance.hashCode()));
+        result = ((result * 31) + ((this.selectionWidthStyle == null) ? 0 : this.selectionWidthStyle.hashCode()));
+        result = ((result * 31) + ((this.selectionHeightStyle == null) ? 0 : this.selectionHeightStyle.hashCode()));
+        result = ((result * 31) + ((this.strutStyle == null) ? 0 : this.strutStyle.hashCode()));
+        result = ((result * 31) + ((this.textStyle == null) ? 0 : this.textStyle.hashCode()));
+        result = ((result * 31) + ((this.decoration == null) ? 0 : this.decoration.hashCode()));
+        result = ((result * 31) + ((this.obscuringCharacter == null) ? 0 : this.obscuringCharacter.hashCode()));
         return result;
     }
 
@@ -571,9 +572,35 @@ public class TextFieldStyleSchema {
             return false;
         }
         TextFieldStyleSchema rhs = ((TextFieldStyleSchema) other);
-        return (((((((((((((((this.scrollPadding == rhs.scrollPadding)||((this.scrollPadding!= null)&&this.scrollPadding.equals(rhs.scrollPadding)))&&((this.textAlignVertical == rhs.textAlignVertical)||((this.textAlignVertical!= null)&&this.textAlignVertical.equals(rhs.textAlignVertical))))&&((this.textAlign == rhs.textAlign)||((this.textAlign!= null)&&this.textAlign.equals(rhs.textAlign))))&&((this.cursorWidth == rhs.cursorWidth)||((this.cursorWidth!= null)&&this.cursorWidth.equals(rhs.cursorWidth))))&&((this.cursorHeight == rhs.cursorHeight)||((this.cursorHeight!= null)&&this.cursorHeight.equals(rhs.cursorHeight))))&&((this.cursorColor == rhs.cursorColor)||((this.cursorColor!= null)&&this.cursorColor.equals(rhs.cursorColor))))&&((this.cursorRadius == rhs.cursorRadius)||((this.cursorRadius!= null)&&this.cursorRadius.equals(rhs.cursorRadius))))&&((this.keyboardAppearance == rhs.keyboardAppearance)||((this.keyboardAppearance!= null)&&this.keyboardAppearance.equals(rhs.keyboardAppearance))))&&((this.selectionWidthStyle == rhs.selectionWidthStyle)||((this.selectionWidthStyle!= null)&&this.selectionWidthStyle.equals(rhs.selectionWidthStyle))))&&((this.selectionHeightStyle == rhs.selectionHeightStyle)||((this.selectionHeightStyle!= null)&&this.selectionHeightStyle.equals(rhs.selectionHeightStyle))))&&((this.strutStyle == rhs.strutStyle)||((this.strutStyle!= null)&&this.strutStyle.equals(rhs.strutStyle))))&&((this.textStyle == rhs.textStyle)||((this.textStyle!= null)&&this.textStyle.equals(rhs.textStyle))))&&((this.decoration == rhs.decoration)||((this.decoration!= null)&&this.decoration.equals(rhs.decoration))))&&((this.obscuringCharacter == rhs.obscuringCharacter)||((this.obscuringCharacter!= null)&&this.obscuringCharacter.equals(rhs.obscuringCharacter))));
+        return (((((((((((((((this.scrollPadding == rhs.scrollPadding)
+                || ((this.scrollPadding != null) && this.scrollPadding.equals(rhs.scrollPadding)))
+                && ((this.textAlignVertical == rhs.textAlignVertical)
+                        || ((this.textAlignVertical != null) && this.textAlignVertical.equals(rhs.textAlignVertical))))
+                && ((this.textAlign == rhs.textAlign)
+                        || ((this.textAlign != null) && this.textAlign.equals(rhs.textAlign))))
+                && ((this.cursorWidth == rhs.cursorWidth)
+                        || ((this.cursorWidth != null) && this.cursorWidth.equals(rhs.cursorWidth))))
+                && ((this.cursorHeight == rhs.cursorHeight)
+                        || ((this.cursorHeight != null) && this.cursorHeight.equals(rhs.cursorHeight))))
+                && ((this.cursorColor == rhs.cursorColor)
+                        || ((this.cursorColor != null) && this.cursorColor.equals(rhs.cursorColor))))
+                && ((this.cursorRadius == rhs.cursorRadius)
+                        || ((this.cursorRadius != null) && this.cursorRadius.equals(rhs.cursorRadius))))
+                && ((this.keyboardAppearance == rhs.keyboardAppearance) || ((this.keyboardAppearance != null)
+                        && this.keyboardAppearance.equals(rhs.keyboardAppearance))))
+                && ((this.selectionWidthStyle == rhs.selectionWidthStyle) || ((this.selectionWidthStyle != null)
+                        && this.selectionWidthStyle.equals(rhs.selectionWidthStyle))))
+                && ((this.selectionHeightStyle == rhs.selectionHeightStyle) || ((this.selectionHeightStyle != null)
+                        && this.selectionHeightStyle.equals(rhs.selectionHeightStyle))))
+                && ((this.strutStyle == rhs.strutStyle)
+                        || ((this.strutStyle != null) && this.strutStyle.equals(rhs.strutStyle))))
+                && ((this.textStyle == rhs.textStyle)
+                        || ((this.textStyle != null) && this.textStyle.equals(rhs.textStyle))))
+                && ((this.decoration == rhs.decoration)
+                        || ((this.decoration != null) && this.decoration.equals(rhs.decoration))))
+                && ((this.obscuringCharacter == rhs.obscuringCharacter) || ((this.obscuringCharacter != null)
+                        && this.obscuringCharacter.equals(rhs.obscuringCharacter))));
     }
-
 
     /**
      * BoxHeightStyle
@@ -595,11 +622,12 @@ public class TextFieldStyleSchema {
         STRUT("strut"),
         @SerializedName("tight")
         TIGHT("tight");
+
         private final String value;
         private final static Map<String, TextFieldStyleSchema.BoxHeightStyleSchema> CONSTANTS = new HashMap<String, TextFieldStyleSchema.BoxHeightStyleSchema>();
 
         static {
-            for (TextFieldStyleSchema.BoxHeightStyleSchema c: values()) {
+            for (TextFieldStyleSchema.BoxHeightStyleSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -628,7 +656,6 @@ public class TextFieldStyleSchema {
 
     }
 
-
     /**
      * BoxWidthStyle
      * <p>
@@ -641,11 +668,12 @@ public class TextFieldStyleSchema {
         MAX("max"),
         @SerializedName("tight")
         TIGHT("tight");
+
         private final String value;
         private final static Map<String, TextFieldStyleSchema.BoxWidthStyleSchema> CONSTANTS = new HashMap<String, TextFieldStyleSchema.BoxWidthStyleSchema>();
 
         static {
-            for (TextFieldStyleSchema.BoxWidthStyleSchema c: values()) {
+            for (TextFieldStyleSchema.BoxWidthStyleSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -674,7 +702,6 @@ public class TextFieldStyleSchema {
 
     }
 
-
     /**
      * Brightness
      * <p>
@@ -687,11 +714,12 @@ public class TextFieldStyleSchema {
         DARK("dark"),
         @SerializedName("light")
         LIGHT("light");
+
         private final String value;
         private final static Map<String, TextFieldStyleSchema.BrightnessSchema> CONSTANTS = new HashMap<String, TextFieldStyleSchema.BrightnessSchema>();
 
         static {
-            for (TextFieldStyleSchema.BrightnessSchema c: values()) {
+            for (TextFieldStyleSchema.BrightnessSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -720,7 +748,6 @@ public class TextFieldStyleSchema {
 
     }
 
-
     /**
      * TextAlign
      * <p>
@@ -741,11 +768,12 @@ public class TextFieldStyleSchema {
         START("start"),
         @SerializedName("end")
         END("end");
+
         private final String value;
         private final static Map<String, TextFieldStyleSchema.TextAlignSchema> CONSTANTS = new HashMap<String, TextFieldStyleSchema.TextAlignSchema>();
 
         static {
-            for (TextFieldStyleSchema.TextAlignSchema c: values()) {
+            for (TextFieldStyleSchema.TextAlignSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -774,7 +802,6 @@ public class TextFieldStyleSchema {
 
     }
 
-
     /**
      * TextAlignVertical
      * <p>
@@ -789,11 +816,12 @@ public class TextFieldStyleSchema {
         CENTER("center"),
         @SerializedName("top")
         TOP("top");
+
         private final String value;
         private final static Map<String, TextFieldStyleSchema.TextAlignVerticalSchema> CONSTANTS = new HashMap<String, TextFieldStyleSchema.TextAlignVerticalSchema>();
 
         static {
-            for (TextFieldStyleSchema.TextAlignVerticalSchema c: values()) {
+            for (TextFieldStyleSchema.TextAlignVerticalSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

@@ -7,12 +7,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import io.lenra.template.object.Widget;
-import lenra.components.ButtonSchema;
-import lenra.components.FlexSchema;
-import lenra.components.ListenerSchema;
-import lenra.components.TextSchema;
-import lenra.components.FlexSchema.CrossAxisAlignment;
-import lenra.components.FlexSchema.MainAxisAlignment;
+import io.lenra.components.ButtonSchema;
+import io.lenra.components.FlexSchema;
+import io.lenra.components.ListenerSchema;
+import io.lenra.components.TextSchema;
+import io.lenra.components.FlexSchema.CrossAxisAlignment;
+import io.lenra.components.FlexSchema.MainAxisAlignment;
 
 public class Counter implements Widget {
 

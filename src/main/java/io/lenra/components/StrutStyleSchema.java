@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * StrutStyle
@@ -81,7 +80,8 @@ public class StrutStyleSchema {
      */
     @SerializedName("leadingDistribution")
     @Expose
-    private StrutStyleSchema.TextLeadingDistributionSchema leadingDistribution = StrutStyleSchema.TextLeadingDistributionSchema.fromValue("even");
+    private StrutStyleSchema.TextLeadingDistributionSchema leadingDistribution = StrutStyleSchema.TextLeadingDistributionSchema
+            .fromValue("even");
 
     /**
      * A label to help identify this strut style.
@@ -271,7 +271,8 @@ public class StrutStyleSchema {
         this.leadingDistribution = leadingDistribution;
     }
 
-    public StrutStyleSchema withLeadingDistribution(StrutStyleSchema.TextLeadingDistributionSchema leadingDistribution) {
+    public StrutStyleSchema withLeadingDistribution(
+            StrutStyleSchema.TextLeadingDistributionSchema leadingDistribution) {
         this.leadingDistribution = leadingDistribution;
         return this;
     }
@@ -279,45 +280,46 @@ public class StrutStyleSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(StrutStyleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(StrutStyleSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("debugLabel");
         sb.append('=');
-        sb.append(((this.debugLabel == null)?"<null>":this.debugLabel));
+        sb.append(((this.debugLabel == null) ? "<null>" : this.debugLabel));
         sb.append(',');
         sb.append("fontFamily");
         sb.append('=');
-        sb.append(((this.fontFamily == null)?"<null>":this.fontFamily));
+        sb.append(((this.fontFamily == null) ? "<null>" : this.fontFamily));
         sb.append(',');
         sb.append("fontFamilyFallback");
         sb.append('=');
-        sb.append(((this.fontFamilyFallback == null)?"<null>":this.fontFamilyFallback));
+        sb.append(((this.fontFamilyFallback == null) ? "<null>" : this.fontFamilyFallback));
         sb.append(',');
         sb.append("fontSize");
         sb.append('=');
-        sb.append(((this.fontSize == null)?"<null>":this.fontSize));
+        sb.append(((this.fontSize == null) ? "<null>" : this.fontSize));
         sb.append(',');
         sb.append("fontWeight");
         sb.append('=');
-        sb.append(((this.fontWeight == null)?"<null>":this.fontWeight));
+        sb.append(((this.fontWeight == null) ? "<null>" : this.fontWeight));
         sb.append(',');
         sb.append("forceStrutHeight");
         sb.append('=');
-        sb.append(((this.forceStrutHeight == null)?"<null>":this.forceStrutHeight));
+        sb.append(((this.forceStrutHeight == null) ? "<null>" : this.forceStrutHeight));
         sb.append(',');
         sb.append("height");
         sb.append('=');
-        sb.append(((this.height == null)?"<null>":this.height));
+        sb.append(((this.height == null) ? "<null>" : this.height));
         sb.append(',');
         sb.append("leading");
         sb.append('=');
-        sb.append(((this.leading == null)?"<null>":this.leading));
+        sb.append(((this.leading == null) ? "<null>" : this.leading));
         sb.append(',');
         sb.append("leadingDistribution");
         sb.append('=');
-        sb.append(((this.leadingDistribution == null)?"<null>":this.leadingDistribution));
+        sb.append(((this.leadingDistribution == null) ? "<null>" : this.leadingDistribution));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -327,15 +329,15 @@ public class StrutStyleSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.fontFamily == null)? 0 :this.fontFamily.hashCode()));
-        result = ((result* 31)+((this.leading == null)? 0 :this.leading.hashCode()));
-        result = ((result* 31)+((this.leadingDistribution == null)? 0 :this.leadingDistribution.hashCode()));
-        result = ((result* 31)+((this.debugLabel == null)? 0 :this.debugLabel.hashCode()));
-        result = ((result* 31)+((this.fontSize == null)? 0 :this.fontSize.hashCode()));
-        result = ((result* 31)+((this.forceStrutHeight == null)? 0 :this.forceStrutHeight.hashCode()));
-        result = ((result* 31)+((this.fontWeight == null)? 0 :this.fontWeight.hashCode()));
-        result = ((result* 31)+((this.fontFamilyFallback == null)? 0 :this.fontFamilyFallback.hashCode()));
-        result = ((result* 31)+((this.height == null)? 0 :this.height.hashCode()));
+        result = ((result * 31) + ((this.fontFamily == null) ? 0 : this.fontFamily.hashCode()));
+        result = ((result * 31) + ((this.leading == null) ? 0 : this.leading.hashCode()));
+        result = ((result * 31) + ((this.leadingDistribution == null) ? 0 : this.leadingDistribution.hashCode()));
+        result = ((result * 31) + ((this.debugLabel == null) ? 0 : this.debugLabel.hashCode()));
+        result = ((result * 31) + ((this.fontSize == null) ? 0 : this.fontSize.hashCode()));
+        result = ((result * 31) + ((this.forceStrutHeight == null) ? 0 : this.forceStrutHeight.hashCode()));
+        result = ((result * 31) + ((this.fontWeight == null) ? 0 : this.fontWeight.hashCode()));
+        result = ((result * 31) + ((this.fontFamilyFallback == null) ? 0 : this.fontFamilyFallback.hashCode()));
+        result = ((result * 31) + ((this.height == null) ? 0 : this.height.hashCode()));
         return result;
     }
 
@@ -348,9 +350,22 @@ public class StrutStyleSchema {
             return false;
         }
         StrutStyleSchema rhs = ((StrutStyleSchema) other);
-        return ((((((((((this.fontFamily == rhs.fontFamily)||((this.fontFamily!= null)&&this.fontFamily.equals(rhs.fontFamily)))&&((this.leading == rhs.leading)||((this.leading!= null)&&this.leading.equals(rhs.leading))))&&((this.leadingDistribution == rhs.leadingDistribution)||((this.leadingDistribution!= null)&&this.leadingDistribution.equals(rhs.leadingDistribution))))&&((this.debugLabel == rhs.debugLabel)||((this.debugLabel!= null)&&this.debugLabel.equals(rhs.debugLabel))))&&((this.fontSize == rhs.fontSize)||((this.fontSize!= null)&&this.fontSize.equals(rhs.fontSize))))&&((this.forceStrutHeight == rhs.forceStrutHeight)||((this.forceStrutHeight!= null)&&this.forceStrutHeight.equals(rhs.forceStrutHeight))))&&((this.fontWeight == rhs.fontWeight)||((this.fontWeight!= null)&&this.fontWeight.equals(rhs.fontWeight))))&&((this.fontFamilyFallback == rhs.fontFamilyFallback)||((this.fontFamilyFallback!= null)&&this.fontFamilyFallback.equals(rhs.fontFamilyFallback))))&&((this.height == rhs.height)||((this.height!= null)&&this.height.equals(rhs.height))));
+        return ((((((((((this.fontFamily == rhs.fontFamily)
+                || ((this.fontFamily != null) && this.fontFamily.equals(rhs.fontFamily)))
+                && ((this.leading == rhs.leading) || ((this.leading != null) && this.leading.equals(rhs.leading))))
+                && ((this.leadingDistribution == rhs.leadingDistribution) || ((this.leadingDistribution != null)
+                        && this.leadingDistribution.equals(rhs.leadingDistribution))))
+                && ((this.debugLabel == rhs.debugLabel)
+                        || ((this.debugLabel != null) && this.debugLabel.equals(rhs.debugLabel))))
+                && ((this.fontSize == rhs.fontSize) || ((this.fontSize != null) && this.fontSize.equals(rhs.fontSize))))
+                && ((this.forceStrutHeight == rhs.forceStrutHeight)
+                        || ((this.forceStrutHeight != null) && this.forceStrutHeight.equals(rhs.forceStrutHeight))))
+                && ((this.fontWeight == rhs.fontWeight)
+                        || ((this.fontWeight != null) && this.fontWeight.equals(rhs.fontWeight))))
+                && ((this.fontFamilyFallback == rhs.fontFamilyFallback) || ((this.fontFamilyFallback != null)
+                        && this.fontFamilyFallback.equals(rhs.fontFamilyFallback))))
+                && ((this.height == rhs.height) || ((this.height != null) && this.height.equals(rhs.height))));
     }
-
 
     /**
      * TextLeadingDitribution
@@ -364,11 +379,12 @@ public class StrutStyleSchema {
         EVEN("even"),
         @SerializedName("proportional")
         PROPORTIONAL("proportional");
+
         private final String value;
         private final static Map<String, StrutStyleSchema.TextLeadingDistributionSchema> CONSTANTS = new HashMap<String, StrutStyleSchema.TextLeadingDistributionSchema>();
 
         static {
-            for (StrutStyleSchema.TextLeadingDistributionSchema c: values()) {
+            for (StrutStyleSchema.TextLeadingDistributionSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

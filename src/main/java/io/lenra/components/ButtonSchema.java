@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Button
@@ -271,45 +270,46 @@ public class ButtonSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(ButtonSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(ButtonSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("text");
         sb.append('=');
-        sb.append(((this.text == null)?"<null>":this.text));
+        sb.append(((this.text == null) ? "<null>" : this.text));
         sb.append(',');
         sb.append("disabled");
         sb.append('=');
-        sb.append(((this.disabled == null)?"<null>":this.disabled));
+        sb.append(((this.disabled == null) ? "<null>" : this.disabled));
         sb.append(',');
         sb.append("size");
         sb.append('=');
-        sb.append(((this.size == null)?"<null>":this.size));
+        sb.append(((this.size == null) ? "<null>" : this.size));
         sb.append(',');
         sb.append("mainStyle");
         sb.append('=');
-        sb.append(((this.mainStyle == null)?"<null>":this.mainStyle));
+        sb.append(((this.mainStyle == null) ? "<null>" : this.mainStyle));
         sb.append(',');
         sb.append("onPressed");
         sb.append('=');
-        sb.append(((this.onPressed == null)?"<null>":this.onPressed));
+        sb.append(((this.onPressed == null) ? "<null>" : this.onPressed));
         sb.append(',');
         sb.append("leftIcon");
         sb.append('=');
-        sb.append(((this.leftIcon == null)?"<null>":this.leftIcon));
+        sb.append(((this.leftIcon == null) ? "<null>" : this.leftIcon));
         sb.append(',');
         sb.append("rightIcon");
         sb.append('=');
-        sb.append(((this.rightIcon == null)?"<null>":this.rightIcon));
+        sb.append(((this.rightIcon == null) ? "<null>" : this.rightIcon));
         sb.append(',');
         sb.append("submit");
         sb.append('=');
-        sb.append(((this.submit == null)?"<null>":this.submit));
+        sb.append(((this.submit == null) ? "<null>" : this.submit));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -319,15 +319,15 @@ public class ButtonSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.rightIcon == null)? 0 :this.rightIcon.hashCode()));
-        result = ((result* 31)+((this.size == null)? 0 :this.size.hashCode()));
-        result = ((result* 31)+((this.submit == null)? 0 :this.submit.hashCode()));
-        result = ((result* 31)+((this.leftIcon == null)? 0 :this.leftIcon.hashCode()));
-        result = ((result* 31)+((this.mainStyle == null)? 0 :this.mainStyle.hashCode()));
-        result = ((result* 31)+((this.disabled == null)? 0 :this.disabled.hashCode()));
-        result = ((result* 31)+((this.text == null)? 0 :this.text.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.onPressed == null)? 0 :this.onPressed.hashCode()));
+        result = ((result * 31) + ((this.rightIcon == null) ? 0 : this.rightIcon.hashCode()));
+        result = ((result * 31) + ((this.size == null) ? 0 : this.size.hashCode()));
+        result = ((result * 31) + ((this.submit == null) ? 0 : this.submit.hashCode()));
+        result = ((result * 31) + ((this.leftIcon == null) ? 0 : this.leftIcon.hashCode()));
+        result = ((result * 31) + ((this.mainStyle == null) ? 0 : this.mainStyle.hashCode()));
+        result = ((result * 31) + ((this.disabled == null) ? 0 : this.disabled.hashCode()));
+        result = ((result * 31) + ((this.text == null) ? 0 : this.text.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.onPressed == null) ? 0 : this.onPressed.hashCode()));
         return result;
     }
 
@@ -340,9 +340,19 @@ public class ButtonSchema {
             return false;
         }
         ButtonSchema rhs = ((ButtonSchema) other);
-        return ((((((((((this.rightIcon == rhs.rightIcon)||((this.rightIcon!= null)&&this.rightIcon.equals(rhs.rightIcon)))&&((this.size == rhs.size)||((this.size!= null)&&this.size.equals(rhs.size))))&&((this.submit == rhs.submit)||((this.submit!= null)&&this.submit.equals(rhs.submit))))&&((this.leftIcon == rhs.leftIcon)||((this.leftIcon!= null)&&this.leftIcon.equals(rhs.leftIcon))))&&((this.mainStyle == rhs.mainStyle)||((this.mainStyle!= null)&&this.mainStyle.equals(rhs.mainStyle))))&&((this.disabled == rhs.disabled)||((this.disabled!= null)&&this.disabled.equals(rhs.disabled))))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.onPressed == rhs.onPressed)||((this.onPressed!= null)&&this.onPressed.equals(rhs.onPressed))));
+        return ((((((((((this.rightIcon == rhs.rightIcon)
+                || ((this.rightIcon != null) && this.rightIcon.equals(rhs.rightIcon)))
+                && ((this.size == rhs.size) || ((this.size != null) && this.size.equals(rhs.size))))
+                && ((this.submit == rhs.submit) || ((this.submit != null) && this.submit.equals(rhs.submit))))
+                && ((this.leftIcon == rhs.leftIcon) || ((this.leftIcon != null) && this.leftIcon.equals(rhs.leftIcon))))
+                && ((this.mainStyle == rhs.mainStyle)
+                        || ((this.mainStyle != null) && this.mainStyle.equals(rhs.mainStyle))))
+                && ((this.disabled == rhs.disabled) || ((this.disabled != null) && this.disabled.equals(rhs.disabled))))
+                && ((this.text == rhs.text) || ((this.text != null) && this.text.equals(rhs.text))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.onPressed == rhs.onPressed)
+                        || ((this.onPressed != null) && this.onPressed.equals(rhs.onPressed))));
     }
-
 
     /**
      * Size
@@ -358,11 +368,12 @@ public class ButtonSchema {
         MEDIUM("medium"),
         @SerializedName("large")
         LARGE("large");
+
         private final String value;
         private final static Map<String, ButtonSchema.SizeSchema> CONSTANTS = new HashMap<String, ButtonSchema.SizeSchema>();
 
         static {
-            for (ButtonSchema.SizeSchema c: values()) {
+            for (ButtonSchema.SizeSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -391,7 +402,6 @@ public class ButtonSchema {
 
     }
 
-
     /**
      * Style
      * <p>
@@ -406,11 +416,12 @@ public class ButtonSchema {
         SECONDARY("secondary"),
         @SerializedName("tertiary")
         TERTIARY("tertiary");
+
         private final String value;
         private final static Map<String, ButtonSchema.StyleSchema> CONSTANTS = new HashMap<String, ButtonSchema.StyleSchema>();
 
         static {
-            for (ButtonSchema.StyleSchema c: values()) {
+            for (ButtonSchema.StyleSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -439,7 +450,6 @@ public class ButtonSchema {
 
     }
 
-
     /**
      * The identifier of the component
      * 
@@ -448,11 +458,12 @@ public class ButtonSchema {
 
         @SerializedName("button")
         BUTTON("button");
+
         private final String value;
         private final static Map<String, ButtonSchema.Type> CONSTANTS = new HashMap<String, ButtonSchema.Type>();
 
         static {
-            for (ButtonSchema.Type c: values()) {
+            for (ButtonSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

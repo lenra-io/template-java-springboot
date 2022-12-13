@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * InputBorder
@@ -106,21 +105,22 @@ public class InputBorderSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(InputBorderSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(InputBorderSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("borderRadius");
         sb.append('=');
-        sb.append(((this.borderRadius == null)?"<null>":this.borderRadius));
+        sb.append(((this.borderRadius == null) ? "<null>" : this.borderRadius));
         sb.append(',');
         sb.append("borderSide");
         sb.append('=');
-        sb.append(((this.borderSide == null)?"<null>":this.borderSide));
+        sb.append(((this.borderSide == null) ? "<null>" : this.borderSide));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -130,9 +130,9 @@ public class InputBorderSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.borderRadius == null)? 0 :this.borderRadius.hashCode()));
-        result = ((result* 31)+((this.borderSide == null)? 0 :this.borderSide.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.borderRadius == null) ? 0 : this.borderRadius.hashCode()));
+        result = ((result * 31) + ((this.borderSide == null) ? 0 : this.borderSide.hashCode()));
         return result;
     }
 
@@ -145,7 +145,11 @@ public class InputBorderSchema {
             return false;
         }
         InputBorderSchema rhs = ((InputBorderSchema) other);
-        return ((((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type)))&&((this.borderRadius == rhs.borderRadius)||((this.borderRadius!= null)&&this.borderRadius.equals(rhs.borderRadius))))&&((this.borderSide == rhs.borderSide)||((this.borderSide!= null)&&this.borderSide.equals(rhs.borderSide))));
+        return ((((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type)))
+                && ((this.borderRadius == rhs.borderRadius)
+                        || ((this.borderRadius != null) && this.borderRadius.equals(rhs.borderRadius))))
+                && ((this.borderSide == rhs.borderSide)
+                        || ((this.borderSide != null) && this.borderSide.equals(rhs.borderSide))));
     }
 
     public enum Type {
@@ -154,11 +158,12 @@ public class InputBorderSchema {
         UNDERLINE("underline"),
         @SerializedName("outline")
         OUTLINE("outline");
+
         private final String value;
         private final static Map<String, InputBorderSchema.Type> CONSTANTS = new HashMap<String, InputBorderSchema.Type>();
 
         static {
-            for (InputBorderSchema.Type c: values()) {
+            for (InputBorderSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

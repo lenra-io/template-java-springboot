@@ -1,9 +1,8 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * BoxConstraints
@@ -129,25 +128,26 @@ public class BoxConstraintsSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(BoxConstraintsSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(BoxConstraintsSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("minWidth");
         sb.append('=');
-        sb.append(((this.minWidth == null)?"<null>":this.minWidth));
+        sb.append(((this.minWidth == null) ? "<null>" : this.minWidth));
         sb.append(',');
         sb.append("maxWidth");
         sb.append('=');
-        sb.append(((this.maxWidth == null)?"<null>":this.maxWidth));
+        sb.append(((this.maxWidth == null) ? "<null>" : this.maxWidth));
         sb.append(',');
         sb.append("minHeight");
         sb.append('=');
-        sb.append(((this.minHeight == null)?"<null>":this.minHeight));
+        sb.append(((this.minHeight == null) ? "<null>" : this.minHeight));
         sb.append(',');
         sb.append("maxHeight");
         sb.append('=');
-        sb.append(((this.maxHeight == null)?"<null>":this.maxHeight));
+        sb.append(((this.maxHeight == null) ? "<null>" : this.maxHeight));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -157,10 +157,10 @@ public class BoxConstraintsSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.minHeight == null)? 0 :this.minHeight.hashCode()));
-        result = ((result* 31)+((this.minWidth == null)? 0 :this.minWidth.hashCode()));
-        result = ((result* 31)+((this.maxHeight == null)? 0 :this.maxHeight.hashCode()));
-        result = ((result* 31)+((this.maxWidth == null)? 0 :this.maxWidth.hashCode()));
+        result = ((result * 31) + ((this.minHeight == null) ? 0 : this.minHeight.hashCode()));
+        result = ((result * 31) + ((this.minWidth == null) ? 0 : this.minWidth.hashCode()));
+        result = ((result * 31) + ((this.maxHeight == null) ? 0 : this.maxHeight.hashCode()));
+        result = ((result * 31) + ((this.maxWidth == null) ? 0 : this.maxWidth.hashCode()));
         return result;
     }
 
@@ -173,7 +173,13 @@ public class BoxConstraintsSchema {
             return false;
         }
         BoxConstraintsSchema rhs = ((BoxConstraintsSchema) other);
-        return (((((this.minHeight == rhs.minHeight)||((this.minHeight!= null)&&this.minHeight.equals(rhs.minHeight)))&&((this.minWidth == rhs.minWidth)||((this.minWidth!= null)&&this.minWidth.equals(rhs.minWidth))))&&((this.maxHeight == rhs.maxHeight)||((this.maxHeight!= null)&&this.maxHeight.equals(rhs.maxHeight))))&&((this.maxWidth == rhs.maxWidth)||((this.maxWidth!= null)&&this.maxWidth.equals(rhs.maxWidth))));
+        return (((((this.minHeight == rhs.minHeight)
+                || ((this.minHeight != null) && this.minHeight.equals(rhs.minHeight)))
+                && ((this.minWidth == rhs.minWidth) || ((this.minWidth != null) && this.minWidth.equals(rhs.minWidth))))
+                && ((this.maxHeight == rhs.maxHeight)
+                        || ((this.maxHeight != null) && this.maxHeight.equals(rhs.maxHeight))))
+                && ((this.maxWidth == rhs.maxWidth)
+                        || ((this.maxWidth != null) && this.maxWidth.equals(rhs.maxWidth))));
     }
 
 }

@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Toggle
@@ -289,45 +288,46 @@ public class ToggleSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(ToggleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(ToggleSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("value");
         sb.append('=');
-        sb.append(((this.value == null)?"<null>":this.value));
+        sb.append(((this.value == null) ? "<null>" : this.value));
         sb.append(',');
         sb.append("splashRadius");
         sb.append('=');
-        sb.append(((this.splashRadius == null)?"<null>":this.splashRadius));
+        sb.append(((this.splashRadius == null) ? "<null>" : this.splashRadius));
         sb.append(',');
         sb.append("autofocus");
         sb.append('=');
-        sb.append(((this.autofocus == null)?"<null>":this.autofocus));
+        sb.append(((this.autofocus == null) ? "<null>" : this.autofocus));
         sb.append(',');
         sb.append("dragStartBehavior");
         sb.append('=');
-        sb.append(((this.dragStartBehavior == null)?"<null>":this.dragStartBehavior));
+        sb.append(((this.dragStartBehavior == null) ? "<null>" : this.dragStartBehavior));
         sb.append(',');
         sb.append("onPressed");
         sb.append('=');
-        sb.append(((this.onPressed == null)?"<null>":this.onPressed));
+        sb.append(((this.onPressed == null) ? "<null>" : this.onPressed));
         sb.append(',');
         sb.append("style");
         sb.append('=');
-        sb.append(((this.style == null)?"<null>":this.style));
+        sb.append(((this.style == null) ? "<null>" : this.style));
         sb.append(',');
         sb.append("name");
         sb.append('=');
-        sb.append(((this.name == null)?"<null>":this.name));
+        sb.append(((this.name == null) ? "<null>" : this.name));
         sb.append(',');
         sb.append("disabled");
         sb.append('=');
-        sb.append(((this.disabled == null)?"<null>":this.disabled));
+        sb.append(((this.disabled == null) ? "<null>" : this.disabled));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -337,15 +337,15 @@ public class ToggleSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.dragStartBehavior == null)? 0 :this.dragStartBehavior.hashCode()));
-        result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
-        result = ((result* 31)+((this.style == null)? 0 :this.style.hashCode()));
-        result = ((result* 31)+((this.disabled == null)? 0 :this.disabled.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.autofocus == null)? 0 :this.autofocus.hashCode()));
-        result = ((result* 31)+((this.value == null)? 0 :this.value.hashCode()));
-        result = ((result* 31)+((this.splashRadius == null)? 0 :this.splashRadius.hashCode()));
-        result = ((result* 31)+((this.onPressed == null)? 0 :this.onPressed.hashCode()));
+        result = ((result * 31) + ((this.dragStartBehavior == null) ? 0 : this.dragStartBehavior.hashCode()));
+        result = ((result * 31) + ((this.name == null) ? 0 : this.name.hashCode()));
+        result = ((result * 31) + ((this.style == null) ? 0 : this.style.hashCode()));
+        result = ((result * 31) + ((this.disabled == null) ? 0 : this.disabled.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.autofocus == null) ? 0 : this.autofocus.hashCode()));
+        result = ((result * 31) + ((this.value == null) ? 0 : this.value.hashCode()));
+        result = ((result * 31) + ((this.splashRadius == null) ? 0 : this.splashRadius.hashCode()));
+        result = ((result * 31) + ((this.onPressed == null) ? 0 : this.onPressed.hashCode()));
         return result;
     }
 
@@ -358,9 +358,20 @@ public class ToggleSchema {
             return false;
         }
         ToggleSchema rhs = ((ToggleSchema) other);
-        return ((((((((((this.dragStartBehavior == rhs.dragStartBehavior)||((this.dragStartBehavior!= null)&&this.dragStartBehavior.equals(rhs.dragStartBehavior)))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))))&&((this.disabled == rhs.disabled)||((this.disabled!= null)&&this.disabled.equals(rhs.disabled))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.autofocus == rhs.autofocus)||((this.autofocus!= null)&&this.autofocus.equals(rhs.autofocus))))&&((this.value == rhs.value)||((this.value!= null)&&this.value.equals(rhs.value))))&&((this.splashRadius == rhs.splashRadius)||((this.splashRadius!= null)&&this.splashRadius.equals(rhs.splashRadius))))&&((this.onPressed == rhs.onPressed)||((this.onPressed!= null)&&this.onPressed.equals(rhs.onPressed))));
+        return ((((((((((this.dragStartBehavior == rhs.dragStartBehavior)
+                || ((this.dragStartBehavior != null) && this.dragStartBehavior.equals(rhs.dragStartBehavior)))
+                && ((this.name == rhs.name) || ((this.name != null) && this.name.equals(rhs.name))))
+                && ((this.style == rhs.style) || ((this.style != null) && this.style.equals(rhs.style))))
+                && ((this.disabled == rhs.disabled) || ((this.disabled != null) && this.disabled.equals(rhs.disabled))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.autofocus == rhs.autofocus)
+                        || ((this.autofocus != null) && this.autofocus.equals(rhs.autofocus))))
+                && ((this.value == rhs.value) || ((this.value != null) && this.value.equals(rhs.value))))
+                && ((this.splashRadius == rhs.splashRadius)
+                        || ((this.splashRadius != null) && this.splashRadius.equals(rhs.splashRadius))))
+                && ((this.onPressed == rhs.onPressed)
+                        || ((this.onPressed != null) && this.onPressed.equals(rhs.onPressed))));
     }
-
 
     /**
      * Determines the way that drag start behavior is handled.
@@ -372,11 +383,12 @@ public class ToggleSchema {
         START("start"),
         @SerializedName("down")
         DOWN("down");
+
         private final String value;
         private final static Map<String, ToggleSchema.DragStartBehavior> CONSTANTS = new HashMap<String, ToggleSchema.DragStartBehavior>();
 
         static {
-            for (ToggleSchema.DragStartBehavior c: values()) {
+            for (ToggleSchema.DragStartBehavior c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -405,7 +417,6 @@ public class ToggleSchema {
 
     }
 
-
     /**
      * The type of the element.
      * 
@@ -414,11 +425,12 @@ public class ToggleSchema {
 
         @SerializedName("toggle")
         TOGGLE("toggle");
+
         private final String value;
         private final static Map<String, ToggleSchema.Type> CONSTANTS = new HashMap<String, ToggleSchema.Type>();
 
         static {
-            for (ToggleSchema.Type c: values()) {
+            for (ToggleSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

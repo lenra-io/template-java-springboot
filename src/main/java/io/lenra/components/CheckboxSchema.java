@@ -1,11 +1,10 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.HashMap;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * Checkbox
@@ -267,41 +266,42 @@ public class CheckboxSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(CheckboxSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(CheckboxSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("value");
         sb.append('=');
-        sb.append(((this.value == null)?"<null>":this.value));
+        sb.append(((this.value == null) ? "<null>" : this.value));
         sb.append(',');
         sb.append("tristate");
         sb.append('=');
-        sb.append(((this.tristate == null)?"<null>":this.tristate));
+        sb.append(((this.tristate == null) ? "<null>" : this.tristate));
         sb.append(',');
         sb.append("onPressed");
         sb.append('=');
-        sb.append(((this.onPressed == null)?"<null>":this.onPressed));
+        sb.append(((this.onPressed == null) ? "<null>" : this.onPressed));
         sb.append(',');
         sb.append("style");
         sb.append('=');
-        sb.append(((this.style == null)?"<null>":this.style));
+        sb.append(((this.style == null) ? "<null>" : this.style));
         sb.append(',');
         sb.append("materialTapTargetSize");
         sb.append('=');
-        sb.append(((this.materialTapTargetSize == null)?"<null>":this.materialTapTargetSize));
+        sb.append(((this.materialTapTargetSize == null) ? "<null>" : this.materialTapTargetSize));
         sb.append(',');
         sb.append("autofocus");
         sb.append('=');
-        sb.append(((this.autofocus == null)?"<null>":this.autofocus));
+        sb.append(((this.autofocus == null) ? "<null>" : this.autofocus));
         sb.append(',');
         sb.append("name");
         sb.append('=');
-        sb.append(((this.name == null)?"<null>":this.name));
+        sb.append(((this.name == null) ? "<null>" : this.name));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -311,14 +311,14 @@ public class CheckboxSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.tristate == null)? 0 :this.tristate.hashCode()));
-        result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
-        result = ((result* 31)+((this.style == null)? 0 :this.style.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.autofocus == null)? 0 :this.autofocus.hashCode()));
-        result = ((result* 31)+((this.value == null)? 0 :this.value.hashCode()));
-        result = ((result* 31)+((this.onPressed == null)? 0 :this.onPressed.hashCode()));
-        result = ((result* 31)+((this.materialTapTargetSize == null)? 0 :this.materialTapTargetSize.hashCode()));
+        result = ((result * 31) + ((this.tristate == null) ? 0 : this.tristate.hashCode()));
+        result = ((result * 31) + ((this.name == null) ? 0 : this.name.hashCode()));
+        result = ((result * 31) + ((this.style == null) ? 0 : this.style.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.autofocus == null) ? 0 : this.autofocus.hashCode()));
+        result = ((result * 31) + ((this.value == null) ? 0 : this.value.hashCode()));
+        result = ((result * 31) + ((this.onPressed == null) ? 0 : this.onPressed.hashCode()));
+        result = ((result * 31) + ((this.materialTapTargetSize == null) ? 0 : this.materialTapTargetSize.hashCode()));
         return result;
     }
 
@@ -331,9 +331,19 @@ public class CheckboxSchema {
             return false;
         }
         CheckboxSchema rhs = ((CheckboxSchema) other);
-        return (((((((((this.tristate == rhs.tristate)||((this.tristate!= null)&&this.tristate.equals(rhs.tristate)))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.autofocus == rhs.autofocus)||((this.autofocus!= null)&&this.autofocus.equals(rhs.autofocus))))&&((this.value == rhs.value)||((this.value!= null)&&this.value.equals(rhs.value))))&&((this.onPressed == rhs.onPressed)||((this.onPressed!= null)&&this.onPressed.equals(rhs.onPressed))))&&((this.materialTapTargetSize == rhs.materialTapTargetSize)||((this.materialTapTargetSize!= null)&&this.materialTapTargetSize.equals(rhs.materialTapTargetSize))));
+        return (((((((((this.tristate == rhs.tristate)
+                || ((this.tristate != null) && this.tristate.equals(rhs.tristate)))
+                && ((this.name == rhs.name) || ((this.name != null) && this.name.equals(rhs.name))))
+                && ((this.style == rhs.style) || ((this.style != null) && this.style.equals(rhs.style))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.autofocus == rhs.autofocus)
+                        || ((this.autofocus != null) && this.autofocus.equals(rhs.autofocus))))
+                && ((this.value == rhs.value) || ((this.value != null) && this.value.equals(rhs.value))))
+                && ((this.onPressed == rhs.onPressed)
+                        || ((this.onPressed != null) && this.onPressed.equals(rhs.onPressed))))
+                && ((this.materialTapTargetSize == rhs.materialTapTargetSize) || ((this.materialTapTargetSize != null)
+                        && this.materialTapTargetSize.equals(rhs.materialTapTargetSize))));
     }
-
 
     /**
      * Material Tap Target Size
@@ -347,11 +357,12 @@ public class CheckboxSchema {
         SHRINK_WRAP("shrinkWrap"),
         @SerializedName("padded")
         PADDED("padded");
+
         private final String value;
         private final static Map<String, CheckboxSchema.MaterialTapTargetSizeSchema> CONSTANTS = new HashMap<String, CheckboxSchema.MaterialTapTargetSizeSchema>();
 
         static {
-            for (CheckboxSchema.MaterialTapTargetSizeSchema c: values()) {
+            for (CheckboxSchema.MaterialTapTargetSizeSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -380,7 +391,6 @@ public class CheckboxSchema {
 
     }
 
-
     /**
      * The identifier of the component
      * 
@@ -389,11 +399,12 @@ public class CheckboxSchema {
 
         @SerializedName("checkbox")
         CHECKBOX("checkbox");
+
         private final String value;
         private final static Map<String, CheckboxSchema.Type> CONSTANTS = new HashMap<String, CheckboxSchema.Type>();
 
         static {
-            for (CheckboxSchema.Type c: values()) {
+            for (CheckboxSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

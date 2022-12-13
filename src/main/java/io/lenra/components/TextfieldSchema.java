@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 /**
  * TextField
@@ -221,12 +220,14 @@ public class TextfieldSchema {
     /**
      * Text Direction
      * <p>
-     * In which direction the elements should be placed following the horizontal axis.
+     * In which direction the elements should be placed following the horizontal
+     * axis.
      * 
      */
     @SerializedName("textDirection")
     @Expose
-    private lenra.components.FlexSchema.TextDirectionSchema textDirection = lenra.components.FlexSchema.TextDirectionSchema.fromValue("ltr");
+    private io.lenra.components.FlexSchema.TextDirectionSchema textDirection = io.lenra.components.FlexSchema.TextDirectionSchema
+            .fromValue("ltr");
     /**
      * TextInputAction
      * <p>
@@ -833,24 +834,26 @@ public class TextfieldSchema {
     /**
      * Text Direction
      * <p>
-     * In which direction the elements should be placed following the horizontal axis.
+     * In which direction the elements should be placed following the horizontal
+     * axis.
      * 
      */
-    public lenra.components.FlexSchema.TextDirectionSchema getTextDirection() {
+    public io.lenra.components.FlexSchema.TextDirectionSchema getTextDirection() {
         return textDirection;
     }
 
     /**
      * Text Direction
      * <p>
-     * In which direction the elements should be placed following the horizontal axis.
+     * In which direction the elements should be placed following the horizontal
+     * axis.
      * 
      */
-    public void setTextDirection(lenra.components.FlexSchema.TextDirectionSchema textDirection) {
+    public void setTextDirection(io.lenra.components.FlexSchema.TextDirectionSchema textDirection) {
         this.textDirection = textDirection;
     }
 
-    public TextfieldSchema withTextDirection(lenra.components.FlexSchema.TextDirectionSchema textDirection) {
+    public TextfieldSchema withTextDirection(io.lenra.components.FlexSchema.TextDirectionSchema textDirection) {
         this.textDirection = textDirection;
         return this;
     }
@@ -929,125 +932,126 @@ public class TextfieldSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(TextfieldSchema.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(TextfieldSchema.class.getName()).append('@')
+                .append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("value");
         sb.append('=');
-        sb.append(((this.value == null)?"<null>":this.value));
+        sb.append(((this.value == null) ? "<null>" : this.value));
         sb.append(',');
         sb.append("autocorrect");
         sb.append('=');
-        sb.append(((this.autocorrect == null)?"<null>":this.autocorrect));
+        sb.append(((this.autocorrect == null) ? "<null>" : this.autocorrect));
         sb.append(',');
         sb.append("autofillHints");
         sb.append('=');
-        sb.append(((this.autofillHints == null)?"<null>":this.autofillHints));
+        sb.append(((this.autofillHints == null) ? "<null>" : this.autofillHints));
         sb.append(',');
         sb.append("autofocus");
         sb.append('=');
-        sb.append(((this.autofocus == null)?"<null>":this.autofocus));
+        sb.append(((this.autofocus == null) ? "<null>" : this.autofocus));
         sb.append(',');
         sb.append("buildCounter");
         sb.append('=');
-        sb.append(((this.buildCounter == null)?"<null>":this.buildCounter));
+        sb.append(((this.buildCounter == null) ? "<null>" : this.buildCounter));
         sb.append(',');
         sb.append("style");
         sb.append('=');
-        sb.append(((this.style == null)?"<null>":this.style));
+        sb.append(((this.style == null) ? "<null>" : this.style));
         sb.append(',');
         sb.append("dragStartBehavior");
         sb.append('=');
-        sb.append(((this.dragStartBehavior == null)?"<null>":this.dragStartBehavior));
+        sb.append(((this.dragStartBehavior == null) ? "<null>" : this.dragStartBehavior));
         sb.append(',');
         sb.append("enabled");
         sb.append('=');
-        sb.append(((this.enabled == null)?"<null>":this.enabled));
+        sb.append(((this.enabled == null) ? "<null>" : this.enabled));
         sb.append(',');
         sb.append("enableInteractiveSelection");
         sb.append('=');
-        sb.append(((this.enableInteractiveSelection == null)?"<null>":this.enableInteractiveSelection));
+        sb.append(((this.enableInteractiveSelection == null) ? "<null>" : this.enableInteractiveSelection));
         sb.append(',');
         sb.append("expands");
         sb.append('=');
-        sb.append(((this.expands == null)?"<null>":this.expands));
+        sb.append(((this.expands == null) ? "<null>" : this.expands));
         sb.append(',');
         sb.append("keyboardType");
         sb.append('=');
-        sb.append(((this.keyboardType == null)?"<null>":this.keyboardType));
+        sb.append(((this.keyboardType == null) ? "<null>" : this.keyboardType));
         sb.append(',');
         sb.append("maxLength");
         sb.append('=');
-        sb.append(((this.maxLength == null)?"<null>":this.maxLength));
+        sb.append(((this.maxLength == null) ? "<null>" : this.maxLength));
         sb.append(',');
         sb.append("maxLengthEnforcement");
         sb.append('=');
-        sb.append(((this.maxLengthEnforcement == null)?"<null>":this.maxLengthEnforcement));
+        sb.append(((this.maxLengthEnforcement == null) ? "<null>" : this.maxLengthEnforcement));
         sb.append(',');
         sb.append("maxLines");
         sb.append('=');
-        sb.append(((this.maxLines == null)?"<null>":this.maxLines));
+        sb.append(((this.maxLines == null) ? "<null>" : this.maxLines));
         sb.append(',');
         sb.append("minLines");
         sb.append('=');
-        sb.append(((this.minLines == null)?"<null>":this.minLines));
+        sb.append(((this.minLines == null) ? "<null>" : this.minLines));
         sb.append(',');
         sb.append("obscureText");
         sb.append('=');
-        sb.append(((this.obscureText == null)?"<null>":this.obscureText));
+        sb.append(((this.obscureText == null) ? "<null>" : this.obscureText));
         sb.append(',');
         sb.append("onAppPrivateCommand");
         sb.append('=');
-        sb.append(((this.onAppPrivateCommand == null)?"<null>":this.onAppPrivateCommand));
+        sb.append(((this.onAppPrivateCommand == null) ? "<null>" : this.onAppPrivateCommand));
         sb.append(',');
         sb.append("onChanged");
         sb.append('=');
-        sb.append(((this.onChanged == null)?"<null>":this.onChanged));
+        sb.append(((this.onChanged == null) ? "<null>" : this.onChanged));
         sb.append(',');
         sb.append("onEditingComplete");
         sb.append('=');
-        sb.append(((this.onEditingComplete == null)?"<null>":this.onEditingComplete));
+        sb.append(((this.onEditingComplete == null) ? "<null>" : this.onEditingComplete));
         sb.append(',');
         sb.append("onSubmitted");
         sb.append('=');
-        sb.append(((this.onSubmitted == null)?"<null>":this.onSubmitted));
+        sb.append(((this.onSubmitted == null) ? "<null>" : this.onSubmitted));
         sb.append(',');
         sb.append("onTap");
         sb.append('=');
-        sb.append(((this.onTap == null)?"<null>":this.onTap));
+        sb.append(((this.onTap == null) ? "<null>" : this.onTap));
         sb.append(',');
         sb.append("readOnly");
         sb.append('=');
-        sb.append(((this.readOnly == null)?"<null>":this.readOnly));
+        sb.append(((this.readOnly == null) ? "<null>" : this.readOnly));
         sb.append(',');
         sb.append("showCursor");
         sb.append('=');
-        sb.append(((this.showCursor == null)?"<null>":this.showCursor));
+        sb.append(((this.showCursor == null) ? "<null>" : this.showCursor));
         sb.append(',');
         sb.append("textCapitalization");
         sb.append('=');
-        sb.append(((this.textCapitalization == null)?"<null>":this.textCapitalization));
+        sb.append(((this.textCapitalization == null) ? "<null>" : this.textCapitalization));
         sb.append(',');
         sb.append("textDirection");
         sb.append('=');
-        sb.append(((this.textDirection == null)?"<null>":this.textDirection));
+        sb.append(((this.textDirection == null) ? "<null>" : this.textDirection));
         sb.append(',');
         sb.append("textInputAction");
         sb.append('=');
-        sb.append(((this.textInputAction == null)?"<null>":this.textInputAction));
+        sb.append(((this.textInputAction == null) ? "<null>" : this.textInputAction));
         sb.append(',');
         sb.append("toolbarOptions");
         sb.append('=');
-        sb.append(((this.toolbarOptions == null)?"<null>":this.toolbarOptions));
+        sb.append(((this.toolbarOptions == null) ? "<null>" : this.toolbarOptions));
         sb.append(',');
         sb.append("name");
         sb.append('=');
-        sb.append(((this.name == null)?"<null>":this.name));
+        sb.append(((this.name == null) ? "<null>" : this.name));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -1057,35 +1061,36 @@ public class TextfieldSchema {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.toolbarOptions == null)? 0 :this.toolbarOptions.hashCode()));
-        result = ((result* 31)+((this.maxLengthEnforcement == null)? 0 :this.maxLengthEnforcement.hashCode()));
-        result = ((result* 31)+((this.textCapitalization == null)? 0 :this.textCapitalization.hashCode()));
-        result = ((result* 31)+((this.onEditingComplete == null)? 0 :this.onEditingComplete.hashCode()));
-        result = ((result* 31)+((this.onTap == null)? 0 :this.onTap.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.enabled == null)? 0 :this.enabled.hashCode()));
-        result = ((result* 31)+((this.autocorrect == null)? 0 :this.autocorrect.hashCode()));
-        result = ((result* 31)+((this.onAppPrivateCommand == null)? 0 :this.onAppPrivateCommand.hashCode()));
-        result = ((result* 31)+((this.textDirection == null)? 0 :this.textDirection.hashCode()));
-        result = ((result* 31)+((this.enableInteractiveSelection == null)? 0 :this.enableInteractiveSelection.hashCode()));
-        result = ((result* 31)+((this.value == null)? 0 :this.value.hashCode()));
-        result = ((result* 31)+((this.showCursor == null)? 0 :this.showCursor.hashCode()));
-        result = ((result* 31)+((this.obscureText == null)? 0 :this.obscureText.hashCode()));
-        result = ((result* 31)+((this.buildCounter == null)? 0 :this.buildCounter.hashCode()));
-        result = ((result* 31)+((this.onChanged == null)? 0 :this.onChanged.hashCode()));
-        result = ((result* 31)+((this.readOnly == null)? 0 :this.readOnly.hashCode()));
-        result = ((result* 31)+((this.expands == null)? 0 :this.expands.hashCode()));
-        result = ((result* 31)+((this.autofocus == null)? 0 :this.autofocus.hashCode()));
-        result = ((result* 31)+((this.minLines == null)? 0 :this.minLines.hashCode()));
-        result = ((result* 31)+((this.onSubmitted == null)? 0 :this.onSubmitted.hashCode()));
-        result = ((result* 31)+((this.textInputAction == null)? 0 :this.textInputAction.hashCode()));
-        result = ((result* 31)+((this.dragStartBehavior == null)? 0 :this.dragStartBehavior.hashCode()));
-        result = ((result* 31)+((this.keyboardType == null)? 0 :this.keyboardType.hashCode()));
-        result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
-        result = ((result* 31)+((this.autofillHints == null)? 0 :this.autofillHints.hashCode()));
-        result = ((result* 31)+((this.maxLines == null)? 0 :this.maxLines.hashCode()));
-        result = ((result* 31)+((this.style == null)? 0 :this.style.hashCode()));
-        result = ((result* 31)+((this.maxLength == null)? 0 :this.maxLength.hashCode()));
+        result = ((result * 31) + ((this.toolbarOptions == null) ? 0 : this.toolbarOptions.hashCode()));
+        result = ((result * 31) + ((this.maxLengthEnforcement == null) ? 0 : this.maxLengthEnforcement.hashCode()));
+        result = ((result * 31) + ((this.textCapitalization == null) ? 0 : this.textCapitalization.hashCode()));
+        result = ((result * 31) + ((this.onEditingComplete == null) ? 0 : this.onEditingComplete.hashCode()));
+        result = ((result * 31) + ((this.onTap == null) ? 0 : this.onTap.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.enabled == null) ? 0 : this.enabled.hashCode()));
+        result = ((result * 31) + ((this.autocorrect == null) ? 0 : this.autocorrect.hashCode()));
+        result = ((result * 31) + ((this.onAppPrivateCommand == null) ? 0 : this.onAppPrivateCommand.hashCode()));
+        result = ((result * 31) + ((this.textDirection == null) ? 0 : this.textDirection.hashCode()));
+        result = ((result * 31)
+                + ((this.enableInteractiveSelection == null) ? 0 : this.enableInteractiveSelection.hashCode()));
+        result = ((result * 31) + ((this.value == null) ? 0 : this.value.hashCode()));
+        result = ((result * 31) + ((this.showCursor == null) ? 0 : this.showCursor.hashCode()));
+        result = ((result * 31) + ((this.obscureText == null) ? 0 : this.obscureText.hashCode()));
+        result = ((result * 31) + ((this.buildCounter == null) ? 0 : this.buildCounter.hashCode()));
+        result = ((result * 31) + ((this.onChanged == null) ? 0 : this.onChanged.hashCode()));
+        result = ((result * 31) + ((this.readOnly == null) ? 0 : this.readOnly.hashCode()));
+        result = ((result * 31) + ((this.expands == null) ? 0 : this.expands.hashCode()));
+        result = ((result * 31) + ((this.autofocus == null) ? 0 : this.autofocus.hashCode()));
+        result = ((result * 31) + ((this.minLines == null) ? 0 : this.minLines.hashCode()));
+        result = ((result * 31) + ((this.onSubmitted == null) ? 0 : this.onSubmitted.hashCode()));
+        result = ((result * 31) + ((this.textInputAction == null) ? 0 : this.textInputAction.hashCode()));
+        result = ((result * 31) + ((this.dragStartBehavior == null) ? 0 : this.dragStartBehavior.hashCode()));
+        result = ((result * 31) + ((this.keyboardType == null) ? 0 : this.keyboardType.hashCode()));
+        result = ((result * 31) + ((this.name == null) ? 0 : this.name.hashCode()));
+        result = ((result * 31) + ((this.autofillHints == null) ? 0 : this.autofillHints.hashCode()));
+        result = ((result * 31) + ((this.maxLines == null) ? 0 : this.maxLines.hashCode()));
+        result = ((result * 31) + ((this.style == null) ? 0 : this.style.hashCode()));
+        result = ((result * 31) + ((this.maxLength == null) ? 0 : this.maxLength.hashCode()));
         return result;
     }
 
@@ -1098,9 +1103,56 @@ public class TextfieldSchema {
             return false;
         }
         TextfieldSchema rhs = ((TextfieldSchema) other);
-        return ((((((((((((((((((((((((((((((this.toolbarOptions == rhs.toolbarOptions)||((this.toolbarOptions!= null)&&this.toolbarOptions.equals(rhs.toolbarOptions)))&&((this.maxLengthEnforcement == rhs.maxLengthEnforcement)||((this.maxLengthEnforcement!= null)&&this.maxLengthEnforcement.equals(rhs.maxLengthEnforcement))))&&((this.textCapitalization == rhs.textCapitalization)||((this.textCapitalization!= null)&&this.textCapitalization.equals(rhs.textCapitalization))))&&((this.onEditingComplete == rhs.onEditingComplete)||((this.onEditingComplete!= null)&&this.onEditingComplete.equals(rhs.onEditingComplete))))&&((this.onTap == rhs.onTap)||((this.onTap!= null)&&this.onTap.equals(rhs.onTap))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.enabled == rhs.enabled)||((this.enabled!= null)&&this.enabled.equals(rhs.enabled))))&&((this.autocorrect == rhs.autocorrect)||((this.autocorrect!= null)&&this.autocorrect.equals(rhs.autocorrect))))&&((this.onAppPrivateCommand == rhs.onAppPrivateCommand)||((this.onAppPrivateCommand!= null)&&this.onAppPrivateCommand.equals(rhs.onAppPrivateCommand))))&&((this.textDirection == rhs.textDirection)||((this.textDirection!= null)&&this.textDirection.equals(rhs.textDirection))))&&((this.enableInteractiveSelection == rhs.enableInteractiveSelection)||((this.enableInteractiveSelection!= null)&&this.enableInteractiveSelection.equals(rhs.enableInteractiveSelection))))&&((this.value == rhs.value)||((this.value!= null)&&this.value.equals(rhs.value))))&&((this.showCursor == rhs.showCursor)||((this.showCursor!= null)&&this.showCursor.equals(rhs.showCursor))))&&((this.obscureText == rhs.obscureText)||((this.obscureText!= null)&&this.obscureText.equals(rhs.obscureText))))&&((this.buildCounter == rhs.buildCounter)||((this.buildCounter!= null)&&this.buildCounter.equals(rhs.buildCounter))))&&((this.onChanged == rhs.onChanged)||((this.onChanged!= null)&&this.onChanged.equals(rhs.onChanged))))&&((this.readOnly == rhs.readOnly)||((this.readOnly!= null)&&this.readOnly.equals(rhs.readOnly))))&&((this.expands == rhs.expands)||((this.expands!= null)&&this.expands.equals(rhs.expands))))&&((this.autofocus == rhs.autofocus)||((this.autofocus!= null)&&this.autofocus.equals(rhs.autofocus))))&&((this.minLines == rhs.minLines)||((this.minLines!= null)&&this.minLines.equals(rhs.minLines))))&&((this.onSubmitted == rhs.onSubmitted)||((this.onSubmitted!= null)&&this.onSubmitted.equals(rhs.onSubmitted))))&&((this.textInputAction == rhs.textInputAction)||((this.textInputAction!= null)&&this.textInputAction.equals(rhs.textInputAction))))&&((this.dragStartBehavior == rhs.dragStartBehavior)||((this.dragStartBehavior!= null)&&this.dragStartBehavior.equals(rhs.dragStartBehavior))))&&((this.keyboardType == rhs.keyboardType)||((this.keyboardType!= null)&&this.keyboardType.equals(rhs.keyboardType))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.autofillHints == rhs.autofillHints)||((this.autofillHints!= null)&&this.autofillHints.equals(rhs.autofillHints))))&&((this.maxLines == rhs.maxLines)||((this.maxLines!= null)&&this.maxLines.equals(rhs.maxLines))))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))))&&((this.maxLength == rhs.maxLength)||((this.maxLength!= null)&&this.maxLength.equals(rhs.maxLength))));
+        return ((((((((((((((((((((((((((((((this.toolbarOptions == rhs.toolbarOptions)
+                || ((this.toolbarOptions != null) && this.toolbarOptions.equals(rhs.toolbarOptions)))
+                && ((this.maxLengthEnforcement == rhs.maxLengthEnforcement) || ((this.maxLengthEnforcement != null)
+                        && this.maxLengthEnforcement.equals(rhs.maxLengthEnforcement))))
+                && ((this.textCapitalization == rhs.textCapitalization) || ((this.textCapitalization != null)
+                        && this.textCapitalization.equals(rhs.textCapitalization))))
+                && ((this.onEditingComplete == rhs.onEditingComplete)
+                        || ((this.onEditingComplete != null) && this.onEditingComplete.equals(rhs.onEditingComplete))))
+                && ((this.onTap == rhs.onTap) || ((this.onTap != null) && this.onTap.equals(rhs.onTap))))
+                && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type))))
+                && ((this.enabled == rhs.enabled) || ((this.enabled != null) && this.enabled.equals(rhs.enabled))))
+                && ((this.autocorrect == rhs.autocorrect)
+                        || ((this.autocorrect != null) && this.autocorrect.equals(rhs.autocorrect))))
+                && ((this.onAppPrivateCommand == rhs.onAppPrivateCommand) || ((this.onAppPrivateCommand != null)
+                        && this.onAppPrivateCommand.equals(rhs.onAppPrivateCommand))))
+                && ((this.textDirection == rhs.textDirection)
+                        || ((this.textDirection != null) && this.textDirection.equals(rhs.textDirection))))
+                && ((this.enableInteractiveSelection == rhs.enableInteractiveSelection)
+                        || ((this.enableInteractiveSelection != null)
+                                && this.enableInteractiveSelection.equals(rhs.enableInteractiveSelection))))
+                && ((this.value == rhs.value) || ((this.value != null) && this.value.equals(rhs.value))))
+                && ((this.showCursor == rhs.showCursor)
+                        || ((this.showCursor != null) && this.showCursor.equals(rhs.showCursor))))
+                && ((this.obscureText == rhs.obscureText)
+                        || ((this.obscureText != null) && this.obscureText.equals(rhs.obscureText))))
+                && ((this.buildCounter == rhs.buildCounter)
+                        || ((this.buildCounter != null) && this.buildCounter.equals(rhs.buildCounter))))
+                && ((this.onChanged == rhs.onChanged)
+                        || ((this.onChanged != null) && this.onChanged.equals(rhs.onChanged))))
+                && ((this.readOnly == rhs.readOnly) || ((this.readOnly != null) && this.readOnly.equals(rhs.readOnly))))
+                && ((this.expands == rhs.expands) || ((this.expands != null) && this.expands.equals(rhs.expands))))
+                && ((this.autofocus == rhs.autofocus)
+                        || ((this.autofocus != null) && this.autofocus.equals(rhs.autofocus))))
+                && ((this.minLines == rhs.minLines) || ((this.minLines != null) && this.minLines.equals(rhs.minLines))))
+                && ((this.onSubmitted == rhs.onSubmitted)
+                        || ((this.onSubmitted != null) && this.onSubmitted.equals(rhs.onSubmitted))))
+                && ((this.textInputAction == rhs.textInputAction)
+                        || ((this.textInputAction != null) && this.textInputAction.equals(rhs.textInputAction))))
+                && ((this.dragStartBehavior == rhs.dragStartBehavior)
+                        || ((this.dragStartBehavior != null) && this.dragStartBehavior.equals(rhs.dragStartBehavior))))
+                && ((this.keyboardType == rhs.keyboardType)
+                        || ((this.keyboardType != null) && this.keyboardType.equals(rhs.keyboardType))))
+                && ((this.name == rhs.name) || ((this.name != null) && this.name.equals(rhs.name))))
+                && ((this.autofillHints == rhs.autofillHints)
+                        || ((this.autofillHints != null) && this.autofillHints.equals(rhs.autofillHints))))
+                && ((this.maxLines == rhs.maxLines) || ((this.maxLines != null) && this.maxLines.equals(rhs.maxLines))))
+                && ((this.style == rhs.style) || ((this.style != null) && this.style.equals(rhs.style))))
+                && ((this.maxLength == rhs.maxLength)
+                        || ((this.maxLength != null) && this.maxLength.equals(rhs.maxLength))));
     }
-
 
     /**
      * DragStartBehavior
@@ -1114,11 +1166,12 @@ public class TextfieldSchema {
         START("start"),
         @SerializedName("down")
         DOWN("down");
+
         private final String value;
         private final static Map<String, TextfieldSchema.DragStartBehaviorSchema> CONSTANTS = new HashMap<String, TextfieldSchema.DragStartBehaviorSchema>();
 
         static {
-            for (TextfieldSchema.DragStartBehaviorSchema c: values()) {
+            for (TextfieldSchema.DragStartBehaviorSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -1147,7 +1200,6 @@ public class TextfieldSchema {
 
     }
 
-
     /**
      * MaxLengthEnforcement
      * <p>
@@ -1162,11 +1214,12 @@ public class TextfieldSchema {
         ENFORCED("enforced"),
         @SerializedName("truncateAfterCompositionEnds")
         TRUNCATE_AFTER_COMPOSITION_ENDS("truncateAfterCompositionEnds");
+
         private final String value;
         private final static Map<String, TextfieldSchema.MaxLengthEnforcementSchema> CONSTANTS = new HashMap<String, TextfieldSchema.MaxLengthEnforcementSchema>();
 
         static {
-            for (TextfieldSchema.MaxLengthEnforcementSchema c: values()) {
+            for (TextfieldSchema.MaxLengthEnforcementSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -1195,7 +1248,6 @@ public class TextfieldSchema {
 
     }
 
-
     /**
      * TextCapitalization
      * <p>
@@ -1212,11 +1264,12 @@ public class TextfieldSchema {
         SENTENCES("sentences"),
         @SerializedName("characters")
         CHARACTERS("characters");
+
         private final String value;
         private final static Map<String, TextfieldSchema.TextCapitalizationSchema> CONSTANTS = new HashMap<String, TextfieldSchema.TextCapitalizationSchema>();
 
         static {
-            for (TextfieldSchema.TextCapitalizationSchema c: values()) {
+            for (TextfieldSchema.TextCapitalizationSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -1244,7 +1297,6 @@ public class TextfieldSchema {
         }
 
     }
-
 
     /**
      * TextInputAction
@@ -1280,11 +1332,12 @@ public class TextfieldSchema {
         SEND("send"),
         @SerializedName("unspecified")
         UNSPECIFIED("unspecified");
+
         private final String value;
         private final static Map<String, TextfieldSchema.TextInputActionSchema> CONSTANTS = new HashMap<String, TextfieldSchema.TextInputActionSchema>();
 
         static {
-            for (TextfieldSchema.TextInputActionSchema c: values()) {
+            for (TextfieldSchema.TextInputActionSchema c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -1313,7 +1366,6 @@ public class TextfieldSchema {
 
     }
 
-
     /**
      * The type of the element
      * 
@@ -1322,11 +1374,12 @@ public class TextfieldSchema {
 
         @SerializedName("textfield")
         TEXTFIELD("textfield");
+
         private final String value;
         private final static Map<String, TextfieldSchema.Type> CONSTANTS = new HashMap<String, TextfieldSchema.Type>();
 
         static {
-            for (TextfieldSchema.Type c: values()) {
+            for (TextfieldSchema.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

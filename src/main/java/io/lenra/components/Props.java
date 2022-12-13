@@ -1,5 +1,5 @@
 
-package lenra.components;
+package io.lenra.components;
 
 /**
  * Parameters passed to the listener
