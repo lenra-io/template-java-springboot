@@ -22,7 +22,7 @@ public class TextFieldStyleSchema {
      */
     @SerializedName("cursorColor")
     @Expose
-    private Integer cursorColor;
+    private Long cursorColor;
     /**
      * The height of the cursor.
      * 
@@ -141,7 +141,7 @@ public class TextFieldStyleSchema {
      * Color type
      * 
      */
-    public Integer getCursorColor() {
+    public Long getCursorColor() {
         return cursorColor;
     }
 
@@ -151,11 +151,11 @@ public class TextFieldStyleSchema {
      * Color type
      * 
      */
-    public void setCursorColor(Integer cursorColor) {
+    public void setCursorColor(Long cursorColor) {
         this.cursorColor = cursorColor;
     }
 
-    public TextFieldStyleSchema withCursorColor(Integer cursorColor) {
+    public TextFieldStyleSchema withCursorColor(Long cursorColor) {
         this.cursorColor = cursorColor;
         return this;
     }

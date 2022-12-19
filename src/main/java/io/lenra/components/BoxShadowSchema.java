@@ -20,7 +20,7 @@ public class BoxShadowSchema {
      */
     @SerializedName("color")
     @Expose
-    private Integer color;
+    private Long color;
     /**
      * The blur radius
      * 
@@ -51,7 +51,7 @@ public class BoxShadowSchema {
      * Color type
      * 
      */
-    public Integer getColor() {
+    public Long getColor() {
         return color;
     }
 
@@ -61,11 +61,11 @@ public class BoxShadowSchema {
      * Color type
      * 
      */
-    public void setColor(Integer color) {
+    public void setColor(Long color) {
         this.color = color;
     }
 
-    public BoxShadowSchema withColor(Integer color) {
+    public BoxShadowSchema withColor(Long color) {
         this.color = color;
         return this;
     }

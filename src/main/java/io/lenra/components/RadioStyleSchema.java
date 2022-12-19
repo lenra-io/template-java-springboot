@@ -20,7 +20,7 @@ public class RadioStyleSchema {
      */
     @SerializedName("activeColor")
     @Expose
-    private Integer activeColor;
+    private Long activeColor;
     /**
      * Color
      * <p>
@@ -29,7 +29,7 @@ public class RadioStyleSchema {
      */
     @SerializedName("focusColor")
     @Expose
-    private Integer focusColor;
+    private Long focusColor;
     /**
      * Color
      * <p>
@@ -38,7 +38,7 @@ public class RadioStyleSchema {
      */
     @SerializedName("hovercolor")
     @Expose
-    private Integer hovercolor;
+    private Long hovercolor;
     /**
      * The splash radius of the radio button
      * 
@@ -63,7 +63,7 @@ public class RadioStyleSchema {
      * Color type
      * 
      */
-    public Integer getActiveColor() {
+    public Long getActiveColor() {
         return activeColor;
     }
 
@@ -73,11 +73,11 @@ public class RadioStyleSchema {
      * Color type
      * 
      */
-    public void setActiveColor(Integer activeColor) {
+    public void setActiveColor(Long activeColor) {
         this.activeColor = activeColor;
     }
 
-    public RadioStyleSchema withActiveColor(Integer activeColor) {
+    public RadioStyleSchema withActiveColor(Long activeColor) {
         this.activeColor = activeColor;
         return this;
     }
@@ -88,7 +88,7 @@ public class RadioStyleSchema {
      * Color type
      * 
      */
-    public Integer getFocusColor() {
+    public Long getFocusColor() {
         return focusColor;
     }
 
@@ -98,11 +98,11 @@ public class RadioStyleSchema {
      * Color type
      * 
      */
-    public void setFocusColor(Integer focusColor) {
+    public void setFocusColor(Long focusColor) {
         this.focusColor = focusColor;
     }
 
-    public RadioStyleSchema withFocusColor(Integer focusColor) {
+    public RadioStyleSchema withFocusColor(Long focusColor) {
         this.focusColor = focusColor;
         return this;
     }
@@ -113,7 +113,7 @@ public class RadioStyleSchema {
      * Color type
      * 
      */
-    public Integer getHovercolor() {
+    public Long getHovercolor() {
         return hovercolor;
     }
 
@@ -123,11 +123,11 @@ public class RadioStyleSchema {
      * Color type
      * 
      */
-    public void setHovercolor(Integer hovercolor) {
+    public void setHovercolor(Long hovercolor) {
         this.hovercolor = hovercolor;
     }
 
-    public RadioStyleSchema withHovercolor(Integer hovercolor) {
+    public RadioStyleSchema withHovercolor(Long hovercolor) {
         this.hovercolor = hovercolor;
         return this;
     }

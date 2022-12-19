@@ -132,7 +132,7 @@ public class InputDecorationSchema {
      */
     @SerializedName("fillColor")
     @Expose
-    private Integer fillColor;
+    private Long fillColor;
     /**
      * Whether the input is filled with fillColor.
      * 
@@ -166,7 +166,7 @@ public class InputDecorationSchema {
      */
     @SerializedName("focusColor")
     @Expose
-    private Integer focusColor;
+    private Long focusColor;
     /**
      * InputBorder
      * <p>
@@ -250,7 +250,7 @@ public class InputDecorationSchema {
      */
     @SerializedName("hoverColor")
     @Expose
-    private Integer hoverColor;
+    private Long hoverColor;
     @SerializedName("icon")
     @Expose
     private Object icon;
@@ -262,7 +262,7 @@ public class InputDecorationSchema {
      */
     @SerializedName("iconColor")
     @Expose
-    private Integer iconColor;
+    private Long iconColor;
     /**
      * Whether the decoration is the same size as the input field.
      * 
@@ -310,7 +310,7 @@ public class InputDecorationSchema {
      */
     @SerializedName("prefixIconColor")
     @Expose
-    private Integer prefixIconColor;
+    private Long prefixIconColor;
     /**
      * BoxConstraints
      * <p>
@@ -357,7 +357,7 @@ public class InputDecorationSchema {
      */
     @SerializedName("suffixIconColor")
     @Expose
-    private Integer suffixIconColor;
+    private Long suffixIconColor;
     /**
      * BoxConstraints
      * <p>
@@ -708,7 +708,7 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public Integer getFillColor() {
+    public Long getFillColor() {
         return fillColor;
     }
 
@@ -718,11 +718,11 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public void setFillColor(Integer fillColor) {
+    public void setFillColor(Long fillColor) {
         this.fillColor = fillColor;
     }
 
-    public InputDecorationSchema withFillColor(Integer fillColor) {
+    public InputDecorationSchema withFillColor(Long fillColor) {
         this.fillColor = fillColor;
         return this;
     }
@@ -805,7 +805,7 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public Integer getFocusColor() {
+    public Long getFocusColor() {
         return focusColor;
     }
 
@@ -815,11 +815,11 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public void setFocusColor(Integer focusColor) {
+    public void setFocusColor(Long focusColor) {
         this.focusColor = focusColor;
     }
 
-    public InputDecorationSchema withFocusColor(Integer focusColor) {
+    public InputDecorationSchema withFocusColor(Long focusColor) {
         this.focusColor = focusColor;
         return this;
     }
@@ -1042,7 +1042,7 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public Integer getHoverColor() {
+    public Long getHoverColor() {
         return hoverColor;
     }
 
@@ -1052,11 +1052,11 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public void setHoverColor(Integer hoverColor) {
+    public void setHoverColor(Long hoverColor) {
         this.hoverColor = hoverColor;
     }
 
-    public InputDecorationSchema withHoverColor(Integer hoverColor) {
+    public InputDecorationSchema withHoverColor(Long hoverColor) {
         this.hoverColor = hoverColor;
         return this;
     }
@@ -1080,7 +1080,7 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public Integer getIconColor() {
+    public Long getIconColor() {
         return iconColor;
     }
 
@@ -1090,11 +1090,11 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public void setIconColor(Integer iconColor) {
+    public void setIconColor(Long iconColor) {
         this.iconColor = iconColor;
     }
 
-    public InputDecorationSchema withIconColor(Integer iconColor) {
+    public InputDecorationSchema withIconColor(Long iconColor) {
         this.iconColor = iconColor;
         return this;
     }
@@ -1232,7 +1232,7 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public Integer getPrefixIconColor() {
+    public Long getPrefixIconColor() {
         return prefixIconColor;
     }
 
@@ -1242,11 +1242,11 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public void setPrefixIconColor(Integer prefixIconColor) {
+    public void setPrefixIconColor(Long prefixIconColor) {
         this.prefixIconColor = prefixIconColor;
     }
 
-    public InputDecorationSchema withPrefixIconColor(Integer prefixIconColor) {
+    public InputDecorationSchema withPrefixIconColor(Long prefixIconColor) {
         this.prefixIconColor = prefixIconColor;
         return this;
     }
@@ -1375,7 +1375,7 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public Integer getSuffixIconColor() {
+    public Long getSuffixIconColor() {
         return suffixIconColor;
     }
 
@@ -1385,11 +1385,11 @@ public class InputDecorationSchema {
      * Color type
      * 
      */
-    public void setSuffixIconColor(Integer suffixIconColor) {
+    public void setSuffixIconColor(Long suffixIconColor) {
         this.suffixIconColor = suffixIconColor;
     }
 
-    public InputDecorationSchema withSuffixIconColor(Integer suffixIconColor) {
+    public InputDecorationSchema withSuffixIconColor(Long suffixIconColor) {
         this.suffixIconColor = suffixIconColor;
         return this;
     }

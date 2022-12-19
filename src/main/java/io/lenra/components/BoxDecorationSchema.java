@@ -40,7 +40,7 @@ public class BoxDecorationSchema {
      */
     @SerializedName("color")
     @Expose
-    private Integer color;
+    private Long color;
     /**
      * BoxShape
      * <p>
@@ -107,7 +107,7 @@ public class BoxDecorationSchema {
      * Color type
      * 
      */
-    public Integer getColor() {
+    public Long getColor() {
         return color;
     }
 
@@ -117,11 +117,11 @@ public class BoxDecorationSchema {
      * Color type
      * 
      */
-    public void setColor(Integer color) {
+    public void setColor(Long color) {
         this.color = color;
     }
 
-    public BoxDecorationSchema withColor(Integer color) {
+    public BoxDecorationSchema withColor(Long color) {
         this.color = color;
         return this;
     }

@@ -37,7 +37,7 @@
 // */
 // @SerializedName("color")
 // @Expose
-// private Integer color;
+// private Long color;
 // /**
 // * The semantic label for the Icon. This will be announced when using
 // accessibility mode.
@@ -107,7 +107,7 @@
 // * Color type
 // *
 // */
-// public Integer getColor() {
+// public Long getColor() {
 // return color;
 // }
 
@@ -117,11 +117,11 @@
 // * Color type
 // *
 // */
-// public void setColor(Integer color) {
+// public void setColor(Long color) {
 // this.color = color;
 // }
 
-// public IconSchema withColor(Integer color) {
+// public IconSchema withColor(Long color) {
 // this.color = color;
 // return this;
 // }

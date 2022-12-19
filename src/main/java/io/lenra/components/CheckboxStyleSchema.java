@@ -22,7 +22,7 @@ public class CheckboxStyleSchema {
      */
     @SerializedName("activeColor")
     @Expose
-    private Integer activeColor;
+    private Long activeColor;
     /**
      * Color
      * <p>
@@ -31,7 +31,7 @@ public class CheckboxStyleSchema {
      */
     @SerializedName("checkColor")
     @Expose
-    private Integer checkColor;
+    private Long checkColor;
     /**
      * Color
      * <p>
@@ -40,7 +40,7 @@ public class CheckboxStyleSchema {
      */
     @SerializedName("focusColor")
     @Expose
-    private Integer focusColor;
+    private Long focusColor;
     /**
      * Color
      * <p>
@@ -49,7 +49,7 @@ public class CheckboxStyleSchema {
      */
     @SerializedName("hoverColor")
     @Expose
-    private Integer hoverColor;
+    private Long hoverColor;
     /**
      * The splash radius.
      * 
@@ -92,7 +92,7 @@ public class CheckboxStyleSchema {
      * Color type
      * 
      */
-    public Integer getActiveColor() {
+    public Long getActiveColor() {
         return activeColor;
     }
 
@@ -102,11 +102,11 @@ public class CheckboxStyleSchema {
      * Color type
      * 
      */
-    public void setActiveColor(Integer activeColor) {
+    public void setActiveColor(Long activeColor) {
         this.activeColor = activeColor;
     }
 
-    public CheckboxStyleSchema withActiveColor(Integer activeColor) {
+    public CheckboxStyleSchema withActiveColor(Long activeColor) {
         this.activeColor = activeColor;
         return this;
     }
@@ -117,7 +117,7 @@ public class CheckboxStyleSchema {
      * Color type
      * 
      */
-    public Integer getCheckColor() {
+    public Long getCheckColor() {
         return checkColor;
     }
 
@@ -127,11 +127,11 @@ public class CheckboxStyleSchema {
      * Color type
      * 
      */
-    public void setCheckColor(Integer checkColor) {
+    public void setCheckColor(Long checkColor) {
         this.checkColor = checkColor;
     }
 
-    public CheckboxStyleSchema withCheckColor(Integer checkColor) {
+    public CheckboxStyleSchema withCheckColor(Long checkColor) {
         this.checkColor = checkColor;
         return this;
     }
@@ -142,7 +142,7 @@ public class CheckboxStyleSchema {
      * Color type
      * 
      */
-    public Integer getFocusColor() {
+    public Long getFocusColor() {
         return focusColor;
     }
 
@@ -152,11 +152,11 @@ public class CheckboxStyleSchema {
      * Color type
      * 
      */
-    public void setFocusColor(Integer focusColor) {
+    public void setFocusColor(Long focusColor) {
         this.focusColor = focusColor;
     }
 
-    public CheckboxStyleSchema withFocusColor(Integer focusColor) {
+    public CheckboxStyleSchema withFocusColor(Long focusColor) {
         this.focusColor = focusColor;
         return this;
     }
@@ -167,7 +167,7 @@ public class CheckboxStyleSchema {
      * Color type
      * 
      */
-    public Integer getHoverColor() {
+    public Long getHoverColor() {
         return hoverColor;
     }
 
@@ -177,11 +177,11 @@ public class CheckboxStyleSchema {
      * Color type
      * 
      */
-    public void setHoverColor(Integer hoverColor) {
+    public void setHoverColor(Long hoverColor) {
         this.hoverColor = hoverColor;
     }
 
-    public CheckboxStyleSchema withHoverColor(Integer hoverColor) {
+    public CheckboxStyleSchema withHoverColor(Long hoverColor) {
         this.hoverColor = hoverColor;
         return this;
     }

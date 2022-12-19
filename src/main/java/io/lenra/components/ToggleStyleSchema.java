@@ -22,7 +22,7 @@ public class ToggleStyleSchema {
      */
     @SerializedName("activeColor")
     @Expose
-    private Integer activeColor;
+    private Long activeColor;
     /**
      * Color
      * <p>
@@ -31,7 +31,7 @@ public class ToggleStyleSchema {
      */
     @SerializedName("activeTrackColor")
     @Expose
-    private Integer activeTrackColor;
+    private Long activeTrackColor;
     /**
      * Color
      * <p>
@@ -40,7 +40,7 @@ public class ToggleStyleSchema {
      */
     @SerializedName("inactiveTrackColor")
     @Expose
-    private Integer inactiveTrackColor;
+    private Long inactiveTrackColor;
     /**
      * Color
      * <p>
@@ -49,7 +49,7 @@ public class ToggleStyleSchema {
      */
     @SerializedName("inactiveThumbColor")
     @Expose
-    private Integer inactiveThumbColor;
+    private Long inactiveThumbColor;
     /**
      * Color
      * <p>
@@ -58,7 +58,7 @@ public class ToggleStyleSchema {
      */
     @SerializedName("hoverColor")
     @Expose
-    private Integer hoverColor;
+    private Long hoverColor;
     /**
      * Color
      * <p>
@@ -67,7 +67,7 @@ public class ToggleStyleSchema {
      */
     @SerializedName("focusColor")
     @Expose
-    private Integer focusColor;
+    private Long focusColor;
     /**
      * Image
      * <p>
@@ -96,7 +96,7 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public Integer getActiveColor() {
+    public Long getActiveColor() {
         return activeColor;
     }
 
@@ -106,11 +106,11 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public void setActiveColor(Integer activeColor) {
+    public void setActiveColor(Long activeColor) {
         this.activeColor = activeColor;
     }
 
-    public ToggleStyleSchema withActiveColor(Integer activeColor) {
+    public ToggleStyleSchema withActiveColor(Long activeColor) {
         this.activeColor = activeColor;
         return this;
     }
@@ -121,7 +121,7 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public Integer getActiveTrackColor() {
+    public Long getActiveTrackColor() {
         return activeTrackColor;
     }
 
@@ -131,11 +131,11 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public void setActiveTrackColor(Integer activeTrackColor) {
+    public void setActiveTrackColor(Long activeTrackColor) {
         this.activeTrackColor = activeTrackColor;
     }
 
-    public ToggleStyleSchema withActiveTrackColor(Integer activeTrackColor) {
+    public ToggleStyleSchema withActiveTrackColor(Long activeTrackColor) {
         this.activeTrackColor = activeTrackColor;
         return this;
     }
@@ -146,7 +146,7 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public Integer getInactiveTrackColor() {
+    public Long getInactiveTrackColor() {
         return inactiveTrackColor;
     }
 
@@ -156,11 +156,11 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public void setInactiveTrackColor(Integer inactiveTrackColor) {
+    public void setInactiveTrackColor(Long inactiveTrackColor) {
         this.inactiveTrackColor = inactiveTrackColor;
     }
 
-    public ToggleStyleSchema withInactiveTrackColor(Integer inactiveTrackColor) {
+    public ToggleStyleSchema withInactiveTrackColor(Long inactiveTrackColor) {
         this.inactiveTrackColor = inactiveTrackColor;
         return this;
     }
@@ -171,7 +171,7 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public Integer getInactiveThumbColor() {
+    public Long getInactiveThumbColor() {
         return inactiveThumbColor;
     }
 
@@ -181,11 +181,11 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public void setInactiveThumbColor(Integer inactiveThumbColor) {
+    public void setInactiveThumbColor(Long inactiveThumbColor) {
         this.inactiveThumbColor = inactiveThumbColor;
     }
 
-    public ToggleStyleSchema withInactiveThumbColor(Integer inactiveThumbColor) {
+    public ToggleStyleSchema withInactiveThumbColor(Long inactiveThumbColor) {
         this.inactiveThumbColor = inactiveThumbColor;
         return this;
     }
@@ -196,7 +196,7 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public Integer getHoverColor() {
+    public Long getHoverColor() {
         return hoverColor;
     }
 
@@ -206,11 +206,11 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public void setHoverColor(Integer hoverColor) {
+    public void setHoverColor(Long hoverColor) {
         this.hoverColor = hoverColor;
     }
 
-    public ToggleStyleSchema withHoverColor(Integer hoverColor) {
+    public ToggleStyleSchema withHoverColor(Long hoverColor) {
         this.hoverColor = hoverColor;
         return this;
     }
@@ -221,7 +221,7 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public Integer getFocusColor() {
+    public Long getFocusColor() {
         return focusColor;
     }
 
@@ -231,11 +231,11 @@ public class ToggleStyleSchema {
      * Color type
      * 
      */
-    public void setFocusColor(Integer focusColor) {
+    public void setFocusColor(Long focusColor) {
         this.focusColor = focusColor;
     }
 
-    public ToggleStyleSchema withFocusColor(Integer focusColor) {
+    public ToggleStyleSchema withFocusColor(Long focusColor) {
         this.focusColor = focusColor;
         return this;
     }

@@ -27,7 +27,7 @@ public class BorderSideSchema {
      */
     @SerializedName("color")
     @Expose
-    private Integer color;
+    private Long color;
 
     /**
      * The width of the Border
@@ -56,7 +56,7 @@ public class BorderSideSchema {
      * Color type
      * 
      */
-    public Integer getColor() {
+    public Long getColor() {
         return color;
     }
 
@@ -66,11 +66,11 @@ public class BorderSideSchema {
      * Color type
      * 
      */
-    public void setColor(Integer color) {
+    public void setColor(Long color) {
         this.color = color;
     }
 
-    public BorderSideSchema withColor(Integer color) {
+    public BorderSideSchema withColor(Long color) {
         this.color = color;
         return this;
     }

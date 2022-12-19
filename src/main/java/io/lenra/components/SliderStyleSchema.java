@@ -20,7 +20,7 @@ public class SliderStyleSchema {
      */
     @SerializedName("activeColor")
     @Expose
-    private Integer activeColor;
+    private Long activeColor;
     /**
      * Color
      * <p>
@@ -29,7 +29,7 @@ public class SliderStyleSchema {
      */
     @SerializedName("inactiveColor")
     @Expose
-    private Integer inactiveColor;
+    private Long inactiveColor;
     /**
      * Color
      * <p>
@@ -38,7 +38,7 @@ public class SliderStyleSchema {
      */
     @SerializedName("thumbColor")
     @Expose
-    private Integer thumbColor;
+    private Long thumbColor;
 
     /**
      * Color
@@ -46,7 +46,7 @@ public class SliderStyleSchema {
      * Color type
      * 
      */
-    public Integer getActiveColor() {
+    public Long getActiveColor() {
         return activeColor;
     }
 
@@ -56,11 +56,11 @@ public class SliderStyleSchema {
      * Color type
      * 
      */
-    public void setActiveColor(Integer activeColor) {
+    public void setActiveColor(Long activeColor) {
         this.activeColor = activeColor;
     }
 
-    public SliderStyleSchema withActiveColor(Integer activeColor) {
+    public SliderStyleSchema withActiveColor(Long activeColor) {
         this.activeColor = activeColor;
         return this;
     }
@@ -71,7 +71,7 @@ public class SliderStyleSchema {
      * Color type
      * 
      */
-    public Integer getInactiveColor() {
+    public Long getInactiveColor() {
         return inactiveColor;
     }
 
@@ -81,11 +81,11 @@ public class SliderStyleSchema {
      * Color type
      * 
      */
-    public void setInactiveColor(Integer inactiveColor) {
+    public void setInactiveColor(Long inactiveColor) {
         this.inactiveColor = inactiveColor;
     }
 
-    public SliderStyleSchema withInactiveColor(Integer inactiveColor) {
+    public SliderStyleSchema withInactiveColor(Long inactiveColor) {
         this.inactiveColor = inactiveColor;
         return this;
     }
@@ -96,7 +96,7 @@ public class SliderStyleSchema {
      * Color type
      * 
      */
-    public Integer getThumbColor() {
+    public Long getThumbColor() {
         return thumbColor;
     }
 
@@ -106,11 +106,11 @@ public class SliderStyleSchema {
      * Color type
      * 
      */
-    public void setThumbColor(Integer thumbColor) {
+    public void setThumbColor(Long thumbColor) {
         this.thumbColor = thumbColor;
     }
 
-    public SliderStyleSchema withThumbColor(Integer thumbColor) {
+    public SliderStyleSchema withThumbColor(Long thumbColor) {
         this.thumbColor = thumbColor;
         return this;
     }

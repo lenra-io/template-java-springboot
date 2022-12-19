@@ -23,10 +23,10 @@ public class Menu implements Widget {
                 child_list.add(header());
 
                 BoxDecorationSchema decoration = new BoxDecorationSchema()
-                                .withColor(0xFFFFFFFF)
+                                .withColor(0xFFFFFFFFL)
                                 .withBoxShadow(new BoxShadowSchema()
                                                 .withBlurRadius(8.0)
-                                                .withColor(0x1A000000)
+                                                .withColor(0x1A000000L)
                                                 .withOffset(new OffsetSchema()
                                                                 .withDx(0.0)
                                                                 .withDy(1.0)));

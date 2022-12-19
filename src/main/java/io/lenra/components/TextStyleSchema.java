@@ -22,7 +22,7 @@ public class TextStyleSchema {
      */
     @SerializedName("color")
     @Expose
-    private Integer color;
+    private Long color;
     /**
      * Text Decoration
      * <p>
@@ -40,7 +40,7 @@ public class TextStyleSchema {
      */
     @SerializedName("decorationColor")
     @Expose
-    private Integer decorationColor;
+    private Long decorationColor;
     /**
      * Text Decoration Style
      * <p>
@@ -146,7 +146,7 @@ public class TextStyleSchema {
      * Color type
      * 
      */
-    public Integer getColor() {
+    public Long getColor() {
         return color;
     }
 
@@ -156,11 +156,11 @@ public class TextStyleSchema {
      * Color type
      * 
      */
-    public void setColor(Integer color) {
+    public void setColor(Long color) {
         this.color = color;
     }
 
-    public TextStyleSchema withColor(Integer color) {
+    public TextStyleSchema withColor(Long color) {
         this.color = color;
         return this;
     }
@@ -196,7 +196,7 @@ public class TextStyleSchema {
      * Color type
      * 
      */
-    public Integer getDecorationColor() {
+    public Long getDecorationColor() {
         return decorationColor;
     }
 
@@ -206,11 +206,11 @@ public class TextStyleSchema {
      * Color type
      * 
      */
-    public void setDecorationColor(Integer decorationColor) {
+    public void setDecorationColor(Long decorationColor) {
         this.decorationColor = decorationColor;
     }
 
-    public TextStyleSchema withDecorationColor(Integer decorationColor) {
+    public TextStyleSchema withDecorationColor(Long decorationColor) {
         this.decorationColor = decorationColor;
         return this;
     }
