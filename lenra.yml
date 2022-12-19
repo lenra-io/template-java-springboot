@@ -3,20 +3,23 @@ generator:
   dofigen:
     builders:
       - name: builder
-        image: openjdk:20-ea-11-jdk
+        image: maven:3-openjdk-17-slim
+        workdir: /app
         adds:
           - "."
-        workdir: /app
         script:
-          - ./mvnw package
-          - mv target/ /tmp/
-    image: openjdk:11-jre
+          - mvn package
+          - mv target/*.jar /tmp/
+        caches:
+          - /root/.m2
+          - /app/target
+    image: bitnami/java:17
     envs:
       LOG_LEVEL: debug
     workdir: /app
     artifacts:
       - builder: builder
-        source: "/tmp/target"
+        source: "/tmp/*.jar"
         destination: "/app/"
     cmd:
       - java
@@ -24,3 +27,7 @@ generator:
       - template-0.0.1-SNAPSHOT.jar
     ports:
       - 3000
+    ignores:
+      - "**"
+      - "!/src/**"
+      - "!/pom.xml"

@@ -41,7 +41,7 @@ public class Counter implements Widget {
 
                 return new FlexSchema()
                                 .withType(FlexSchema.Type.FLEX)
-                                .withSpacing(2.0)
+                                .withSpacing(16.0)
                                 .withMainAxisAlignment(MainAxisAlignment.SPACE_EVENLY)
                                 .withCrossAxisAlignment(CrossAxisAlignment.CENTER)
                                 .withChildren(child_list);

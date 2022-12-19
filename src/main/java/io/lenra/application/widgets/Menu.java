@@ -31,14 +31,14 @@ public class Menu implements Widget {
                                                                 .withDx(0.0)
                                                                 .withDy(1.0)));
 
-                PaddingSchema padding = new PaddingSchema().withTop(2.0).withBottom(2.0).withLeft(4.0).withRight(4.0);
+                PaddingSchema padding = new PaddingSchema().withTop(16.0).withBottom(16.0).withLeft(32.0).withRight(32.0);
 
                 FlexSchema child = new FlexSchema()
                                 .withType(FlexSchema.Type.FLEX)
                                 .withFillParent(true)
                                 .withMainAxisAlignment(MainAxisAlignment.SPACE_BETWEEN)
                                 .withCrossAxisAlignment(CrossAxisAlignment.CENTER)
-                                .withPadding(new PaddingSchema().withRight(4.0))
+                                .withPadding(new PaddingSchema().withRight(32.0))
                                 .withChildren(child_list);
                 return new ContainerSchema().withType(ContainerSchema.Type.CONTAINER).withDecoration(decoration)
                                 .withPadding(padding).withChild(child);

@@ -25,7 +25,7 @@ public class Home implements Widget {
                 return new FlexSchema()
                                 .withType(FlexSchema.Type.FLEX)
                                 .withDirection(DirectionSchema.VERTICAL)
-                                .withSpacing(4.0)
+                                .withSpacing(16.0)
                                 .withMainAxisAlignment(MainAxisAlignment.SPACE_EVENLY)
                                 .withCrossAxisAlignment(CrossAxisAlignment.CENTER)
                                 .withChildren(child_list);

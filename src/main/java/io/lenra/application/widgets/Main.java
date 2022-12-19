@@ -18,10 +18,10 @@ public class Main implements Widget {
                 List<Object> flex_child = new LinkedList<Object>();
                 flex_child.add(
                                 new WidgetSchema().withType(WidgetSchema.Type.WIDGET).withName("menu")
-                                                .withProps(new JsonObject()));
+                                                .withProps(null));
                 flex_child.add(
                                 new WidgetSchema().withType(WidgetSchema.Type.WIDGET).withName("home")
-                                                .withProps(new JsonObject()));
+                                                .withProps(null));
 
                 return new FlexSchema()
                                 .withType(FlexSchema.Type.FLEX)

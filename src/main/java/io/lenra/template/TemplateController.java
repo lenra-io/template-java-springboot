@@ -20,10 +20,7 @@ public class TemplateController {
 	@PostMapping(value = "/**", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Object index(@RequestBody(required = false) LenraBody body)
 			throws FileNotFoundException {
-		if (body == null) {
-			System.out.println("Handle manifest");
-			return TemplateManifest.getManifest();
-		} else {
+		if (body != null) {
 			if (body.widget != null) {
 				System.out.println("Handle widget: " + body.widget);
 				Object widget = handleWidget(body);
@@ -36,10 +33,10 @@ public class TemplateController {
 			} else if (body.resource != null) {
 				System.out.println("Handle resource: " + body.resource);
 				return handleResources(body);
-			} else {
-				return "error";
 			}
 		}
+		System.out.println("Handle manifest");
+		return TemplateManifest.getManifest();
 
 	}
 
