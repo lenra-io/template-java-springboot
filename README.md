@@ -22,8 +22,7 @@ To download it, you can use cargo or download the binary via the [latest github 
 From cargo you need to run the following command :
 
 ```bash
-cargo install lenra_cli --version=1.0.0-beta.5
-# or `cargo install lenra_cli@1.0.0-beta.5`
+cargo install --git https://github.com/lenra-io/lenra_cli.git
 ```
 
 When installed you can run the binary file
