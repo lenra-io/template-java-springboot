@@ -1,0 +1,33 @@
+componentsApi: "1.0"
+generator:
+  dofigen:
+    builders:
+      - name: builder
+        image: maven:3-openjdk-17-slim
+        workdir: /app
+        adds:
+          - "."
+        script:
+          - mvn package
+          - mv target/*.jar /tmp/
+        caches:
+          - /root/.m2
+          - /app/target
+    image: bitnami/java:17
+    envs:
+      LOG_LEVEL: debug
+    workdir: /app
+    artifacts:
+      - builder: builder
+        source: "/tmp/*.jar"
+        destination: "/app/"
+    cmd:
+      - java
+      - -jar
+      - template-0.0.1-SNAPSHOT.jar
+    ports:
+      - 3000
+    ignores:
+      - "**"
+      - "!/src/**"
+      - "!/pom.xml"
