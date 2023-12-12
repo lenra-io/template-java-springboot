@@ -1,4 +1,4 @@
-package io.lenra.templatejavaspringboot.api;
+package io.lenra.app.api;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

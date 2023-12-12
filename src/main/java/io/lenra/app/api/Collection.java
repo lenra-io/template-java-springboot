@@ -1,4 +1,4 @@
-package io.lenra.templatejavaspringboot.api;
+package io.lenra.app.api;
 
 public class Collection {
     private DataApi api;

@@ -1,4 +1,4 @@
-package io.lenra.templatejavaspringboot.api;
+package io.lenra.app.api;
 
 import java.util.HashMap;
 import java.util.Map;
