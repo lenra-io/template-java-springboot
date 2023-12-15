@@ -1,247 +1,228 @@
-import { Data } from "./Data.js";
-import { ListenerRequest } from "./gen/request.js";
-import createClient from "openapi-fetch";
-import { paths } from "./gen/api.js";
+import java.util.HashMap;
+import java.util.Map;
 
-export type Class<T> = { new(...args: any[]): T; };
-
-export class Api {
-    readonly url: string;
-    readonly token: string;
-    readonly data: DataApi;
-    constructor(req: ListenerRequest["api"], readonly client = createClient<paths>({ baseUrl: req.url })) {
-        this.url = req.url;
-        this.token = req.token;
-        this.data = new DataApi(this);
-    }
+public interface Api {
+    String getUrl();
+    String getToken();
+    DataApi getData();
 }
 
-abstract class ApiPart {
-    constructor(readonly api: Api) {
+public abstract class ApiPart {
+    private final Api api;
+
+    public ApiPart(Api api) {
         this.api = api;
     }
 
-    headers() {
-        return { Authorization: `Bearer ${this.api.token}` }
+    protected Map<String, String> headers() {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Authorization", "Bearer " + api.getToken());
+        return headers;
     }
 }
 
-class Collection {
-    constructor(private readonly api: AbstractDataApi, private readonly name: string) { }
+public class Collection {
+    private final AbstractDataApi api;
+    private final String name;
 
-    // CRUD
-    getDoc(id: string) {
-        return this.api.api.client.GET(
-            "/app-api/v1/data/colls/{coll}/docs/{id}",
-            {
-                params: {
-                    path: {
-                        coll: this.name,
-                        id: id
-                    }
-                },
-                headers: this.api.headers()
-            }
-        );
+    public Collection(AbstractDataApi api, String name) {
+        this.api = api;
+        this.name = name;
     }
 
-    createDoc(doc: any) {
-        return this.api.api.client.POST(
-            "/app-api/v1/data/colls/{coll}/docs",
-            {
-                params: {
-                    path: {
-                        coll: this.name
-                    }
-                },
-                body: doc,
-                headers: this.api.headers()
-            }
-        );
+    public Object getDoc(String id) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("coll", name);
+        params.put("id", id);
+
+        Map<String, Object> request = new HashMap<>();
+        request.put("params", params);
+        request.put("headers", api.headers());
+
+        return api.getClient().GET("/app-api/v1/data/colls/{coll}/docs/{id}", request);
     }
 
-    updateDoc(doc: any) {
-        return this.api.api.client.PUT(
-            "/app-api/v1/data/colls/{coll}/docs/{id}",
-            {
-                params: {
-                    path: {
-                        coll: this.name,
-                        id: doc._id
-                    }
-                },
-                body: doc,
-                headers: this.api.headers()
-            }
-        );
+    public Object createDoc(Object doc) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("coll", name);
+
+        Map<String, Object> request = new HashMap<>();
+        request.put("params", params);
+        request.put("body", doc);
+        request.put("headers", api.headers());
+
+        return api.getClient().POST("/app-api/v1/data/colls/{coll}/docs", request);
     }
 
-    deleteDoc(id: string) {
-        return this.api.api.client.DELETE(
-            "/app-api/v1/data/colls/{coll}/docs/{id}",
-            {
-                params: {
-                    path: {
-                        coll: this.name,
-                        id
-                    }
-                },
-                headers: this.api.headers()
-            }
-        );
+    public Object updateDoc(Object doc) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("coll", name);
+        params.put("id", doc._id);
+
+        Map<String, Object> request = new HashMap<>();
+        request.put("params", params);
+        request.put("body", doc);
+        request.put("headers", api.headers());
+
+        return api.getClient().PUT("/app-api/v1/data/colls/{coll}/docs/{id}", request);
     }
 
-    // Mongo functions
-    find(query: any, projection: any) {
-        return this.api.api.client.POST(
-            "/app-api/v1/data/colls/{coll}/find",
-            {
-                params: {
-                    path: {
-                        coll: this.name
-                    }
-                },
-                body: {
-                    query,
-                    projection
-                },
-                headers: this.api.headers()
-            }
-        );
+    public Object deleteDoc(String id) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("coll", name);
+        params.put("id", id);
+
+        Map<String, Object> request = new HashMap<>();
+        request.put("params", params);
+        request.put("headers", api.headers());
+
+        return api.getClient().DELETE("/app-api/v1/data/colls/{coll}/docs/{id}", request);
     }
 
-    updateMany(filter: any, update: any) {
-        return this.api.api.client.POST(
-            "/app-api/v1/data/colls/{coll}/updateMany",
-            {
-                params: {
-                    path: {
-                        coll: this.name
-                    }
-                },
-                body: {
-                    filter,
-                    update
-                },
-                headers: this.api.headers()
-            }
-        );
+    public Object find(Object query, Object projection) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("coll", name);
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("query", query);
+        body.put("projection", projection);
+
+        Map<String, Object> request = new HashMap<>();
+        request.put("params", params);
+        request.put("body", body);
+        request.put("headers", api.headers());
+
+        return api.getClient().POST("/app-api/v1/data/colls/{coll}/find", request);
+    }
+
+    public Object updateMany(Object filter, Object update) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("coll", name);
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("filter", filter);
+        body.put("update", update);
+
+        Map<String, Object> request = new HashMap<>();
+        request.put("params", params);
+        request.put("body", body);
+        request.put("headers", api.headers());
+
+        return api.getClient().POST("/app-api/v1/data/colls/{coll}/updateMany", request);
     }
 }
 
-class TypedCollection<D extends Data, T extends Class<D>> {
-    private readonly collection: Collection;
-    constructor(api: AbstractDataApi, private readonly collClass: T) {
+public class TypedCollection<D extends Data, T extends Class<D>> {
+    private final Collection collection;
+    private final T collClass;
+
+    public TypedCollection(AbstractDataApi api, T collClass) {
         this.collection = new Collection(api, DataApi.collectionName(collClass));
+        this.collClass = collClass;
     }
 
-    async getDoc(id: string): Promise<D> {
-        const resp = await this.collection.getDoc(id);
-        return AbstractDataApi.fromJson(this.collClass, resp.data);
+    public D getDoc(String id) {
+        Object resp = collection.getDoc(id);
+        return AbstractDataApi.fromJson(collClass, resp.data);
     }
 
-    async createDoc(doc: D): Promise<D> {
-        const resp = await this.collection.createDoc(doc);
-        return AbstractDataApi.fromJson(this.collClass, resp.data);
+    public D createDoc(D doc) {
+        Object resp = collection.createDoc(doc);
+        return AbstractDataApi.fromJson(collClass, resp.data);
     }
 
-    async updateDoc(doc: D): Promise<D> {
-        const resp = await this.collection.updateDoc(doc);
-        return AbstractDataApi.fromJson(this.collClass, resp.data);
+    public D updateDoc(D doc) {
+        Object resp = collection.updateDoc(doc);
+        return AbstractDataApi.fromJson(collClass, resp.data);
     }
 
-    async deleteDoc(doc: D): Promise<void> {
-        await this.collection.deleteDoc(doc._id);
+    public void deleteDoc(D doc) {
+        collection.deleteDoc(doc._id);
     }
 
-    async find(query: any): Promise<D[]> {
-        const resp = await this.collection.find(query, {});
-        return resp.data.map((d: any) => AbstractDataApi.fromJson(this.collClass, d));
+    public List<D> find(Object query) {
+        Object resp = collection.find(query, {});
+        return resp.data.map((d) => AbstractDataApi.fromJson(collClass, d));
     }
 
-    async updateMany(filter: any, update: any): Promise<void> {
-        await this.collection.updateMany(filter, update);
+    public void updateMany(Object filter, Object update) {
+        collection.updateMany(filter, update);
     }
 }
 
-abstract class AbstractDataApi extends ApiPart {
-    private readonly collections: { [name: string]: Collection } = {};
-    private readonly typedCollections: { [name: string]: TypedCollection<Data, Class<Data>> } = {};
+public abstract class AbstractDataApi extends ApiPart {
+    private final Map<String, Collection> collections = new HashMap<>();
+    private final Map<String, TypedCollection<Data, Class<Data>>> typedCollections = new HashMap<>();
 
-    coll(name: string): Collection
-    coll<D extends Data>(collClass: Class<D>): TypedCollection<D, Class<D>>
-    coll<D extends Data>(arg1: string | Class<D>) {
-        if (typeof arg1 === "string") {
-            if (!this.collections[arg1]) {
-                this.collections[arg1] = new Collection(this, arg1);
-            }
-            return this.collections[arg1];
-        } else {
-            const name = DataApi.collectionName(arg1);
-            if (!this.typedCollections[name]) {
-                this.typedCollections[name] = new TypedCollection(this, arg1);
-            }
-            return this.typedCollections[name];
+    public Collection coll(String name) {
+        if (!collections.containsKey(name)) {
+            collections.put(name, new Collection(this, name));
         }
+        return collections.get(name);
     }
 
-    static fromJson<T extends Data>(dataClass: Class<T>, data: any): T {
-        let result: T = new dataClass();
-        for (let index in data) {
-            if (result.hasOwnProperty(index)) {
-                result[index] = data[index];
+    public TypedCollection<D, Class<D>> coll<D extends Data>(Class<D> collClass) {
+        String name = DataApi.collectionName(collClass);
+        if (!typedCollections.containsKey(name)) {
+            typedCollections.put(name, new TypedCollection<>(this, collClass));
+        }
+        return typedCollections.get(name);
+    }
+
+    public static <T extends Data> T fromJson(Class<T> dataClass, Object data) {
+        T result = new dataClass();
+        for (String index : data.keySet()) {
+            if (result.containsKey(index)) {
+                result.put(index, data.get(index));
             }
         }
         return result;
     }
 }
 
-export class DataApi extends AbstractDataApi {
-    startTransaction(): Promise<Transaction> {
-        return this.api.client.POST(
-            "/app-api/v1/data/transaction",
-            {
-                headers: this.headers()
-            }
-        ).then(resp => new Transaction(this.api, resp.data));
+public class DataApi extends AbstractDataApi {
+    private final Api api;
+
+    public DataApi(Api api) {
+        super(api);
+        this.api = api;
     }
 
-    static dataCollection<T extends Data>(data: T): string {
-        return this.collectionName<T>(<Class<T>>data.constructor);
+    public Transaction startTransaction() {
+        Object resp = api.getClient().POST("/app-api/v1/data/transaction", headers());
+        return new Transaction(api, resp.data);
     }
 
-    static collectionName<T extends Data>(dataClass: Class<T>): string {
-        return dataClass.name.toLowerCase();
+    public static String dataCollection(Data data) {
+        return collectionName(data.getClass());
+    }
+
+    public static String collectionName(Class<? extends Data> dataClass) {
+        return dataClass.getSimpleName().toLowerCase();
     }
 }
 
-export class Transaction extends AbstractDataApi {
-    readonly token: string;
+public class Transaction extends AbstractDataApi {
+    private final Api api;
+    private final String token;
 
-    constructor(api: Api, token: string) {
+    public Transaction(Api api, String token) {
         super(api);
+        this.api = api;
         this.token = token;
     }
 
-    headers(): { Authorization: string; } {
-        return { Authorization: `Bearer ${this.token}` };
+    protected Map<String, String> headers() {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Authorization", "Bearer " + token);
+        return headers;
     }
 
-    async commit() {
-        await this.api.client.POST(
-            "/app-api/v1/data/transaction/commit",
-            {
-                headers: this.headers()
-            }
-        );
+    public void commit() {
+        api.getClient().POST("/app-api/v1/data/transaction/commit", headers());
     }
 
-    async abort() {
-        await this.api.client.POST(
-            "/app-api/v1/data/transaction/abort",
-            {
-                headers: this.headers()
-            }
-        );
+    public void abort() {
+        api.getClient().POST("/app-api/v1/data/transaction/abort", headers());
     }
 }
