@@ -1,4 +1,4 @@
-package io.lenra.app.api;
+package io.lenra.app.classes;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
