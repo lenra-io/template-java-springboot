@@ -29,6 +29,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Ignore Lenra API files
+**/src/main/**/api/
+
 ### STS ###
 .apt_generated
 .classpath

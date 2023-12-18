@@ -1,0 +1,4 @@
+'!include': 'common.yml'
+outputDir: "."
+generatorName: java
+composerPackageName: lenra/internal-api-client
