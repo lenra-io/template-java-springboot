@@ -19,11 +19,13 @@ public class Transaction extends AbstractDataApi {
         return headers;
     }
 
+    // TODO: Fix the following methods
+
     public void commit() {
-        api.getClient().POST("/app-api/v1/data/transaction/commit", headers());
+        // api.getClient().POST("/app-api/v1/data/transaction/commit", headers());
     }
 
     public void abort() {
-        api.getClient().POST("/app-api/v1/data/transaction/abort", headers());
+        // api.getClient().POST("/app-api/v1/data/transaction/abort", headers());
     }
 }

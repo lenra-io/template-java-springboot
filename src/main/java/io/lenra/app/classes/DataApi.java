@@ -9,8 +9,10 @@ public class DataApi extends AbstractDataApi {
     }
 
     public Transaction startTransaction() {
-        Object resp = api.getClient().POST("/app-api/v1/data/transaction", headers());
-        return new Transaction(api, resp.data);
+        // Object resp = api.getClient().POST("/app-api/v1/data/transaction", headers());
+        // return new Transaction(api, resp.data);
+        // TODO: Fix that
+        return new Transaction(api, "resp.data");
     }
 
     public static String dataCollection(Data data) {
