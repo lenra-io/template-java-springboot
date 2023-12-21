@@ -10,12 +10,19 @@ public class Api {
     String token;
     DataApi data;
 
-    ListenerRequest req;
     ApiClient client;
 
-    public Api(ListenerRequest request, ApiClient client) {
-        this.url = request.getUrl();
-        this.token = request.getToken();
+    public Api(Object request, ApiClient client) {
         this.data = new DataApi(this);
+        this.client = client;
+    }
+
+    public Api(Object request) {
+        this.data = new DataApi(this);
+
+        ApiClient client = new ApiClient();
+        client.setBasePath(url);
+
+        this.client = client;
     }
 }

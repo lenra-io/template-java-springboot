@@ -29,12 +29,12 @@ public class MyApp extends LenraApplication {
     }
 
     @Override
-    Map<String, Object> views() {
+    Map<String, Function<ViewRequest, Object>> views() {
         ObjectMapper mapper = new ObjectMapper();
         var counterList = mapper.getTypeFactory().constructArrayType(Counter.class);
         var defaultRef = new TypeReference<Object>() {};
-        var handler = new ViewHandler<List<Counter>, Object>(CounterView::handle, counterList, defaultRef);
-        return new HashMap<String, Object>() {{
+        var handler = new ViewHandler(CounterView::handle, counterList, defaultRef);
+        return new HashMap<String, Function<ViewRequest, Object>>() {{
             put("counter", handler);
         }};
         // return Map.of("counter", new ViewHandler<List<Counter>, Object>(CounterView::handle, List<Counter>.class, Object.class));

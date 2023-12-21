@@ -3,6 +3,11 @@ package io.lenra.app.classes;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.lenra.api.internal.ApiException;
+import io.lenra.api.internal.client.model.DataDocument;
+import io.lenra.api.internal.client.model.FindDocumentsRequest;
+import io.lenra.api.internal.client.model.UpdateManyDocumentsRequest;
+
 public class Collection {
     private final AbstractDataApi api;
     private final String name;
@@ -12,84 +17,36 @@ public class Collection {
         this.name = name;
     }
 
-    public Object getDoc(String id) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("coll", name);
-        params.put("id", id);
-
-        Map<String, Object> request = new HashMap<>();
-        request.put("params", params);
-        request.put("headers", api.headers());
-
-        return api.getClient().GET("/app-api/v1/data/colls/{coll}/docs/{id}", request);
+    public Object getDoc(String id) throws ApiException {
+        return api.getApi().getDocumentById(this.name, id);
     }
 
-    public Object createDoc(Object doc) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("coll", name);
-
-        Map<String, Object> request = new HashMap<>();
-        request.put("params", params);
-        request.put("body", doc);
-        request.put("headers", api.headers());
-
-        return api.getClient().POST("/app-api/v1/data/colls/{coll}/docs", request);
+    public Object createDoc(Object doc) throws ApiException {
+        return api.getApi().createDocument(this.name, doc);
     }
 
-    public Object updateDoc(Object doc) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("coll", name);
-        params.put("id", doc._id);
-
-        Map<String, Object> request = new HashMap<>();
-        request.put("params", params);
-        request.put("body", doc);
-        request.put("headers", api.headers());
-
-        return api.getClient().PUT("/app-api/v1/data/colls/{coll}/docs/{id}", request);
+    public Object updateDoc(Object doc) throws ApiException {
+        DataDocument dataDoc = (DataDocument) doc;
+        return api.getApi().updateDocumentById(this.name, dataDoc.getId(), dataDoc);
     }
 
-    public Object deleteDoc(String id) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("coll", name);
-        params.put("id", id);
-
-        Map<String, Object> request = new HashMap<>();
-        request.put("params", params);
-        request.put("headers", api.headers());
-
-        return api.getClient().DELETE("/app-api/v1/data/colls/{coll}/docs/{id}", request);
+    public Object deleteDoc(String id) throws ApiException {
+        return api.getApi().deleteDocumentById(this.name, id);
     }
 
-    public Object find(Object query, Object projection) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("coll", name);
+    public Object find(Object query, Object projection) throws ApiException {
+        FindDocumentsRequest req = new FindDocumentsRequest();
+        req.setQuery((Map<String, Object>) query);
+        req.setProjection((Map<String, Object>) projection);
 
-        Map<String, Object> body = new HashMap<>();
-        body.put("query", query);
-        body.put("projection", projection);
-
-        Map<String, Object> request = new HashMap<>();
-        request.put("params", params);
-        request.put("body", body);
-        request.put("headers", api.headers());
-
-        return api.getClient().POST("/app-api/v1/data/colls/{coll}/find", request);
+        return api.getApi().findDocuments(this.name, req);
     }
 
-    public Object updateMany(Object filter, Object update) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("coll", name);
+    public Object updateMany(Object filter, Object update) throws ApiException {
+        UpdateManyDocumentsRequest req = new UpdateManyDocumentsRequest();
+        req.setFilter((Map<String, Object>) filter);
+        req.setUpdate((Map<String, Object>) update);
 
-        Map<String, Object> body = new HashMap<>();
-        body.put("filter", filter);
-        body.put("update", update);
-
-        Map<String, Object> request = new HashMap<>();
-        request.put("params", params);
-        request.put("body", body);
-        request.put("headers", api.headers());
-
-        return api.getClient().POST("/app-api/v1/data/colls/{coll}/updateMany", request);
+        return api.getApi().updateManyDocuments(this.name, req);
     }
 }

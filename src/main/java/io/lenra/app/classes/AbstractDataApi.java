@@ -4,8 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class AbstractDataApi<D extends Data> extends ApiPart {
+    public io.lenra.api.internal.client.DataApi api;
+
     public AbstractDataApi(Api api) {
         super(api);
+    }
+
+    public io.lenra.api.internal.client.DataApi getApi() {
+        if (api == null) {
+            api = new io.lenra.api.internal.client.DataApi();
+        }
+        return api;
     }
 
     private final Map<String, Collection> collections = new HashMap<>();
