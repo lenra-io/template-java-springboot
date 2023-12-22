@@ -34,17 +34,10 @@ public class MyApp extends LenraApplication {
         ObjectMapper mapper = new ObjectMapper();
         var counterList = mapper.getTypeFactory().constructArrayType(Counter.class);
         var defaultRef = new TypeReference<Object>() {};
-        /* 
-        * I need to create a handler for my view.
-        * It has a function that handles the request,
-        * a counterList as data to show on the view and 
-        * a default ref for I don't know what
-        */
-        var handler = new ViewHandler<List<Counter>, Object>(CounterView::handle, new JavaTypeDataMapper<List<Counter>>(counterList), new TypeReferenceDataMapper<Object>(defaultRef));
+        var handler = new ViewHandler<Counter[], Object>(CounterView::handle, new JavaTypeDataMapper<Counter[]>(counterList), new TypeReferenceDataMapper<Object>(defaultRef));
         return new HashMap<String, ViewHandler>() {{
             put("counter", handler);
         }};
-        // return Map.of("counter", new ViewHandler<List<Counter>, Object>(CounterView::handle, List<Counter>.class, Object.class));
     }
 
     @Override

@@ -26,9 +26,9 @@ public class CounterView {
         return onIncrement;
     }
 
-    public static CounterView handle(ViewReq<List<Counter>, Object> request) {
-        List<Counter> counters = request.data;
-        Counter counter = counters.get(0);
+    public static CounterView handle(ViewReq<Counter[], Object> request) {
+        Counter[] counters = request.data;
+        Counter counter = counters[0];
         return new CounterView(counter.getCount(), new Listener("onIncrement"));
     }
 }
