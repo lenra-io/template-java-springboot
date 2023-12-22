@@ -1,6 +1,5 @@
 package io.lenra.app;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -25,9 +24,10 @@ public class MyApp extends LenraApplication {
 
     @Override
     Map<String, ViewHandler<?, ?>> views() {
-        return new HashMap<String, ViewHandler<?, ?>>() {{
-            put("counter", new ViewHandler<>(CounterView::handle){});
-        }};
+        return Map.of(
+            "counter", new ViewHandler<>(CounterView::handle){},
+            "lenra.counter", new ViewHandler<>(CounterView::handle){}
+        );
     }
 
     @Override
