@@ -32,9 +32,16 @@ public class MyApp extends LenraApplication {
     @Override
     Map<String, ViewHandler> views() {
         ObjectMapper mapper = new ObjectMapper();
-        var counterList = mapper.getTypeFactory().constructArrayType(Counter.class);
+        // var counterList = mapper.getTypeFactory().constructArrayType(Counter.class);
+        var counterList = new TypeReference<List<Counter>>() {};
         var defaultRef = new TypeReference<Object>() {};
-        var handler = new ViewHandler<Counter[], Object>(CounterView::handle, new JavaTypeDataMapper<Counter[]>(counterList), new TypeReferenceDataMapper<Object>(defaultRef));
+        /* 
+        * I need to create a handler for my view.
+        * It has a function that handles the request,
+        * a counterList as data to show on the view and 
+        * a default ref for I don't know what
+        */
+        var handler = new ViewHandler<List<Counter>, Object>(CounterView::handle, new TypeReferenceDataMapper<List<Counter>>(counterList), new TypeReferenceDataMapper<Object>(defaultRef));
         return new HashMap<String, ViewHandler>() {{
             put("counter", handler);
         }};
