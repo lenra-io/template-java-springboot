@@ -9,14 +9,13 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.ArrayType;
 
-import io.lenra.app.ViewHandler.ViewReq;
+import io.lenra.app.ViewHandler.JavaTypeDataMapper;
+import io.lenra.app.ViewHandler.TypeReferenceDataMapper;
 import io.lenra.app.component.View;
 import io.lenra.app.data.Counter;
 import io.lenra.app.listener.IncrementListener;
 import io.lenra.app.request.ListenerRequest;
-import io.lenra.app.request.ViewRequest;
 import io.lenra.app.view.CounterView;
 
 @Component
@@ -31,7 +30,7 @@ public class MyApp extends LenraApplication {
     }
 
     @Override
-    Map<String, Function<ViewRequest, Object>> views() {
+    Map<String, ViewHandler> views() {
         ObjectMapper mapper = new ObjectMapper();
         var counterList = mapper.getTypeFactory().constructArrayType(Counter.class);
         var defaultRef = new TypeReference<Object>() {};
@@ -41,8 +40,8 @@ public class MyApp extends LenraApplication {
         * a counterList as data to show on the view and 
         * a default ref for I don't know what
         */
-        var handler = new ViewHandler<List<Counter>, Object>(CounterView::handle,  counterList, null);
-        return new HashMap<String, Function<ViewRequest, Object>>() {{
+        var handler = new ViewHandler<List<Counter>, Object>(CounterView::handle, new JavaTypeDataMapper<List<Counter>>(counterList), new TypeReferenceDataMapper<Object>(defaultRef));
+        return new HashMap<String, ViewHandler>() {{
             put("counter", handler);
         }};
         // return Map.of("counter", new ViewHandler<List<Counter>, Object>(CounterView::handle, List<Counter>.class, Object.class));

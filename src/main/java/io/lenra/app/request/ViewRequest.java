@@ -24,6 +24,6 @@ public class ViewRequest extends AppRequest<Object> {
         ObjectMapper mapper = new ObjectMapper();
         this.data = mapper.convertValue(this.data, new TypeReference<List<Counter>>(){});
         var view = application.getViews().get(this.getView());
-        return view.apply(this);
+        return view.handle(this);
     }
 }
