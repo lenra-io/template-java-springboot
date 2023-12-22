@@ -9,7 +9,9 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.ArrayType;
 
+import io.lenra.app.ViewHandler.ViewReq;
 import io.lenra.app.component.View;
 import io.lenra.app.data.Counter;
 import io.lenra.app.listener.IncrementListener;
@@ -33,7 +35,13 @@ public class MyApp extends LenraApplication {
         ObjectMapper mapper = new ObjectMapper();
         var counterList = mapper.getTypeFactory().constructArrayType(Counter.class);
         var defaultRef = new TypeReference<Object>() {};
-        var handler = new ViewHandler(CounterView::handle, counterList, defaultRef);
+        /* 
+        * I need to create a handler for my view.
+        * It has a function that handles the request,
+        * a counterList as data to show on the view and 
+        * a default ref for I don't know what
+        */
+        var handler = new ViewHandler<List<Counter>, Object>(CounterView::handle,  counterList, null);
         return new HashMap<String, Function<ViewRequest, Object>>() {{
             put("counter", handler);
         }};
