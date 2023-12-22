@@ -7,13 +7,7 @@ import java.util.function.Function;
 
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import io.lenra.app.ViewHandler.JavaTypeDataMapper;
-import io.lenra.app.ViewHandler.TypeReferenceDataMapper;
 import io.lenra.app.component.View;
-import io.lenra.app.data.Counter;
 import io.lenra.app.listener.IncrementListener;
 import io.lenra.app.request.ListenerRequest;
 import io.lenra.app.view.CounterView;
@@ -30,20 +24,9 @@ public class MyApp extends LenraApplication {
     }
 
     @Override
-    Map<String, ViewHandler> views() {
-        ObjectMapper mapper = new ObjectMapper();
-        // var counterList = mapper.getTypeFactory().constructArrayType(Counter.class);
-        var counterList = new TypeReference<List<Counter>>() {};
-        var defaultRef = new TypeReference<Object>() {};
-        /* 
-        * I need to create a handler for my view.
-        * It has a function that handles the request,
-        * a counterList as data to show on the view and 
-        * a default ref for I don't know what
-        */
-        var handler = new ViewHandler<List<Counter>, Object>(CounterView::handle, new TypeReferenceDataMapper<List<Counter>>(counterList), new TypeReferenceDataMapper<Object>(defaultRef));
-        return new HashMap<String, ViewHandler>() {{
-            put("counter", handler);
+    Map<String, ViewHandler<?, ?>> views() {
+        return new HashMap<String, ViewHandler<?, ?>>() {{
+            put("counter", new ViewHandler<>(CounterView::handle){});
         }};
     }
 
@@ -51,5 +34,4 @@ public class MyApp extends LenraApplication {
     Map<String, Function<ListenerRequest, Object>> listeners() {
         return Map.of("increment", IncrementListener::handle);
     }
-
 }

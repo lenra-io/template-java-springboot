@@ -1,11 +1,16 @@
 package io.lenra.app.view;
 
 import java.util.List;
+import java.util.Map;
 
-import io.lenra.app.ViewHandler.ViewReq;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import io.lenra.app.component.Listener;
 import io.lenra.app.data.Counter;
+import io.lenra.app.request.ViewRequest;
 
+// TODO: define it glabally: https://www.baeldung.com/jackson-ignore-null-fields#globally
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CounterView {
     private int count;
     private Listener onIncrement;
@@ -26,9 +31,10 @@ public class CounterView {
         return onIncrement;
     }
 
-    public static CounterView handle(ViewReq<Counter[], Object> request) {
-        Counter[] counters = request.data;
-        Counter counter = counters[0];
+    public static CounterView handle(ViewRequest<List<Counter>, Map<String, Object>> request) {
+        List<Counter> counters = request.getData();
+        Counter counter = counters.get(0);
+        System.out.println("props: " + request.getProps());
         return new CounterView(counter.getCount(), new Listener("onIncrement"));
     }
 }
