@@ -7,7 +7,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.lenra.app.LenraApplication;
-import io.lenra.app.data.Counter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -22,7 +21,7 @@ public class ViewRequest extends AppRequest<Object> {
     @Override
     public Object handle(LenraApplication application) {
         ObjectMapper mapper = new ObjectMapper();
-        this.data = mapper.convertValue(this.data, new TypeReference<List<Counter>>(){});
+        this.data = mapper.convertValue(this.data, new TypeReference<List<?>>(){});
         var view = application.getViews().get(this.getView());
         return view.handle(this);
     }

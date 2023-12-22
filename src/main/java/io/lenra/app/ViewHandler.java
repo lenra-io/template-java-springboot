@@ -2,7 +2,6 @@ package io.lenra.app;
 
 import java.util.function.Function;
 
-import com.fasterxml.jackson.core.type.ResolvedType;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
