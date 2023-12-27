@@ -6,6 +6,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class GenerateClasses {
 
@@ -30,25 +36,48 @@ public class GenerateClasses {
       throws IOException {
     Path schemaPath = Paths.get("api", "responses", "view.schema.json");
     String schemaContent = Files.readString(schemaPath);
-    
-    // Parse JSON schema
-    // ...
+
+    JsonObject mainSchema = JsonParser.parseString(schemaContent).getAsJsonObject();
 
     List<String> componentList = new ArrayList<>();
     // Add components to the list
-    // ...
+    // definitions > components.lenra > oneOf
+    JsonArray lenraComponents = mainSchema.getAsJsonObject("definitions").getAsJsonObject("components.lenra")
+        .getAsJsonArray("oneOf");
+
+    for (int i = 0; i < lenraComponents.size(); i++) {
+      JsonObject component = lenraComponents.get(i).getAsJsonObject();
+      String ref = component.getAsJsonPrimitive("$ref").getAsString();
+      componentList.add(ref);
+    }
+
+    // definitions > components.json > oneOf
+    JsonArray jsonComponents = mainSchema.getAsJsonObject("definitions").getAsJsonObject("components.json")
+        .getAsJsonArray("oneOf");
+
+    for (int i = 0; i < jsonComponents.size(); i++) {
+      JsonObject component = jsonComponents.get(i).getAsJsonObject();
+      String ref = component.getAsJsonPrimitive("$ref").getAsString();
+      componentList.add(ref);
+    }
 
     // Generate not existing classes
     List<String> componentsExports = new ArrayList<>();
     boolean componentsFileChanged = false;
 
     for (String ref : componentList) {
-      String comp = ref.substring(ref.lastIndexOf("/") + 1, ref.lastIndexOf("."));
-      // Check if the class exists
-      // ...
+      String comp = ref.substring(ref.lastIndexOf("."), ref.length() - 1);
 
-      Path baseClassPath = Paths.get(baseComponentsDir.toString(), comp + ".base.ts");
-      System.out.println("Generating " + baseClassPath + " file for " + schema.getTitle());
+      // Check if the class exists
+      String[] splitted = ref.replace("/^#\\/?/", "").split("/");
+
+      JsonObject schema = mainSchema.getAsJsonObject(splitted[0]);
+      for(int i = 1; i < splitted.length; i++) {
+        schema = schema.getAsJsonObject(splitted[i]);
+      }
+
+      Path baseClassPath = Paths.get(baseComponentsDir.toString(), comp + ".base.java");
+      System.out.println("Generating " + baseClassPath + " file for " + schema.get("title").getAsString());
       Files.writeString(baseClassPath, generateBaseClass(schema));
 
       // Check if the file corresponding to the schema exists
@@ -56,7 +85,7 @@ public class GenerateClasses {
 
       if (!Files.exists(classPath)) {
         // Creates the file
-        System.out.println("Generating " + classPath + " file for " + schema.getTitle());
+        System.out.println("Generating " + classPath + " file for " + schema.get("title").getAsString());
         Files.writeString(classPath, generateImplClass(schema, comp + ".base"));
       }
 
@@ -77,10 +106,10 @@ public class GenerateClasses {
     }
   }
 
-  private static String generateImplClass(Schema schema, String from) {
-    String title = schema.getTitle();
-    Map<String, Property> properties = schema.getProperties();
-    List<String> required = schema.getRequired();
+  private static String generateImplClass(JsonObject schema, String from) {
+    String title = schema.get("title").getAsString();
+    JsonObject properties = schema.getAsJsonObject("properties");
+    JsonArray required = schema.getAsJsonArray("required");
     List<String> requiredNoType = new ArrayList<>();
 
     for (String key : required) {
@@ -117,7 +146,7 @@ public class GenerateClasses {
     return sb.toString();
   }
 
-  private static String generateBaseClass(Schema schema) {
+  private static String generateBaseClass(JsonObject schema) {
     String title = schema.getTitle();
     Map<String, Property> properties = schema.getProperties();
     List<String> required = schema.getRequired();
