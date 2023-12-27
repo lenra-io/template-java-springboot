@@ -1,6 +1,5 @@
 package io.lenra.app.classes;
 
-import io.lenra.app.request.ListenerRequest;
 import io.lenra.api.internal.ApiClient;
 import lombok.Data;
 

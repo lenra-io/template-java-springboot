@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import io.lenra.app.LenraApplication;
 
 @JsonTypeInfo(use = Id.DEDUCTION, defaultImpl = ManifestRequest.class) // Intended usage
-@JsonSubTypes({ @Type(ViewRequest.class), @Type(ManifestRequest.class) })
+@JsonSubTypes({ @Type(ViewRequest.class), @Type(ListenerRequest.class), @Type(ManifestRequest.class) })
 public abstract class AppRequest<T> {
     abstract public T handle(LenraApplication application);
 }
