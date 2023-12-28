@@ -13,10 +13,13 @@ public class ListenerRequest extends AppRequest<Object> {
     private String listener;
     private Object props;
 
-    public Api api;
-
     @Override
     public Object handle(LenraApplication application) {
+        return new Object();
+    }
+
+    @Override
+    public Object handle(LenraApplication application, Api api) {
         var listener = application.getListeners().get(this.getListener());
         return listener.apply(this);
     }

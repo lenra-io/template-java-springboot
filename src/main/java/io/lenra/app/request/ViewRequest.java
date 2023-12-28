@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
 import io.lenra.app.LenraApplication;
 import io.lenra.app.ViewHandler;
+import io.lenra.app.classes.Api;
 import lombok.Getter;
 
 @JsonDeserialize(using = ViewRequest.ViewRequestDeserializer.class)
@@ -65,5 +66,11 @@ public class ViewRequest<D, P> extends AppRequest<Object> {
             var props = mapper.convertValue(node.get("props"), handler.propsType);
             return new ViewRequest(view, handler, data, props);
         }
+    }
+
+    @Override
+    public Object handle(LenraApplication application, Api api) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handle'");
     }
 }
