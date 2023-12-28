@@ -67,10 +67,4 @@ public class ViewRequest<D, P> extends AppRequest<Object> {
             return new ViewRequest(view, handler, data, props);
         }
     }
-
-    @Override
-    public Object handle(LenraApplication application, Api api) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handle'");
-    }
 }

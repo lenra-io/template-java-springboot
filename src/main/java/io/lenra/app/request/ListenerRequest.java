@@ -7,20 +7,16 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(callSuper=false)
-public class ListenerRequest extends AppRequest<Object> {
-     @JsonProperty(required = true)
+@EqualsAndHashCode(callSuper = false)
+public class ListenerRequest<P> extends AppRequest<Object> {
+    @JsonProperty(required = true)
     private String listener;
-    private Object props;
+
+    private P props;
+    private Api api;
 
     @Override
     public Object handle(LenraApplication application) {
         return new Object();
-    }
-
-    @Override
-    public Object handle(LenraApplication application, Api api) {
-        var listener = application.getListeners().get(this.getListener());
-        return listener.apply(this);
     }
 }

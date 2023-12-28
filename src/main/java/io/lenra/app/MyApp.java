@@ -31,7 +31,7 @@ public class MyApp extends LenraApplication {
     }
 
     @Override
-    Map<String, Function<ListenerRequest, Object>> listeners() {
-        return Map.of("increment", IncrementListener::handle);
+    Map<String, ListenerHandler<?>> listeners() {
+        return Map.of("increment", new ListenerHandler<>(IncrementListener::handle){});
     }
 }

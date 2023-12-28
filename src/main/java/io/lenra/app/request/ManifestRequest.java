@@ -11,10 +11,4 @@ public class ManifestRequest extends AppRequest<Manifest> {
         return application.getManifest();
     }
 
-    @Override
-    public Manifest handle(LenraApplication application, Api api) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handle'");
-    }
-    
 }
