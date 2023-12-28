@@ -70,8 +70,10 @@
 				<artifactId>jsonschema2pojo-maven-plugin</artifactId>
 				<version>1.2.1</version>
 				<configuration>
-					<sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
-					<targetPackage>com.example.types</targetPackage>
+					<sourceDirectory>${basedir}/src/main/resources/api</sourceDirectory>
+					<targetPackage>io.lenra.api</targetPackage>
+					<!-- This is really important because we use the "." character for definition names but it is considered as a separator by jsonschema2pojo -->
+					<refFragmentPathDelimiters>#/</refFragmentPathDelimiters>
 				</configuration>
 				<executions>
 					<execution>
