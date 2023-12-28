@@ -8,7 +8,7 @@ public class IncrementListener {
     public IncrementListener() {
     }
 
-    public static IncrementListener handle(ListenerRequest request, Api api) {
+    public static IncrementListener handle(ListenerRequest<Object> request) {
         // Execute the listener with the request's props.
         // Where is the listener executed from ?
 
@@ -19,7 +19,7 @@ public class IncrementListener {
         Object query = new Object();
 
         try {
-            Object response = api.getData().coll("test").find(query, query);
+            Object response = request.getApi().getData().coll("test").find(query, query);
             System.out.println(response.toString());
         } catch (ApiException e) {
             e.printStackTrace();

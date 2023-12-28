@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.lenra.app.request.ListenerRequest;
-import io.lenra.app.request.ViewRequest;
 
 
 public abstract class ListenerHandler<P> {

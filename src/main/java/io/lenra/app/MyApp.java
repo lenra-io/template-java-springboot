@@ -2,13 +2,11 @@ package io.lenra.app;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 
 import org.springframework.stereotype.Component;
 
 import io.lenra.app.component.View;
 import io.lenra.app.listener.IncrementListener;
-import io.lenra.app.request.ListenerRequest;
 import io.lenra.app.view.CounterView;
 
 @Component

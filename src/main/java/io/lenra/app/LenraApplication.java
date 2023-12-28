@@ -2,14 +2,11 @@ package io.lenra.app;
 
 import java.util.Collections;
 import java.util.Map;
-import java.util.function.Function;
-
-import io.lenra.app.request.ListenerRequest;
 
 public abstract class LenraApplication {
     private final Manifest manifest;
     private final Map<String, ViewHandler<?, ?>> views;
-    private final Map<String, Function<ListenerRequest, Object>> listeners;
+    private final Map<String, ListenerHandler<?>> listeners;
 
     public LenraApplication() {
         this.manifest = manifest();
@@ -25,11 +22,11 @@ public abstract class LenraApplication {
         return views;
     }
 
-    public Map<String, Function<ListenerRequest, Object>> getListeners() {
+    public Map<String, ListenerHandler<?>> getListeners() {
         return listeners;
     }
 
     abstract Manifest manifest();
     abstract Map<String, ViewHandler<?, ?>> views();
-    abstract Map<String, Function<ListenerRequest, Object>> listeners();
+    abstract Map<String, ListenerHandler<?>> listeners();
 }
