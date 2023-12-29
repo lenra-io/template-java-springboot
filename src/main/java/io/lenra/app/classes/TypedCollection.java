@@ -1,6 +1,7 @@
 package io.lenra.app.classes;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 import io.lenra.api.internal.ApiException;
@@ -33,8 +34,8 @@ public class TypedCollection<D extends Data, T extends Class<D>> {
         collection.deleteDoc(doc._id);
     }
 
-    public List<D> find(Object query) throws ApiException {
-        Object resp = collection.find(query, new Object());
+    public List<D> find(Map<String, Object> query, Map<String, Object> projection) throws ApiException {
+        Object resp = collection.find(query, projection);
         // return resp.map((d) => AbstractDataApi.fromJson(collClass, d));
         return null;
     }
