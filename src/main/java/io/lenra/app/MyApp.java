@@ -5,9 +5,14 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
+import io.lenra.api.ComponentsView;
+import io.lenra.api.ComponentsViewDefinitionsFind;
+import io.lenra.api.DataQuery;
+import io.lenra.api.Exposer;
+import io.lenra.api.ManifestSchema;
+import io.lenra.api.Route;
 import io.lenra.api.internal.ApiException;
 import io.lenra.app.classes.Collection;
-import io.lenra.app.component.View;
 import io.lenra.app.listener.IncrementListener;
 import io.lenra.app.request.ListenerRequest;
 import io.lenra.app.view.CounterView;
@@ -15,14 +20,41 @@ import io.lenra.app.view.CounterView;
 @Component
 public class MyApp extends LenraApplication {
     @Override
-    Manifest manifest() {
-        var manifest = new Manifest();
-        manifest.setJson(new Manifest.Exposer(List.of(
-                new Manifest.Route("/counter/global", new View("counter")),
-                new Manifest.Route("/counter/me", new View("counter")))));
+    ManifestSchema manifest() {
+        ManifestSchema manifest = new ManifestSchema();
 
-        manifest.setLenra(new Manifest.Exposer(List.of(new Manifest.Route("/", new View("lenra.main")))));
+        ComponentsView counterSchema = new ComponentsView();
+        ComponentsViewDefinitionsFind counterFind = new ComponentsViewDefinitionsFind();
+        counterFind.setColl("counter");
+        DataQuery counterQuery = new DataQuery();
+        counterQuery.setAdditionalProperty("user", "global");
+        counterFind.setQuery(counterQuery);
+        counterSchema.setFind(counterFind);
+
+        Route globalRoute = new Route();
+        globalRoute.setPath("/counter/global");
+        globalRoute.setView(counterSchema);
+
+        ComponentsView counterMeSchema = new ComponentsView();
+        ComponentsViewDefinitionsFind counterMeFind = new ComponentsViewDefinitionsFind();
+        counterMeFind.setColl("counter");
+        DataQuery counterMeQuery = new DataQuery();
+        counterMeQuery.setAdditionalProperty("user", "@me");
+        counterMeFind.setQuery(counterMeQuery);
+        counterMeSchema.setFind(counterMeFind);
+
+        Route meRoute = new Route();
+        meRoute.setPath("/counter/me");
+        meRoute.setView(counterMeSchema);
+
+        Exposer jsonExposer = new Exposer();
+        jsonExposer.setRoutes(List.of(globalRoute, meRoute));
+
+        manifest.setJson(jsonExposer);
+
         return manifest;
+
+        // manifest.setLenra(new Manifest.Exposer(List.of(new Manifest.Route("/", new View("lenra.main")))));
     }
 
     @Override

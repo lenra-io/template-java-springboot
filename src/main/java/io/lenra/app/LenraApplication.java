@@ -3,8 +3,10 @@ package io.lenra.app;
 import java.util.Collections;
 import java.util.Map;
 
+import io.lenra.api.ManifestSchema;
+
 public abstract class LenraApplication {
-    private final Manifest manifest;
+    private final ManifestSchema manifest;
     private final Map<String, ViewHandler<?, ?>> views;
     private final Map<String, ListenerHandler<?>> listeners;
 
@@ -14,7 +16,7 @@ public abstract class LenraApplication {
         this.listeners = Collections.unmodifiableMap(listeners());
     }
 
-    public Manifest getManifest() {
+    public ManifestSchema getManifest() {
         return manifest;
     }
 
@@ -26,7 +28,7 @@ public abstract class LenraApplication {
         return listeners;
     }
 
-    abstract Manifest manifest();
+    abstract ManifestSchema manifest();
     abstract Map<String, ViewHandler<?, ?>> views();
     abstract Map<String, ListenerHandler<?>> listeners();
 }
