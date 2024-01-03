@@ -16,24 +16,24 @@ public class Collection {
         this.name = name;
     }
 
-    public Object getDoc(String id) throws ApiException {
+    public DataDocument getDoc(String id) throws ApiException {
         return api.getApi().getDocumentById(this.name, id);
     }
 
-    public Object createDoc(Object doc) throws ApiException {
+    public DataDocument createDoc(Object doc) throws ApiException {
         return api.getApi().createDocument(this.name, doc);
     }
 
-    public Object updateDoc(Object doc) throws ApiException {
+    public DataDocument updateDoc(Object doc) throws ApiException {
         DataDocument dataDoc = (DataDocument) doc;
         return api.getApi().updateDocumentById(this.name, dataDoc.getId(), dataDoc);
     }
 
-    public Object deleteDoc(String id) throws ApiException {
+    public DataDocument deleteDoc(String id) throws ApiException {
         return api.getApi().deleteDocumentById(this.name, id);
     }
 
-    public Object find(Map<String, Object> query, Map<String, Object> projection) throws ApiException {
+    public Map<String, Object> find(Map<String, Object> query, Map<String, Object> projection) throws ApiException {
         FindDocumentsRequest req = new FindDocumentsRequest();
         req.setQuery(query);
         req.setProjection(projection);

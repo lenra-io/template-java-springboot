@@ -17,7 +17,7 @@ public class ServerController {
     @Autowired
     private LenraApplication app;
 
-    @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/**", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Object index(@RequestBody AppRequest<?> request) {
         return request.handle(app);
     }

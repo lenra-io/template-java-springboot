@@ -2,8 +2,11 @@ package io.lenra.app;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import io.lenra.app.component.View;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Manifest {
     private Exposer json;
     private Exposer lenra;
