@@ -1,6 +1,6 @@
 package io.lenra.app.listener;
 
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.lenra.api.internal.ApiException;
@@ -10,19 +10,16 @@ public class IncrementListener {
     public IncrementListener() {
     }
 
-    public static IncrementListener handle(ListenerRequest<Object> request) {
-        // Execute the listener with the request's props.
-        // Where is the listener executed from ?
-
-        // TODO: How can I use the API object here ?
-
+    public static IncrementListener handle(ListenerRequest<Map<String, Object>> request) {
         System.out.println("IncrementListener.handle() called");
 
-        Map<String, Object> query = new HashMap<>();
-
         try {
-            Object response = request.getApi().data().coll("test").find(query, query);
-            System.out.println(response.toString());
+            List<Map<String, Object>> counters = request.getApi().data().coll("counter").find(request.getProps(),
+                    Map.of());
+            Map<String, Object> counter = counters.get(0);
+            counter.put("count", (double) counter.get("count") + 1);
+
+            request.getApi().data().coll("counter").updateDoc(counter);
         } catch (ApiException e) {
             e.printStackTrace();
         }

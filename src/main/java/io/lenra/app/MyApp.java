@@ -29,6 +29,7 @@ public class MyApp extends LenraApplication {
         DataQuery counterQuery = new DataQuery();
         counterQuery.setAdditionalProperty("user", "global");
         counterFind.setQuery(counterQuery);
+        counterSchema.setName("counter");
         counterSchema.setFind(counterFind);
 
         Route globalRoute = new Route();
@@ -41,6 +42,7 @@ public class MyApp extends LenraApplication {
         DataQuery counterMeQuery = new DataQuery();
         counterMeQuery.setAdditionalProperty("user", "@me");
         counterMeFind.setQuery(counterMeQuery);
+        counterMeSchema.setName("counter");
         counterMeSchema.setFind(counterMeFind);
 
         Route meRoute = new Route();
@@ -95,7 +97,7 @@ public class MyApp extends LenraApplication {
 
     void createCounter(ListenerRequest<Object> request, String user) throws ApiException {
         Collection counterColl = request.getApi().data().coll("counter");
-        Map<String, Object> counters = counterColl.find(Map.of("user", user), Map.of());
+        List<Map<String, Object>> counters = counterColl.find(Map.of("user", user), Map.of());
 
         if (counters.size() == 0) {
             counterColl.createDoc(new io.lenra.app.data.Counter(user, 0));

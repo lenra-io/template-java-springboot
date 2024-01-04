@@ -1,5 +1,6 @@
 package io.lenra.app.classes;
 
+import java.util.List;
 import java.util.Map;
 
 import io.lenra.api.internal.ApiException;
@@ -33,7 +34,7 @@ public class Collection {
         return api.getApi().deleteDocumentById(this.name, id);
     }
 
-    public Map<String, Object> find(Map<String, Object> query, Map<String, Object> projection) throws ApiException {
+    public List<Map<String, Object>> find(Map<String, Object> query, Map<String, Object> projection) throws ApiException {
         FindDocumentsRequest req = new FindDocumentsRequest();
         req.setQuery(query);
         req.setProjection(projection);

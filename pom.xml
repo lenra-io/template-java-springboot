@@ -40,7 +40,7 @@
 		<dependency>
 			<groupId>com.github.lenra-io</groupId>
 			<artifactId>internal-api-client-lib-java</artifactId>
-			<version>29a4e52</version>
+			<version>fix-1234-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
