@@ -39,11 +39,8 @@ public class Collection {
         try {
             dataDoc = DataDocument.fromJson(json);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        System.out.println("dataDoc: " + dataDoc);
         
         return api.getApi().updateDocumentById(this.name, dataDoc.getId(), dataDoc);
     }
