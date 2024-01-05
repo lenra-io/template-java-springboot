@@ -16,7 +16,6 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
 import io.lenra.app.LenraApplication;
 import io.lenra.app.ViewHandler;
-import io.lenra.app.classes.Api;
 import lombok.Getter;
 
 @JsonDeserialize(using = ViewRequest.ViewRequestDeserializer.class)

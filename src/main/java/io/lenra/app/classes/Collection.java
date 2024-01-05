@@ -1,7 +1,12 @@
 package io.lenra.app.classes;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.internal.LinkedTreeMap;
 
 import io.lenra.api.internal.ApiException;
 import io.lenra.api.internal.client.model.DataDocument;
@@ -26,7 +31,20 @@ public class Collection {
     }
 
     public DataDocument updateDoc(Object doc) throws ApiException {
-        DataDocument dataDoc = (DataDocument) doc;
+        final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        String json = gson.toJson(doc, LinkedTreeMap.class);
+
+        DataDocument dataDoc = null;
+        try {
+            dataDoc = DataDocument.fromJson(json);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        System.out.println("dataDoc: " + dataDoc);
+        
         return api.getApi().updateDocumentById(this.name, dataDoc.getId(), dataDoc);
     }
 
