@@ -1,6 +1,5 @@
 package io.lenra.app.view;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -35,7 +34,6 @@ public class CounterView {
     public static CounterView handle(ViewRequest<List<Counter>, Map<String, Object>> request) {
         List<Counter> counters = request.getData();
         Counter counter = counters.get(0);
-        System.out.println("props: " + request.getProps());
         return new CounterView(counter.getCount(), new Listener("increment", Map.of("_id", counter.getId())));
     }
 }

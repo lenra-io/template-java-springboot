@@ -11,8 +11,6 @@ public class IncrementListener {
     }
 
     public static IncrementListener handle(ListenerRequest<Map<String, Object>> request) {
-        System.out.println("IncrementListener.handle() called");
-
         try {
             List<Map<String, Object>> counters = request.getApi().data().coll("counter").find(request.getProps(),
                     Map.of());
