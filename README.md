@@ -12,6 +12,19 @@
 
 _*Unchecked value is optional_
 
+### How to run the template
+
+Just run this command in this project to run the template app.
+
+`./mvnw spring-boot:run`
+
+Make sure that the port that springboot has set is 3000 and not 8080. I don't know why but sometimes it doesn't use the config and starts the app on 8080.
+
+Then you can run the devtool, it will automatically use the app on port 3000. 
+
+
+## Ignore instructions below for now
+
 
 ### How to install `lenra_cli`
 
