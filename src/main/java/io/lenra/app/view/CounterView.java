@@ -12,19 +12,19 @@ import io.lenra.app.request.ViewRequest;
 // TODO: define it glabally: https://www.baeldung.com/jackson-ignore-null-fields#globally
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CounterView {
-    private int count;
+    private int value;
     private Listener onIncrement;
 
     public CounterView() {
     }
 
-    public CounterView(int count, Listener onIncrement) {
-        this.count = count;
+    public CounterView(int value, Listener onIncrement) {
+        this.value = value;
         this.onIncrement = onIncrement;
     }
 
-    public int getCount() {
-        return count;
+    public int getValue() {
+        return value;
     }
 
     public Listener getOnIncrement() {

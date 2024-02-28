@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
 import io.lenra.app.LenraApplication;
 import io.lenra.app.ViewHandler;
+import jakarta.inject.Inject;
 import lombok.Getter;
 
 @JsonDeserialize(using = ViewRequest.ViewRequestDeserializer.class)
@@ -37,14 +38,14 @@ public class ViewRequest<D, P> extends AppRequest<Object> {
 
     @Override
     public Object handle(LenraApplication application) {
+        System.out.println("ViewRequest: " + this.view);
         return handler.handle(this);
     }
 
-    @Component
     public static class ViewRequestDeserializer extends StdDeserializer<ViewRequest<?, ?>> {
-        @Autowired
+        @Inject
         private LenraApplication app;
-        @Autowired
+        @Inject
         private ObjectMapper mapper;
 
         public ViewRequestDeserializer() {

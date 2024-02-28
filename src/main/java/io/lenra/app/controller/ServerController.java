@@ -1,10 +1,12 @@
 package io.lenra.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import io.lenra.app.LenraApplication;
 import io.lenra.app.request.AppRequest;
@@ -16,6 +18,13 @@ public class ServerController {
 
     @PostMapping(value = "/**", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Object index(@RequestBody AppRequest<?> request) {
-        return request.handle(app);
+        System.err.println("Request: " + request);
+        try {
+            return request.handle(app);
+        } catch (NullPointerException e) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, e.getMessage(), e);
+
+        }
     }
 }

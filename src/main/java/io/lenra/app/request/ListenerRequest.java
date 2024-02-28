@@ -17,6 +17,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import io.lenra.app.LenraApplication;
 import io.lenra.app.ListenerHandler;
 import io.lenra.app.classes.Api;
+import jakarta.inject.Inject;
 import lombok.Getter;
 
 @JsonDeserialize(using = ListenerRequest.ListenerRequestDeserializer.class)
@@ -43,11 +44,10 @@ public class ListenerRequest<P> extends AppRequest<Object> {
         return handler.handle(this);
     }
 
-    @Component
     public static class ListenerRequestDeserializer extends StdDeserializer<ListenerRequest<?>> {
-        @Autowired
+        @Inject
         private LenraApplication app;
-        @Autowired
+        @Inject
         private ObjectMapper mapper;
 
         public ListenerRequestDeserializer() {

@@ -1,0 +1,28 @@
+generator:
+  dofigen:
+    builders:
+    - name: maven
+      from: maven
+      workdir: /app
+      adds:
+        - "."
+      run:
+        - mvn package
+        - mv target/*.jar app.jar
+      caches:
+        - /root/.m2
+        - /app/target
+    from: eclipse-temurin:17-jdk-alpine
+    artifacts:
+      - builder: maven
+        source: /app/app.jar
+        destination: app.jar
+    ports:
+      - 3000
+    cmd:
+     - java
+     - -jar
+     - app.jar
+dev:
+  devtool:
+    tag: 1.1.0

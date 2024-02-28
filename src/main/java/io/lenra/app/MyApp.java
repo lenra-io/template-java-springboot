@@ -16,8 +16,9 @@ import io.lenra.app.classes.Collection;
 import io.lenra.app.listener.IncrementListener;
 import io.lenra.app.request.ListenerRequest;
 import io.lenra.app.view.CounterView;
+import jakarta.inject.Named;
 
-@Component
+@Named
 public class MyApp extends LenraApplication {
     @Override
     ManifestSchema manifest() {
@@ -35,6 +36,7 @@ public class MyApp extends LenraApplication {
         Route globalRoute = new Route();
         globalRoute.setPath("/counter/global");
         globalRoute.setView(counterSchema);
+        globalRoute.setRoles(List.of("guest", "user"));
 
         ComponentsView counterMeSchema = new ComponentsView();
         ComponentsViewDefinitionsFind counterMeFind = new ComponentsViewDefinitionsFind();
