@@ -3,16 +3,13 @@ package io.lenra.app;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.stereotype.Component;
-
-import io.lenra.api.ComponentsView;
-import io.lenra.api.ComponentsViewDefinitionsFind;
-import io.lenra.api.DataQuery;
-import io.lenra.api.Exposer;
-import io.lenra.api.ManifestSchema;
-import io.lenra.api.Route;
 import io.lenra.api.internal.ApiException;
-import io.lenra.app.classes.Collection;
+import io.lenra.app.Manifest.Exposer;
+import io.lenra.app.Manifest.Route;
+import io.lenra.app.api.Collection;
+import io.lenra.app.component.View;
+import io.lenra.app.handlers.ListenerHandler;
+import io.lenra.app.handlers.ViewHandler;
 import io.lenra.app.listener.IncrementListener;
 import io.lenra.app.request.ListenerRequest;
 import io.lenra.app.view.CounterView;
@@ -21,44 +18,46 @@ import jakarta.inject.Named;
 @Named
 public class MyApp extends LenraApplication {
     @Override
-    ManifestSchema manifest() {
-        ManifestSchema manifest = new ManifestSchema();
+    Manifest manifest() {
+        Manifest manifest = new Manifest();
 
-        ComponentsView counterSchema = new ComponentsView();
-        ComponentsViewDefinitionsFind counterFind = new ComponentsViewDefinitionsFind();
-        counterFind.setColl("counter");
-        DataQuery counterQuery = new DataQuery();
-        counterQuery.setAdditionalProperty("user", "global");
-        counterFind.setQuery(counterQuery);
-        counterSchema.setName("counter");
-        counterSchema.setFind(counterFind);
+        // ComponentsView counterSchema = new ComponentsView();
+        // ComponentsViewDefinitionsFind counterFind = new
+        // ComponentsViewDefinitionsFind();
+        // counterFind.setColl("counter");
+        // DataQuery counterQuery = new DataQuery();
+        // counterQuery.setAdditionalProperty("user", "global");
+        // counterFind.setQuery(counterQuery);
+        // counterSchema.setName("counter");
+        // counterSchema.setFind(counterFind);
 
-        Route globalRoute = new Route();
-        globalRoute.setPath("/counter/global");
-        globalRoute.setView(counterSchema);
+        var view = new View("counter");
+        // TODO: set the find
+
+        Route globalRoute = new Route("/counter/global", view);
         globalRoute.setRoles(List.of("guest", "user"));
 
-        ComponentsView counterMeSchema = new ComponentsView();
-        ComponentsViewDefinitionsFind counterMeFind = new ComponentsViewDefinitionsFind();
-        counterMeFind.setColl("counter");
-        DataQuery counterMeQuery = new DataQuery();
-        counterMeQuery.setAdditionalProperty("user", "@me");
-        counterMeFind.setQuery(counterMeQuery);
-        counterMeSchema.setName("counter");
-        counterMeSchema.setFind(counterMeFind);
+        // ComponentsView counterMeSchema = new ComponentsView();
+        // ComponentsViewDefinitionsFind counterMeFind = new
+        // ComponentsViewDefinitionsFind();
+        // counterMeFind.setColl("counter");
+        // DataQuery counterMeQuery = new DataQuery();
+        // counterMeQuery.setAdditionalProperty("user", "@me");
+        // counterMeFind.setQuery(counterMeQuery);
+        // counterMeSchema.setName("counter");
+        // counterMeSchema.setFind(counterMeFind);
 
-        Route meRoute = new Route();
-        meRoute.setPath("/counter/me");
-        meRoute.setView(counterMeSchema);
+        view = new View("counter");
+        // TODO: set the find
 
-        Exposer jsonExposer = new Exposer();
-        jsonExposer.setRoutes(List.of(globalRoute, meRoute));
+        Route meRoute = new Route("/counter/global", view);
 
-        manifest.setJson(jsonExposer);
+        manifest.setJson(new Exposer(List.of(globalRoute, meRoute)));
+
+        // manifest.setL enra(new Manifest.Exposer(List.of(new Manifest.Route("/", new
+        // View("lenra.main")))));
 
         return manifest;
-
-        // manifest.setLenra(new Manifest.Exposer(List.of(new Manifest.Route("/", new View("lenra.main")))));
     }
 
     @Override
