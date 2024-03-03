@@ -22,7 +22,7 @@ import io.lenra.app.api.Collection;
 import io.lenra.app.handlers.ListenerHandler;
 import io.lenra.app.handlers.ViewHandler;
 import io.lenra.app.listener.IncrementListener;
-import io.lenra.app.request.AppRequest;
+import io.lenra.api.AppRequest;
 import io.lenra.app.request.ListenerRequest;
 import io.lenra.app.view.CounterView;
 import jakarta.inject.Named;
@@ -32,7 +32,7 @@ import jakarta.inject.Named;
 @SpringBootApplication
 public class MyApp extends LenraApplication {
     @Override
-    Manifest manifest() {
+    protected Manifest manifest() {
         return Manifest.builder()
                 .json(Exposer.builder()
                         .route(Route.builder()
@@ -62,7 +62,7 @@ public class MyApp extends LenraApplication {
     }
 
     @Override
-    Map<String, ViewHandler<?, ?>> views() {
+    protected Map<String, ViewHandler<?, ?>> views() {
         return Map.of(
                 "counter", new ViewHandler<>(CounterView::handle) {
                 },
@@ -71,7 +71,7 @@ public class MyApp extends LenraApplication {
     }
 
     @Override
-    Map<String, ListenerHandler<?>> listeners() {
+    protected Map<String, ListenerHandler<?>> listeners() {
         return Map.of(
                 "increment", new ListenerHandler<>(IncrementListener::handle) {
                 },
@@ -109,15 +109,16 @@ public class MyApp extends LenraApplication {
     ///////////// Spring Boot app
 
     @PostMapping(value = "/**", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Object index(@RequestBody AppRequest<?> request) {
-        System.err.println("Request: " + request);
-        try {
-            return request.handle(this);
-        } catch (NullPointerException e) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, e.getMessage(), e);
+    public Object index(@RequestBody AppRequest request) {
+        System.err.println(request);
+        return handle(request);
+        // try {
+        //     return request.handle(this);
+        // } catch (NullPointerException e) {
+        //     throw new ResponseStatusException(
+        //             HttpStatus.NOT_FOUND, e.getMessage(), e);
 
-        }
+        // }
     }
 
     public static void main(String[] args) {
