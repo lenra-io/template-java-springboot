@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import io.lenra.api.components.View;
+import io.lenra.api.components.view.definitions.Find;
+import io.lenra.api.data.Query;
 import io.lenra.api.internal.ApiException;
 import io.lenra.app.Manifest.Exposer;
 import io.lenra.app.Manifest.Route;
 import io.lenra.app.api.Collection;
-import io.lenra.app.component.View;
 import io.lenra.app.handlers.ListenerHandler;
 import io.lenra.app.handlers.ViewHandler;
 import io.lenra.app.listener.IncrementListener;
@@ -43,10 +45,24 @@ public class MyApp extends LenraApplication {
         // counterSchema.setName("counter");
         // counterSchema.setFind(counterFind);
 
-        var view = new View("counter");
+        // var view = new View("counter");
         // TODO: set the find
 
-        Route globalRoute = new Route("/counter/global", view);
+        Route globalRoute = new Route("/counter/global", new View() {
+            {
+                setName("counter");
+                setFind(new Find() {
+                    {
+                        setColl("counter");
+                        setQuery(new Query() {
+                            {
+                                put("user", "global");
+                            }
+                        });
+                    }
+                });
+            }
+        });
         globalRoute.setRoles(List.of("guest", "user"));
 
         // ComponentsView counterMeSchema = new ComponentsView();
@@ -59,10 +75,24 @@ public class MyApp extends LenraApplication {
         // counterMeSchema.setName("counter");
         // counterMeSchema.setFind(counterMeFind);
 
-        view = new View("counter");
+        // view = new View("counter");
         // TODO: set the find
 
-        Route meRoute = new Route("/counter/global", view);
+        Route meRoute = new Route("/counter/global", new View() {
+            {
+                setName("counter");
+                setFind(new Find() {
+                    {
+                        setColl("counter");
+                        setQuery(new Query() {
+                            {
+                                put("user", "@me");
+                            }
+                        });
+                    }
+                });
+            }
+        });
 
         manifest.setJson(new Exposer(List.of(globalRoute, meRoute)));
 

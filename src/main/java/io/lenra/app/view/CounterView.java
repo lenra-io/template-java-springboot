@@ -5,7 +5,8 @@ import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import io.lenra.app.component.Listener;
+import io.lenra.api.components.Listener;
+import io.lenra.api.defs.Props;
 import io.lenra.app.data.Counter;
 import io.lenra.app.request.ViewRequest;
 
@@ -34,6 +35,15 @@ public class CounterView {
     public static CounterView handle(ViewRequest<List<Counter>, Map<String, Object>> request) {
         List<Counter> counters = request.getData();
         Counter counter = counters.get(0);
-        return new CounterView(counter.getCount(), new Listener("increment", Map.of("_id", counter.getId())));
+        return new CounterView(counter.getCount(), new Listener() {
+            {
+                setName("increment");
+                setProps(new Props() {
+                    {
+                        put("_id", counter.getId());
+                    }
+                });
+            }
+        });
     }
 }
