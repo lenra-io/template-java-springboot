@@ -1,0 +1,43 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.3'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://jitpack.io')
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'io.lenra:app:1.0.0-SNAPSHOT'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+	
+	testCompileOnly 'org.projectlombok:lombok:1.18.30'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+    
+    testImplementation 'io.quarkus:quarkus-junit5'
+}
+
+group 'io.lenra'
+version '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}

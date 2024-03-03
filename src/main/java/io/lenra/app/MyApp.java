@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import io.lenra.api.Exposer;
+import io.lenra.api.Manifest;
+import io.lenra.api.Route;
 import io.lenra.api.components.View;
 import io.lenra.api.components.view.definitions.Find;
-import io.lenra.api.data.Query;
 import io.lenra.api.internal.ApiException;
-import io.lenra.app.Manifest.Exposer;
-import io.lenra.app.Manifest.Route;
 import io.lenra.app.api.Collection;
 import io.lenra.app.handlers.ListenerHandler;
 import io.lenra.app.handlers.ViewHandler;
@@ -33,73 +33,32 @@ import jakarta.inject.Named;
 public class MyApp extends LenraApplication {
     @Override
     Manifest manifest() {
-        Manifest manifest = new Manifest();
-
-        // ComponentsView counterSchema = new ComponentsView();
-        // ComponentsViewDefinitionsFind counterFind = new
-        // ComponentsViewDefinitionsFind();
-        // counterFind.setColl("counter");
-        // DataQuery counterQuery = new DataQuery();
-        // counterQuery.setAdditionalProperty("user", "global");
-        // counterFind.setQuery(counterQuery);
-        // counterSchema.setName("counter");
-        // counterSchema.setFind(counterFind);
-
-        // var view = new View("counter");
-        // TODO: set the find
-
-        Route globalRoute = new Route("/counter/global", new View() {
-            {
-                setName("counter");
-                setFind(new Find() {
-                    {
-                        setColl("counter");
-                        setQuery(new Query() {
-                            {
-                                put("user", "global");
-                            }
-                        });
-                    }
-                });
-            }
-        });
-        globalRoute.setRoles(List.of("guest", "user"));
-
-        // ComponentsView counterMeSchema = new ComponentsView();
-        // ComponentsViewDefinitionsFind counterMeFind = new
-        // ComponentsViewDefinitionsFind();
-        // counterMeFind.setColl("counter");
-        // DataQuery counterMeQuery = new DataQuery();
-        // counterMeQuery.setAdditionalProperty("user", "@me");
-        // counterMeFind.setQuery(counterMeQuery);
-        // counterMeSchema.setName("counter");
-        // counterMeSchema.setFind(counterMeFind);
-
-        // view = new View("counter");
-        // TODO: set the find
-
-        Route meRoute = new Route("/counter/global", new View() {
-            {
-                setName("counter");
-                setFind(new Find() {
-                    {
-                        setColl("counter");
-                        setQuery(new Query() {
-                            {
-                                put("user", "@me");
-                            }
-                        });
-                    }
-                });
-            }
-        });
-
-        manifest.setJson(new Exposer(List.of(globalRoute, meRoute)));
-
-        // manifest.setL enra(new Manifest.Exposer(List.of(new Manifest.Route("/", new
-        // View("lenra.main")))));
-
-        return manifest;
+        return Manifest.builder()
+                .json(Exposer.builder()
+                        .route(Route.builder()
+                                .path("/counter/global")
+                                .view(View.builder()
+                                        .name("counter")
+                                        .find(Find.builder()
+                                                .coll("counter")
+                                                .query(Map.of("user", "global"))
+                                                .build())
+                                        .build())
+                                .role("guest")
+                                .role("user")
+                                .build())
+                        .route(Route.builder()
+                                .path("/counter/me")
+                                .view(View.builder()
+                                        .name("counter")
+                                        .find(Find.builder()
+                                                .coll("counter")
+                                                .query(Map.of("user", "@me"))
+                                                .build())
+                                        .build())
+                                .build())
+                        .build())
+                .build();
     }
 
     @Override

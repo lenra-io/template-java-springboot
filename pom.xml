@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.0</version>
+		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.lenra</groupId>
@@ -39,16 +39,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.9.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.lenra-io</groupId>
-			<artifactId>internal-api-client-lib-java</artifactId>
-			<version>fix-1234-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 	<repositories>
@@ -71,28 +61,6 @@
 						</exclude>
 					</excludes>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.jsonschema2pojo</groupId>
-				<artifactId>jsonschema2pojo-maven-plugin</artifactId>
-				<version>1.2.1</version>
-				<configuration>
-					<sourcePaths>
-						<sourcePath>${basedir}/api/manifest.schema.json</sourcePath>
-						<sourcePath>${basedir}/api/requests/app.schema.json</sourcePath>
-						<sourcePath>${basedir}/api/responses/view.schema.json</sourcePath>
-					</sourcePaths>
-					<targetPackage>io.lenra.api</targetPackage>
-					<!-- This is really important because we use the "." character for definition names but it is considered as a separator by jsonschema2pojo -->
-					<refFragmentPathDelimiters>#/</refFragmentPathDelimiters>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
