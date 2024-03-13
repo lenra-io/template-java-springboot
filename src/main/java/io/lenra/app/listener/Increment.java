@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 import io.lenra.api.internal.ApiException;
+import io.lenra.app.annotation.AppListener;
 import io.lenra.app.api.Api;
 
 public class Increment {
-    @Listener
+    @AppListener
     public static void increment(Map<String, Object> props, Api api) {
         try {
             List<Map<String, Object>> counters = api.data().coll("counter").find(props, Map.of());
