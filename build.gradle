@@ -38,6 +38,14 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
+sourceSets {
+   main {
+      java {
+         srcDir compileJava.options.annotationProcessorGeneratedSourcesDirectory
+      }
+   }
+}
+
 compileJava {
     options.encoding = 'UTF-8'
 }

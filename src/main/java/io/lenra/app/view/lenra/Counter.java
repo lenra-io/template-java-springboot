@@ -1,20 +1,21 @@
 package io.lenra.app.view.lenra;
 
-import static io.lenra.api.components.Components.button;
-import static io.lenra.api.components.Components.flex;
-import static io.lenra.api.components.Components.text;
+import static io.lenra.app.components.Components.button;
+import static io.lenra.app.components.Components.flex;
+import static io.lenra.app.components.Components.text;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import io.lenra.api.components.Flex;
-import io.lenra.api.components.Flex.CrossAxisAlignment;
-import io.lenra.api.components.Flex.MainAxisAlignment;
-import io.lenra.api.components.Listener;
 import io.lenra.app.annotation.AppView;
+import io.lenra.app.components.Flex;
+import io.lenra.app.components.Flex.CrossAxisAlignment;
+import io.lenra.app.components.Flex.MainAxisAlignment;
+import io.lenra.app.components.Listener;
+import io.lenra.app.listener.ListenerName;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.Setter;
 
 public class Counter {
   @AppView(prefix = "lenra.")
@@ -23,7 +24,7 @@ public class Counter {
     return flex(
         List.of(text(props.getText() + ": " + counter.getCount()),
             button("+",
-                b -> b.setOnPressed(new Listener("increment", Map.of("id", counter.getId()))))),
+                b -> b.setOnPressed(new Listener(ListenerName.INCREMENT.value, Map.of("id", counter.getId()))))),
         f -> {
           f.setSpacing(16d);
           f.setMainAxisAlignment(MainAxisAlignment.SPACE_EVENLY);
@@ -31,7 +32,8 @@ public class Counter {
         });
   }
 
-  @Data
+  @Getter
+  @Setter
   @AllArgsConstructor
   @NoArgsConstructor
   public static class Props {

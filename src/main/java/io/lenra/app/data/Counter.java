@@ -1,11 +1,13 @@
 package io.lenra.app.data;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper=false)
-public class Counter extends io.lenra.app.data.Data {
+public class Counter extends Data {
     private String user;
     private int count;
 
