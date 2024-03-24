@@ -1,9 +1,14 @@
 package io.lenra.app;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -32,13 +37,26 @@ public class App {
 								List.of(
 										new Route(
 												"/counter/global",
-												new View(ViewName.LENRA_COUNTER.value)
+												new View(ViewName.LENRA_COUNTER)
 														.find(new Find("counter", Map.of("user", "global"))))
 												.roles(List.of("guest", "user")),
 										new Route(
 												"/counter/me",
-												new View(ViewName.LENRA_COUNTER.value)
-														.find(new Find("counter", Map.of("user", "@me")))))));
+												new View(ViewName.LENRA_COUNTER)
+														.find(new Find("counter", Map.of("user", "@me")))))))
+				.lenra(
+						new Exposer(
+								List.of(
+										new Route(
+												"/",
+												new View(ViewName.LENRA_MAIN))
+												.roles(List.of("guest", "user")))));
+	}
+
+	@EventListener(ApplicationReadyEvent.class)
+	public void doSomethingAfterStartup() throws Exception {
+		var path = Paths.get("/tmp/.lock");
+		Files.write(path, "\n".getBytes());
 	}
 
 	@PostMapping(value = "/**", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)

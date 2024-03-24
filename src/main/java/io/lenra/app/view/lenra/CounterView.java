@@ -8,6 +8,7 @@ import io.lenra.app.components.Button;
 import io.lenra.app.components.Flex;
 import io.lenra.app.components.Listener;
 import io.lenra.app.components.Text;
+import io.lenra.app.data.Counter;
 import io.lenra.app.listener.ListenerName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,9 +16,9 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 
-public class Counter {
+public class CounterView {
 	@AppView(prefix = "lenra.")
-	public static Flex counter(List<io.lenra.app.data.Counter> counters, Props props) {
+	public static Flex counter(List<Counter> counters, Props props) {
 		var counter = counters.get(0);
 		return new Flex(
 				List.of(

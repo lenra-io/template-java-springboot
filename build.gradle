@@ -17,7 +17,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1'
 
-    def lenra = 'io.lenra:app:1.0.0-SNAPSHOT'
+    def lenra = 'io.lenra:app:1.0.0-beta.2'
     implementation lenra
 	annotationProcessor lenra
 

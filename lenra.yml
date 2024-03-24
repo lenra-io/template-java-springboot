@@ -1,28 +1,30 @@
 generator:
   dofigen:
     builders:
-    - name: maven
-      from: maven
+    - name: gradle
+      from: gradle:8
       workdir: /app
       adds:
         - "."
       run:
-        - mvn package
-        - mv target/*.jar app.jar
+        - gradle --build-cache --no-daemon bootJar
+        - mv build/libs/*-SNAPSHOT.jar app.jar
       caches:
-        - /root/.m2
-        - /app/target
-    from: eclipse-temurin:17-jdk-alpine
+        - /root/.gradle
+        - /app/build
+    from: eclipse-temurin:17-jre-alpine
     artifacts:
-      - builder: maven
+      - builder: gradle
         source: /app/app.jar
         destination: app.jar
     ports:
       - 3000
+    healthcheck:
+      cmd: test -f /tmp/.lock
     cmd:
      - java
      - -jar
      - app.jar
-dev:
-  devtool:
-    tag: 1.1.0
+# dev:
+#   devtool:
+#     tag: 1.1.0
