@@ -1,10 +1,10 @@
 package io.lenra.app;
 
-import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import io.lenra.app.annotation.AppManifest;
 import io.lenra.app.components.View;
 import io.lenra.app.components.view.definitions.Find;
+import io.lenra.app.data.Counter;
 import io.lenra.app.exception.NotFoundException;
 import io.lenra.app.view.ViewName;
 import jakarta.inject.Inject;
@@ -38,12 +40,12 @@ public class App {
 										new Route(
 												"/counter/global",
 												new View(ViewName.LENRA_COUNTER)
-														.find(new Find("counter", Map.of("user", "global"))))
+														.find(new Find(Counter.class, Map.of("user", "global"))))
 												.roles(List.of("guest", "user")),
 										new Route(
 												"/counter/me",
 												new View(ViewName.LENRA_COUNTER)
-														.find(new Find("counter", Map.of("user", "@me")))))))
+														.find(new Find(Counter.class, Map.of("user", "@me")))))))
 				.lenra(
 						new Exposer(
 								List.of(
