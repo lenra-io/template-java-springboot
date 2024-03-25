@@ -1,0 +1,55 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://jitpack.io')
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1'
+
+    def lenra = 'io.lenra:app:1.0.1'
+    implementation lenra
+	annotationProcessor lenra
+
+    def lombok = 'org.projectlombok:lombok:1.18.30'
+    compileOnly lombok
+	annotationProcessor lombok
+	testCompileOnly lombok
+	testAnnotationProcessor lombok
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+group 'io.lenra'
+version '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+sourceSets {
+   main {
+      java {
+         srcDir compileJava.options.annotationProcessorGeneratedSourcesDirectory
+      }
+   }
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}

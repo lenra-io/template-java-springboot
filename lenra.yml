@@ -1,0 +1,31 @@
+generator:
+  dofigen:
+    builders:
+    - name: gradle
+      from: gradle:8
+      workdir: /app
+      adds:
+        - "."
+      run:
+        - gradle --build-cache --no-daemon bootJar
+        - mv build/libs/*-SNAPSHOT.jar app.jar
+      caches:
+        - /root/.gradle
+        - /app/build
+    from: eclipse-temurin:17-jre-alpine
+    artifacts:
+      - builder: gradle
+        source: /app/app.jar
+        destination: app.jar
+    ports:
+      - 3000
+    healthcheck:
+      cmd: test -f /tmp/.lock
+    cmd:
+     - java
+     - -jar
+     - app.jar
+    ignores:
+      - "**"
+      - "!/build.gradle"
+      - "!/src/"
