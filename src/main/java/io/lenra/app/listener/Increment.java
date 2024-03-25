@@ -8,7 +8,7 @@ import io.lenra.app.data.Counter;
 
 public class Increment {
 	@AppListener
-	public static void increment(Map<String, Object> props, Api api) throws ApiException {
+	public static void increment(Api api, Map<String, Object> props) throws ApiException {
 		var coll = api.data().coll(Counter.class);
 		var counters = coll.find(Map.of("_id", props.get("id")));
 		var counter = counters.get(0);

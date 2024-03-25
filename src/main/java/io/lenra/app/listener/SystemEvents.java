@@ -9,12 +9,12 @@ import io.lenra.app.data.Counter;
 
 public class SystemEvents {
 	@AppListener
-	public static void onEnvStart(@AppListener.Api Api api) throws ApiException {
+	public static void onEnvStart(Api api) throws ApiException {
 		createCounter(api, "global");
 	}
 
 	@AppListener
-	public static void onUserFirstJoin(@AppListener.Api Api api) throws ApiException {
+	public static void onUserFirstJoin(Api api) throws ApiException {
 		createCounter(api, "@me");
 	}
 

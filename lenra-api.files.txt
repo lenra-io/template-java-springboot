@@ -1,3 +1,0 @@
-manifest.schema.json
-responses/view.schema.json
-requests/app.schema.json

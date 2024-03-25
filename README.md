@@ -1,57 +1,61 @@
-# template-java-springboot
-[Java Springboot](https://spring.io/projects/spring-boot) template to boostrap Lenra app
-
-## Get Started !
-
-### Requirements*
-
-- [x] docker
-- [x] docker-compose
-- [ ] buildkit
-- [x] lenra_cli
-
-_*Unchecked value is optional_
+<div id="top"></div>
+<!--
+*** This README was created with https://github.com/othneildrew/Best-README-Template
+-->
 
 
-## Ignore instructions below for now
+
+<!-- PROJECT SHIELDS -->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 
-### How to install `lenra_cli`
 
-You need to install the Lenra CLI to start the devtools that will show your app.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
 
-To download it, you can use cargo or download the binary via the [latest github release assets](https://github.com/lenra-io/lenra_cli/releases)
+<h3 align="center">Template Java based on Spring Boot</h3>
 
-From cargo you need to run the following command :
+  <p align="center">
+    This template provides just enough to get started with your Java application.
+    <br />
+    <br />
+    <a href="https://github.com/lenra-io/template-java-springboot/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/lenra-io/template-java-springboot/issues">Request Feature</a>
+  </p>
+</div>
 
-```bash
-cargo install lenra_cli
+
+
+
+<!-- GETTING STARTED -->
+
+## Prerequisites
+
+To properly run this template, you will have to make sure that the Lenra CLI and docker with docker-compose are installed on your computer.
+Installation instructions can be found here https://github.com/lenra-io/lenra_cli.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+To run the template just run:
+```console
+lenra dev
 ```
 
-When installed you can run the binary file
+You can then access the application by opening [`localhost:4000`](http://localhost:4000) on your web browser. 
 
-```bash
-lenra --version
-```
+This template is a basic implementation of a Lenra application using the Java language. You can get your application started by using this template.
 
-### Building and debugging your app
-
-To build your app, you can run the `lenra build` command that will build the docker container
-```bash
-lenra build
-```
-
-The `lenra start` command will start all needed services to make your app ready and then open your browser so you can start debugging.
-
-```bash
-lenra start
-```
-
-When everything is fine, you can stop your app by running the `lenra stop` command. That will interrupt all current running services about your app. And delete all data from your app to be able to keep your test clean.
-
-```bash
-lenra stop
-```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- CONTRIBUTING -->
@@ -60,28 +64,40 @@ lenra stop
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please open an issue with the tag "enhancement".
-Don't forget to give the project a star if you liked it! Thanks again!generate
+Don't forget to give the project a star if you liked it! Thanks again!
 
-### Generate classes
-
-A part of this lib is generated from the [Lenra API](https://github.com/lenra-io/api).
-The class generation is made at build time:
-
-```bash
-# Load API
-## With wget
-wget https://github.com/lenra-io/api/releases/latest/download/load-api.sh -O - -q | bash
-## With curl
-curl -fsSL https://github.com/lenra-io/api/releases/latest/download/load-api.sh | bash
-```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
-### How to run the template
 
-Just run this command in this project to run the template app.
+<!-- LICENSE -->
+## License
 
-`./mvnw spring-boot:run`
+Distributed under the **MIT** License. See [LICENSE](./LICENSE) for more information.
 
-Make sure that the port that springboot has set is 3000 and not 8080. I don't know why but sometimes it doesn't use the config and starts the app on 8080.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Then you can run the devtool, it will automatically use the app on port 3000. 
+
+
+<!-- CONTACT -->
+## Contact
+
+Lenra - [@lenra_dev](https://twitter.com/lenra_dev) - contact@lenra.io
+
+Project Link: [https://github.com/lenra-io/template-java-springboot](https://github.com/lenra-io/template-java-springboot)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/lenra-io/template-java-springboot.svg?style=for-the-badge
+[contributors-url]: https://github.com/lenra-io/template-java-springboot/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/lenra-io/template-java-springboot.svg?style=for-the-badge
+[forks-url]: https://github.com/lenra-io/template-java-springboot/network/members
+[stars-shield]: https://img.shields.io/github/stars/lenra-io/template-java-springboot.svg?style=for-the-badge
+[stars-url]: https://github.com/lenra-io/template-java-springboot/stargazers
+[issues-shield]: https://img.shields.io/github/issues/lenra-io/template-java-springboot.svg?style=for-the-badge
+[issues-url]: https://github.com/lenra-io/template-java-springboot/issues
+[license-shield]: https://img.shields.io/github/license/lenra-io/template-java-springboot.svg?style=for-the-badge
+[license-url]: https://github.com/lenra-io/template-java-springboot/blob/master/LICENSE

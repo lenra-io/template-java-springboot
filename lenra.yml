@@ -25,3 +25,7 @@ generator:
      - java
      - -jar
      - app.jar
+    ignores:
+      - "**"
+      - "!/build.gradle"
+      - "!/src/"
